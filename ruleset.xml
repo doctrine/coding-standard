@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset name="Doctrine">
+    <description>The Doctrine coding standard.</description>
+
+    <!-- Import PSR-2 coding standard (base) -->
+    <rule ref="PSR-2"/>
+</ruleset>
