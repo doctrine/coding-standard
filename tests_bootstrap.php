@@ -84,6 +84,8 @@ if ( ! file_exists($sniffTestSuiteFile)) {
     );
 }
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 $doctrineStandardDir = $phpCodeSnifferDir . '/CodeSniffer/Standards/Doctrine';
 
 if (file_exists($doctrineStandardDir)) {
