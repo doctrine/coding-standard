@@ -1,0 +1,19 @@
+{
+    "name": "doctrine/coding-standard",
+    "type": "library",
+    "description": "Doctrine Coding Standard",
+    "keywords": ["doctrine", "coding", "standard", "cs", "code", "style", "sniffer"],
+    "homepage": "http://www.doctrine-project.org",
+    "license": "MIT",
+    "authors": [
+        {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
+        {"name": "Steve Müller", "email": "st.mueller@dzh-online.de"}
+    ],
+    "require": {
+        "php": ">=5.1.2"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.*",
+        "phpunit/phpunit": "~3.7"
+    }
+}
