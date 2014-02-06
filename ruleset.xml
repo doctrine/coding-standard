@@ -3,5 +3,5 @@
     <description>The Doctrine coding standard.</description>
 
     <!-- Import PSR-2 coding standard (base) -->
-    <rule ref="PSR-2"/>
+    <rule ref="PSR2"/>
 </ruleset>
