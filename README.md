@@ -85,7 +85,7 @@ make sure all dependencies are correctly installed:
 $ php composer.phar install --prefer-source --dev
 ```
 
-The option `--prefer-source`` is particularly necessary to ensure the test suite from PHP_CodeSniffer is
+The option `--prefer-source` is particularly necessary to ensure the test suite from PHP_CodeSniffer is
 installed. Otherwise the test suite for the Doctrine Coding Standard won't work!
 
 Run the test suite with:
