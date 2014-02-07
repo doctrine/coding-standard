@@ -74,3 +74,22 @@ Then you can use it like:
 ```bash
 $ ./vendor/bin/phpcs --standard=vendor/doctrine/coding-standard/Doctrine /path/to/some/file/to/sniff.php
 ```
+
+Testing
+-------
+
+If you are contributing to the Doctrine Coding Standard and want to test your contribution, you have to
+make sure all dependencies are correctly installed:
+
+```bash
+$ php composer.phar install --prefer-source --dev
+```
+
+The option `--prefer-source`` is particularly necessary to ensure the test suite from PHP_CodeSniffer is
+installed. Otherwise the test suite for the Doctrine Coding Standard won't work!
+
+Run the test suite with:
+
+```bash
+$ ./vendor/bin/phpunit
+```
