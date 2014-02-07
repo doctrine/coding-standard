@@ -5,6 +5,11 @@
     <!-- Import PSR-2 coding standard (base) -->
     <rule ref="PSR2"/>
 
+    <!-- Disallow else if in favour elseif -->
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
+        <type>error</type>
+    </rule>
+    
     <!-- Align corresponding assignment statement tokens -->
     <rule ref="Generic.Formatting.MultipleStatementAlignment">
         <properties>

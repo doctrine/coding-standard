@@ -6,6 +6,11 @@ The Doctrine project follows a coding standard based on
 additions and modifications.
 When contributing to the Doctrine project, the following rules have to be met in order to fulfill this standard.
 
+Control Structures
+------------------
+
+- There is no `else if`, you MUST use `elseif` instead.
+
 Formatting
 ----------
 
