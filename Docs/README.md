@@ -6,6 +6,32 @@ The Doctrine project follows a coding standard based on
 additions and modifications.
 When contributing to the Doctrine project, the following rules have to be met in order to fulfill this standard.
 
+Formatting
+----------
+
+- Corresponding assignment statement tokens MUST be aligned. Assignment tokens are:
+  `=`, `&=`, `.=`, `/=`, `-=`, `%=`, `*=`, `+=`, `^=`.
+  Each `=` token MUST be on the same column as the one from the previous corresponding statement.
+
+```php
+$foo        = 'Foo';
+$fooBar     = 'FooBar';
+$fooBarBaz  = 'FooBarBaz';
+$foo       .= $bar;
+
+$foo = 'Foo';
+
+$object->foo($foo);
+
+$fooBar = 'FooBar';
+
+$object->fooBar($fooBar);
+
+$fooBarBaz = 'FoobarBaz';
+
+$object->fooBarBaz($fooBarBaz);
+```
+
 Strings
 -------
 

@@ -4,4 +4,11 @@
 
     <!-- Import PSR-2 coding standard (base) -->
     <rule ref="PSR2"/>
+
+    <!-- Align corresponding assignment statement tokens -->
+    <rule ref="Generic.Formatting.MultipleStatementAlignment">
+        <properties>
+            <property name="error" value="true"/>
+        </properties>
+    </rule>
 </ruleset>
