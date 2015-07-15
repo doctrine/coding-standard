@@ -1,11 +1,23 @@
 language: php
 
-php:
-  - 5.3
-  - 5.4
-  - 5.5
+sudo: false
 
-before_script:
-  - composer --prefer-source --dev install
+before_install:
+    - composer self-update
+
+install:
+    - composer install --prefer-source
+
+matrix:
+    include:
+        - php: 5.3
+        - php: 5.4
+        - php: 5.5
+        - php: 5.6
+        - php: nightly
+        - php: hhvm
+    allow_failures:
+        - php: nightly
+        - php: hhvm
 
 script: ./vendor/bin/phpunit
