@@ -17,7 +17,7 @@ You can install the Doctrine Coding Standard as a plugin into your global system
 
 ```bash
 $ cd /path/to/phpcs/CodeSniffer/Standards
-$ git clone https://github.com/doctrine/coding-standard.git Doctrine
+$ php composer create-project doctrine/coding-standard Doctrine ~0.1@dev
 ```
 
 Then you can use it like
@@ -41,32 +41,53 @@ And just sniff a particular file with
 $ phpcs /path/to/some/file/to/sniff.php
 ```
 
-### 2. Custom installation
+### 2. Global installation
+
+You also can install the Doctrine Coding Standard globally:
+
+```bash
+$ php composer global require doctrine/coding-standard:~0.1@dev
+```
+
+Then you can use it like:
+
+```bash
+$ phpcs --standard=~/.composer/vendor/doctrine/coding-standard/Doctrine /path/to/some/file/to/sniff.php
+```
+
+Or even set it as default standard:
+
+```bash
+$ phpcs --config-set default_standard ~/.composer/vendor/doctrine/coding-standard/Doctrine
+```
+
+And just sniff a particular file with:
+
+```bash
+$ phpcs /path/to/some/file/to/sniff.php
+```
+
+### 3. Custom installation
 
 You can install the Doctrine Coding Standard anywhere you want:
 
 ```bash
-$ cd /path/to/whatever/directory/you/want
-$ git clone https://github.com/doctrine/coding-standard.git Doctrine
+$ php composer create-project doctrine/coding-standard /path/to/coding-standard/Doctrine ~0.1@dev
 ```
 
-Then you can use it like (assuming that you have the `phpcs` binary in your search path):
+Then you can use it like:
 
 ```bash
-$ phpcs --standard=/path/to/whatever/directory/you/want/Doctrine /path/to/some/file/to/sniff.php
+$ ./vendor/bin/phpcs --standard=. /path/to/some/file/to/sniff.php
 ```
 
-### 3. As a composer dependency of your project
+### 4. As a composer dependency of your project
 
 You can install the Doctrine Coding Standard as a composer dependency to your particular project.
 Just add the following block to your project's `composer.json` file:
 
-```js
-{
-    "require": {
-        "doctrine/coding-standard": "dev-master"
-    }
-}
+```bash
+$ php composer require doctrine/coding-standard:~0.1@dev
 ```
 
 Then you can use it like:
@@ -82,7 +103,7 @@ If you are contributing to the Doctrine Coding Standard and want to test your co
 make sure all dependencies are correctly installed:
 
 ```bash
-$ php composer.phar install --prefer-source --dev
+$ php composer install --prefer-source
 ```
 
 The option `--prefer-source` is particularly necessary to ensure the test suite from PHP_CodeSniffer is
