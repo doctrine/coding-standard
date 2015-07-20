@@ -32,6 +32,9 @@ $fooBarBaz = 'FoobarBaz';
 $object->fooBarBaz($fooBarBaz);
 ```
 
+- Logical NOT operators (!) MUST have leading and trailing spaces:
+  `$expr = ! ! $otherExpr || ( ! $otherExpr)`.
+
 Strings
 -------
 
