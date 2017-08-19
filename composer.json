@@ -1,6 +1,6 @@
 {
     "name": "doctrine/coding-standard",
-    "type": "library",
+    "type": "phpcodesniffer-standard",
     "description": "Doctrine Coding Standard",
     "keywords": ["doctrine", "coding", "standard", "cs", "code", "style", "sniffer"],
     "homepage": "http://www.doctrine-project.org",
@@ -16,7 +16,8 @@
     },
     "require": {
         "php": "^7.1",
-        "squizlabs/php_codesniffer": "~3.0"
+        "squizlabs/php_codesniffer": "~3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2"
     },
     "extra": {
         "branch-alias": {
