@@ -1,10 +1,29 @@
 Doctrine PHP_CodeSniffer Coding Standard
 ========================================
 
-[![Build Status](https://secure.travis-ci.org/doctrine/coding-standard.png?branch=master)](http://travis-ci.org/doctrine/coding-standard)
-[![Coverage Status](https://coveralls.io/repos/doctrine/coding-standard/badge.png?branch=master)](https://coveralls.io/r/doctrine/coding-standard?branch=master)
+[![Build Status](https://img.shields.io/travis/doctrine/coding-standard/master.svg?style=flat-square)](http://travis-ci.org/doctrine/coding-standard)
+[![Total Downloads](https://img.shields.io/packagist/dt/doctrine/coding-standard.svg?style=flat-square)](https://packagist.org/packages/doctrine/coding-standard)
+[![Latest Stable Version](https://img.shields.io/packagist/v/doctrine/coding-standard.svg?style=flat-square)](https://packagist.org/packages/doctrine/coding-standard)
 
-The [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) Coding Standard to check against the [Doctrine Coding Standard](https://github.com/deeky666/doctrine-coding-standard/blob/master/Docs/README.md).
+
+The [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) ruleset to check that repositories are
+following the standards defined by the our team.
+
+Standards
+---------
+
+We use [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
+and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) with some
+exceptions/differences (:white_check_mark: are the implemented sniffs):
+
+- Keep the nesting of control structures per method as small as possible
+- Add spaces between assignment, control and return statements
+- Prefer early exit over nesting conditions
+- :white_check_mark: Align equals (=) signs
+- :white_check_mark: Add spaces around a concatenation operator `$foo = 'Hello ' . 'World!';`
+- :white_check_mark: Add spaces around a negation if condition `if ( ! $cond)`
+- :white_check_mark: Add spaces around a return type declaration `function () : void {}`
+- :white_check_mark: Add spaces after a type cast `$foo = (int) '12345';`
 
 Installation
 ------------
