@@ -17,37 +17,29 @@
 * <http://www.doctrine-project.org>.
 */
 
-class Doctrine_Tests_Strings_ConcatenationSpacingUnitTest extends AbstractSniffUnitTest
+declare(strict_types=1);
+
+namespace Doctrine\Sniffs\Spacing;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
+final class SpaceOnNotSniff implements Sniff
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getErrorList()
+    use EnsureSpaces;
+
+    private const MESSAGE = 'There must be a single space %s a NOT operator; %d found';
+
+    public function register()
     {
-        return array(
-            4 => 1,
-            5 => 1,
-            6 => 2,
-            11 => 1,
-            12 => 1,
-            13 => 2,
-            16 => 1,
-            17 => 1,
-            18 => 2,
-            21 => 1,
-            22 => 1,
-            23 => 2,
-            25 => 4,
-            31 => 1,
-            34 => 1,
-        );
+        return [\T_BOOLEAN_NOT];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getWarningList()
+    public function process(File $phpcsFile, $stackPtr)
     {
-        return array();
+        $tokens = $phpcsFile->getTokens();
+
+        $this->ensureSpaceBefore($phpcsFile, $tokens, $stackPtr, self::MESSAGE);
+        $this->ensureSpaceAfter($phpcsFile, $tokens, $stackPtr, self::MESSAGE);
     }
 }

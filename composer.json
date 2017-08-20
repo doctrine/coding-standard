@@ -1,6 +1,6 @@
 {
     "name": "doctrine/coding-standard",
-    "type": "library",
+    "type": "phpcodesniffer-standard",
     "description": "Doctrine Coding Standard",
     "keywords": ["doctrine", "coding", "standard", "cs", "code", "style", "sniffer"],
     "homepage": "http://www.doctrine-project.org",
@@ -9,14 +9,16 @@
         {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
         {"name": "Steve Müller", "email": "st.mueller@dzh-online.de"}
     ],
+    "autoload": {
+       "psr-4": {
+           "Doctrine\\Sniffs\\": "lib/Doctrine/Sniffs"
+       }
+    },
     "require": {
-        "php": ">=5.3",
-        "squizlabs/php_codesniffer": "~1.0"
+        "php": "^7.1",
+        "squizlabs/php_codesniffer": "~3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2"
     },
-    "require-dev": {
-        "phpunit/phpunit": "~4.7"
-    },
-    "target-dir": "Doctrine",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"

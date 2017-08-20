@@ -17,34 +17,41 @@
 * <http://www.doctrine-project.org>.
 */
 
-/**
- * Sniff that verifies that there are spaces around the string concatenation operator ".".
- *
- * @author Steve Müller <st.mueller@dzh-online.de>
- */
-class Doctrine_Sniffs_Strings_ConcatenationSpacingSniff implements PHP_CodeSniffer_Sniff
+declare(strict_types=1);
+
+namespace Doctrine\Sniffs\Spacing;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
+final class SpaceOnReturnTypeSniff implements Sniff
 {
-    /**
-     * {@inheritdoc}
-     */
+    use EnsureSpaces;
+
+    private const MESSAGE = 'There must be a single space %s the colon on return types; %d found';
+
     public function register()
     {
-        return array(T_STRING_CONCAT);
+        return [\T_RETURN_TYPE];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
-        $tokens = $phpcsFile->getTokens();
+        $tokens        = $phpcsFile->getTokens();
+        $colonPosition = $this->findColonPosition($tokens, $stackPtr);
 
-        if (T_WHITESPACE !== $tokens[$stackPtr - 1]['code']) {
-            $phpcsFile->addError('Missing space before the string concatenation operator ".".', $stackPtr, 'Before');
-        }
+        $this->ensureSpaceBefore($phpcsFile, $tokens, $colonPosition, self::MESSAGE);
+        $this->ensureSpaceAfter($phpcsFile, $tokens, $colonPosition, self::MESSAGE);
+    }
 
-        if (T_WHITESPACE !== $tokens[$stackPtr + 1]['code']) {
-            $phpcsFile->addError('Missing space after the string concatenation operator ".".', $stackPtr, 'After');
-        }
+    private function findColonPosition(array $tokens, int $position) : int
+    {
+        $colonPosition = $position;
+
+        do {
+            --$colonPosition;
+        } while ($tokens[$colonPosition]['code'] !== T_COLON);
+
+        return $colonPosition;
     }
 }

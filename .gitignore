@@ -1,3 +1,5 @@
 vendor/
-*.phpunit.xml
+phpcs.xml
 composer.lock
+tests/input2
+phpcs.log

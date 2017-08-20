@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset name="Doctrine">
+    <description>The Doctrine coding standard.</description>
+
+    <!-- Import PSR-2 coding standard (base) -->
+    <rule ref="PSR2">
+        <!-- Using \Doctrine\Sniffs\Spacing\ControlStructureSniff instead -->
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
+    </rule>
+
+    <!-- Disallow else if in favour elseif -->
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
+        <type>error</type>
+    </rule>
+
+    <!-- Align corresponding assignment statement tokens -->
+    <rule ref="Generic.Formatting.MultipleStatementAlignment">
+        <properties>
+            <property name="error" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Force whitespace after a type cast -->
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+
+    <!-- Force whitespace before and after concatenation -->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+</ruleset>
