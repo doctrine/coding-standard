@@ -9,79 +9,9 @@ The [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) Coding Stand
 Installation
 ------------
 
-You have three possibilities to use the Doctrine Coding Standard with PHP_CodeSniffer in a particular project.
+You have two possibilities to use the Doctrine Coding Standard with PHP_CodeSniffer in a particular project.
 
-### 1. Standalone installation
-
-You can install the Doctrine Coding Standard as a plugin into your global system PHP_CodeSniffer installation:
-
-```bash
-$ cd /path/to/phpcs/CodeSniffer/Standards
-$ php composer create-project doctrine/coding-standard Doctrine ~0.1@dev
-```
-
-Then you can use it like
-(assuming that you have the `phpcs` binary in your search path):
-
-```bash
-$ phpcs --standard=Doctrine /path/to/some/file/to/sniff.php
-```
-
-Or even set it as default standard
-(assuming that you have the `phpcs` binary in your search path):
-
-```bash
-$ phpcs --config-set default_standard Doctrine
-```
-
-And just sniff a particular file with
-(assuming that you have the `phpcs` binary in your search path):
-
-```bash
-$ phpcs /path/to/some/file/to/sniff.php
-```
-
-### 2. Global installation
-
-You also can install the Doctrine Coding Standard globally:
-
-```bash
-$ php composer global require doctrine/coding-standard:~0.1@dev
-```
-
-Then you can use it like:
-
-```bash
-$ phpcs --standard=~/.composer/vendor/doctrine/coding-standard/Doctrine /path/to/some/file/to/sniff.php
-```
-
-Or even set it as default standard:
-
-```bash
-$ phpcs --config-set default_standard ~/.composer/vendor/doctrine/coding-standard/Doctrine
-```
-
-And just sniff a particular file with:
-
-```bash
-$ phpcs /path/to/some/file/to/sniff.php
-```
-
-### 3. Custom installation
-
-You can install the Doctrine Coding Standard anywhere you want:
-
-```bash
-$ php composer create-project doctrine/coding-standard /path/to/coding-standard/Doctrine ~0.1@dev
-```
-
-Then you can use it like:
-
-```bash
-$ ./vendor/bin/phpcs --standard=. /path/to/some/file/to/sniff.php
-```
-
-### 4. As a composer dependency of your project
+### 1. As a composer dependency of your project
 
 You can install the Doctrine Coding Standard as a composer dependency to your particular project.
 Just add the following block to your project's `composer.json` file:
@@ -93,24 +23,41 @@ $ php composer require doctrine/coding-standard:~0.1@dev
 Then you can use it like:
 
 ```bash
-$ ./vendor/bin/phpcs --standard=vendor/doctrine/coding-standard/Doctrine /path/to/some/file/to/sniff.php
+$ ./vendor/bin/phpcs --standard=Doctrine /path/to/some/file/to/sniff.php
+```
+
+You might also do automatic fixes using `phpcbf`:
+
+```bash
+$ ./vendor/bin/phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
+```
+
+### 2. Global installation
+
+You can also install the Doctrine Coding Standard globally:
+
+```bash
+$ composer global require doctrine/coding-standard:~0.1@dev
+```
+
+Then you can use it like:
+
+```bash
+$ phpcs --standard=Doctrine /path/to/some/file/to/sniff.php
+```
+
+You might also do automatic fixes using `phpcbf`:
+
+```bash
+$ phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
 ```
 
 Testing
 -------
 
-If you are contributing to the Doctrine Coding Standard and want to test your contribution, you have to
-make sure all dependencies are correctly installed:
+If you are contributing to the Doctrine Coding Standard and want to test your contribution, you just
+need to execute PHPCS with the tests folder and ensure it matches the expected report:
 
 ```bash
-$ php composer install --prefer-source
-```
-
-The option `--prefer-source` is particularly necessary to ensure the test suite from PHP_CodeSniffer is
-installed. Otherwise the test suite for the Doctrine Coding Standard won't work!
-
-Run the test suite with:
-
-```bash
-$ ./vendor/bin/phpunit
+$ ./vendor/bin/phpcs tests/input --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
 ```
