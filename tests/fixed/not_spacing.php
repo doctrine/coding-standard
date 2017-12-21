@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $test = 1;
 
 if (! $test > 0) {

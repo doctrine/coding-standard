@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Blah;
 
 class Test
@@ -24,47 +27,47 @@ class Test
     }
 
     public function f(
-        $a,
-        $c,
-        $d,
-        $e,
-        $b
+        int $a,
+        int $c,
+        int $d,
+        int $e,
+        int $b
     ) : void {
     }
 
     public function g(
-        $a,
-        $c,
-        $d,
-        $e,
-        $b
+        int $a,
+        int $c,
+        int $d,
+        int $e,
+        int $b
     ) : void {
     }
 
     public function h(
-        $a,
-        $c,
-        $d,
-        $e,
-        $b
+        int $a,
+        int $c,
+        int $d,
+        int $e,
+        int $b
     ) : void {
     }
 
     public function i(
-        $a,
-        $c,
-        $d,
-        $e,
-        $b
+        int $a,
+        int $c,
+        int $d,
+        int $e,
+        int $b
     ) : void {
     }
 
     public function j(
-        $a,
-        $c,
-        $d,
-        $e,
-        $b
+        int $a,
+        int $c,
+        int $d,
+        int $e,
+        int $b
     ) : void {
     }
 }
