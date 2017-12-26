@@ -16,7 +16,7 @@ trait EnsureSpaces
             return;
         }
 
-        if ( ! $file->addFixableError($message, $position, 'before', ['before', $spacing])) {
+        if (! $file->addFixableError($message, $position, 'before', ['before', $spacing])) {
             return;
         }
 
@@ -36,7 +36,7 @@ trait EnsureSpaces
             return;
         }
 
-        if ( ! $file->addFixableError($message, $position, 'after', ['after', $spacing])) {
+        if (! $file->addFixableError($message, $position, 'after', ['after', $spacing])) {
             return;
         }
 
