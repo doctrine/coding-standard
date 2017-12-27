@@ -51,12 +51,6 @@
     <rule ref="Generic.WhiteSpace.ScopeIndent"/>
     <!-- Require EOL at EOF -->
     <rule ref="Generic.Files.EndFileNewline"/>
-    <!-- Forbid multiple classes per file -->
-    <rule ref="Generic.Files.OneClassPerFile"/>
-    <!-- Forbid multiple interfaces per file -->
-    <rule ref="Generic.Files.OneInterfacePerFile"/>
-    <!-- Forbid multiple traits per file -->
-    <rule ref="Generic.Files.OneTraitPerFile"/>
     <!-- Forbid backtick operator -->
     <rule ref="Generic.PHP.BacktickOperator"/>
     <!-- Forbid short open tag -->
