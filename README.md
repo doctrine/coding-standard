@@ -1,29 +1,38 @@
-Doctrine PHP_CodeSniffer Coding Standard
-========================================
+Doctrine Coding Standard
+========================
 
 [![Build Status](https://img.shields.io/travis/doctrine/coding-standard/master.svg?style=flat-square)](http://travis-ci.org/doctrine/coding-standard)
 [![Total Downloads](https://img.shields.io/packagist/dt/doctrine/coding-standard.svg?style=flat-square)](https://packagist.org/packages/doctrine/coding-standard)
 [![Latest Stable Version](https://img.shields.io/packagist/v/doctrine/coding-standard.svg?style=flat-square)](https://packagist.org/packages/doctrine/coding-standard)
 
 
-The [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) ruleset to check that repositories are
-following the standards defined by the our team.
+The [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) ruleset to check that
+repositories are following the standards defined by the Doctrine team.
 
 Standards
 ---------
 
-We use [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
-and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) with some
-exceptions/differences (:white_check_mark: are the implemented sniffs):
+Doctrine Coding Standard is based on [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
+and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md), with some noticeable
+exceptions/differences/extensions (:white_check_mark: are the implemented sniffs):
 
 - Keep the nesting of control structures per method as small as possible
-- Add spaces between assignment, control and return statements
-- Prefer early exit over nesting conditions
-- :white_check_mark: Align equals (=) signs
+- Prefer early exit over nesting conditions or using else
+- :white_check_mark: Align equals (`=`) signs in assignments
 - :white_check_mark: Add spaces around a concatenation operator `$foo = 'Hello ' . 'World!';`
-- :white_check_mark: Add spaces around a negation if condition `if ( ! $cond)`
-- :white_check_mark: Add spaces around a return type declaration `function () : void {}`
+- :white_check_mark: Add spaces between assignment, control and return statements
+- :white_check_mark: Add spaces after a negation operator `if (! $cond)`
+- :white_check_mark: Add spaces around a colon in return type declaration `function () : void {}`
 - :white_check_mark: Add spaces after a type cast `$foo = (int) '12345';`
+- :white_check_mark: Use apostrophes for enclosing strings
+- :white_check_mark: Always use strict comparisons
+- :white_check_mark: Always add `declare(strict_types=1)` at the beginning of a file
+- :white_check_mark: Always add native types where possible
+- :white_check_mark: Omit phpDoc for parameters/returns with native types, unless adding description
+- :white_check_mark: Don't use `@author`, `@since` and similar annotations that duplicate Git information
+- :white_check_mark: Assignment in condition is not allowed
+
+For full reference of enforcements, go through `lib/Doctrine/ruleset.xml` where each sniff is briefly described.
 
 Installation
 ------------
