@@ -193,6 +193,8 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
         <!-- Disable alignment of values with opening brace -->
         <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+        <!-- Checked by SlevomatCodingStandard.Arrays.TrailingArrayComma.MissingTrailingComma -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
     </rule>
     <!-- Forbid class being in a file with different name -->
     <rule ref="Squiz.Classes.ClassFileName"/>
