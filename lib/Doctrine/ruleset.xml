@@ -156,7 +156,17 @@
                 name="usefulAnnotations"
                 type="array"
                 value="
+                    @after,
+                    @afterClass,
+                    @AfterMethods,
+                    @before,
+                    @beforeClass,
+                    @BeforeMethods,
+                    @covers,
+                    @coversDefaultClass,
+                    @coversNothing,
                     @dataProvider,
+                    @depends,
                     @deprecated,
                     @expectedException,
                     @expectedExceptionMessage,
@@ -164,8 +174,13 @@
                     @expectedExceptionCode,
                     @expectedDeprecation,
                     @group,
+                    @Groups,
                     @internal,
+                    @Iterations,
                     @link,
+                    @Revs,
+                    @runInSeparateProcess,
+                    @runTestsInSeparateProcesses,
                     @see,
                     @throws
                 "
