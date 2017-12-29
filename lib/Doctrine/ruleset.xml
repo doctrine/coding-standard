@@ -18,8 +18,6 @@
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
     <!-- Forbid useless empty method overrides -->
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
-    <!-- Forbid inline control structures, i.e. `if ($foo) bar();` -->
-    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <!-- Forbid inline HTML in PHP code -->
     <rule ref="Generic.Files.InlineHTML"/>
     <!-- Align corresponding assignment statement tokens -->
@@ -47,10 +45,6 @@
             <property name="allowMultiline" value="true"/>
         </properties>
     </rule>
-    <!-- Force scope changes to increase indentation -->
-    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
-    <!-- Require EOL at EOF -->
-    <rule ref="Generic.Files.EndFileNewline"/>
     <!-- Forbid backtick operator -->
     <rule ref="Generic.PHP.BacktickOperator"/>
     <!-- Forbid short open tag -->
