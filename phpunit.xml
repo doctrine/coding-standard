@@ -1,0 +1,20 @@
+<phpunit
+    bootstrap="./vendor/autoload.php"
+    backupGlobals="false"
+    colors="true"
+    verbose="true">
+
+    <php>
+      <env name="PHP_CS_FIXER_FUTURE_MODE" value="1"/>
+    </php>
+
+    <testsuite name="Doctrine\CodingStandard">
+        <directory>./tests</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./lib</directory>
+        </whitelist>
+    </filter>
+</phpunit>
