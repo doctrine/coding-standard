@@ -1,6 +1,5 @@
 {
     "name": "doctrine/coding-standard",
-    "type": "phpcodesniffer-standard",
     "description": "Doctrine Coding Standard",
     "keywords": ["doctrine", "coding", "standard", "cs", "code", "style", "sniffer"],
     "homepage": "http://www.doctrine-project.org",
@@ -11,14 +10,20 @@
     ],
     "autoload": {
        "psr-4": {
-           "Doctrine\\Sniffs\\": "lib/Doctrine/Sniffs"
+           "Doctrine\\CodingStandard\\": "lib/"
+       }
+    },
+    "autoload-dev": {
+       "psr-4": {
+           "Doctrine\\CodingStandard\\Tests\\": "tests/"
        }
     },
     "require": {
         "php": "^7.1",
-        "squizlabs/php_codesniffer": "^3.0.1",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
-        "slevomat/coding-standard": "^4.0"
+        "friendsofphp/php-cs-fixer": "^2.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
     },
     "extra": {
         "branch-alias": {
