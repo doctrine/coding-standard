@@ -60,7 +60,11 @@
     <!-- Require comma after last element in multi-line array -->
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
     <!-- Require presence of constant visibility -->
-    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility">
+        <properties>
+            <property name="fixable" type="boolean" value="true"/>
+        </properties>
+    </rule>
     <!-- Forbid dead code -->
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid useless annotations - Git and LICENCE file provide more accurate information -->
@@ -130,6 +134,10 @@
             <property
                 name="spacesCountAroundEqualsSign"
                 value="0"
+            />
+            <property
+                name="newlinesCountAfterDeclare"
+                value="2"
             />
         </properties>
     </rule>
