@@ -51,6 +51,8 @@
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     <!-- Forbid `php_sapi_name()` function -->
     <rule ref="Generic.PHP.SAPIUsage"/>
+    <!-- Forbid uppercase keywords, i.e. `TRUE`, `FALSE` -->
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
     <!-- Forbid comments starting with # -->
     <rule ref="PEAR.Commenting.InlineComment"/>
     <!-- Disallow else if in favour elseif -->
