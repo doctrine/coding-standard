@@ -108,10 +108,14 @@
     <!-- Forbid using absolute class name references (except global ones) -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
+            <property name="allowFallbackGlobalConstants" type="boolean" value="false"/>
+            <property name="allowFallbackGlobalFunctions" type="boolean" value="false"/>
             <property name="allowFullyQualifiedGlobalClasses" type="boolean" value="true"/>
-            <property name="allowFullyQualifiedGlobalFunctions" type="boolean" value="true"/>
-            <property name="allowFullyQualifiedGlobalConstants" type="boolean" value="true"/>
+            <property name="allowFullyQualifiedGlobalConstants" type="boolean" value="false"/>
+            <property name="allowFullyQualifiedGlobalFunctions" type="boolean" value="false"/>
             <property name="allowFullyQualifiedNameForCollidingClasses" type="boolean" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingConstants" type="boolean" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingFunctions" type="boolean" value="true"/>
         </properties>
     </rule>
     <!-- Forbid unused use statements -->
