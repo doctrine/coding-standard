@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Example;
 
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
+use function assert;
 use function strlen;
 use function substr;
 
