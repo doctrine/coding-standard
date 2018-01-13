@@ -5,8 +5,8 @@ declare(strict_types = 1);
 namespace Example;
 
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
-use function strlen;
-use function substr;
+use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
+use function strlen as stringLength;
 
 /**
  * Description
@@ -15,6 +15,8 @@ use function substr;
  */
 class Example implements \IteratorAggregate
 {
+    private const VERSION = \PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
+
     /** @var int|null */
     private $foo;
 
@@ -60,10 +62,15 @@ class Example implements \IteratorAggregate
 
     public function mangleBar(int $length) : void
     {
-        if (! $this->baz) {
+        if (!$this->baz) {
             throw new \InvalidArgumentException();
         }
 
-        $this->bar = (string) $this->baxBax ?? substr($this->bar, strlen($this->bar - $length));
+        $this->bar = (string) $this->baxBax ?? \substr($this->bar, stringLength($this->bar - $length));
+    }
+
+    public static function getMinorVersion() : int
+    {
+        return self::VERSION;
     }
 }

@@ -5,8 +5,11 @@ declare(strict_types=1);
 namespace Example;
 
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
+use const PHP_MINOR_VERSION;
+use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
+use const PHP_VERSION;
 use function assert;
-use function strlen;
+use function strlen as stringLength;
 use function substr;
 
 /**
@@ -14,6 +17,8 @@ use function substr;
  */
 class Example implements \IteratorAggregate
 {
+    private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
+
     /** @var int|null */
     private $foo;
 
@@ -62,6 +67,11 @@ class Example implements \IteratorAggregate
             throw new \InvalidArgumentException();
         }
 
-        $this->bar = (string) $this->baxBax ?? substr($this->bar, strlen($this->bar - $length));
+        $this->bar = (string) $this->baxBax ?? substr($this->bar, stringLength($this->bar - $length));
+    }
+
+    public static function getMinorVersion() : int
+    {
+        return self::VERSION;
     }
 }
