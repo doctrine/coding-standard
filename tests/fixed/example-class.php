@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Example;
 
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
+use Fancy\TestCase;
 use const PHP_MINOR_VERSION;
 use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 use const PHP_VERSION;
@@ -73,5 +74,10 @@ class Example implements \IteratorAggregate
     public static function getMinorVersion() : int
     {
         return self::VERSION;
+    }
+
+    public static function getTestCase() : TestCase
+    {
+        return new TestCase();
     }
 }
