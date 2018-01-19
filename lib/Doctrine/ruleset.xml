@@ -202,7 +202,9 @@
                     @runTestsInSeparateProcesses,
                     @see,
                     @Target,
-                    @throws
+                    @test,
+                    @throws,
+                    @uses
                 "
             />
         </properties>
