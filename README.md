@@ -31,6 +31,7 @@ exceptions/differences/extensions (:white_check_mark: are the implemented sniffs
 - :white_check_mark: Omit phpDoc for parameters/returns with native types, unless adding description
 - :white_check_mark: Don't use `@author`, `@since` and similar annotations that duplicate Git information
 - :white_check_mark: Assignment in condition is not allowed
+- :white_check_mark: Use Null Coalesce Operator `$foo = $bar ?? $baz`
 
 For full reference of enforcements, go through `lib/Doctrine/ruleset.xml` where each sniff is briefly described.
 
