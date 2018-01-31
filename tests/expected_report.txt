@@ -7,13 +7,14 @@ tests/input/concatenation_spacing.php                 24      0
 tests/input/example-class.php                         19      0
 tests/input/new_with_parentheses.php                  17      0
 tests/input/not_spacing.php                           7       0
+tests/input/null_coalesce_operator.php                3       0
 tests/input/return_type_on_closures.php               21      0
 tests/input/return_type_on_methods.php                17      0
 tests/input/test-case.php                             6       0
 ----------------------------------------------------------------------
-A TOTAL OF 111 ERRORS AND 0 WARNINGS WERE FOUND IN 7 FILES
+A TOTAL OF 114 ERRORS AND 0 WARNINGS WERE FOUND IN 8 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 100 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 103 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
