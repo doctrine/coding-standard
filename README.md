@@ -45,7 +45,7 @@ You can install the Doctrine Coding Standard as a composer dependency to your pa
 Just add the following block to your project's `composer.json` file:
 
 ```bash
-$ php composer require doctrine/coding-standard:~2.0.0
+$ php composer require doctrine/coding-standard:^3.0
 ```
 
 Then you can use it like:
@@ -65,7 +65,7 @@ $ ./vendor/bin/phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
 You can also install the Doctrine Coding Standard globally:
 
 ```bash
-$ composer global require doctrine/coding-standard:~2.0.0
+$ composer global require doctrine/coding-standard:^3.0
 ```
 
 Then you can use it like:
