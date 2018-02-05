@@ -116,6 +116,7 @@
             <property name="allowFullyQualifiedNameForCollidingClasses" type="boolean" value="true"/>
             <property name="allowFullyQualifiedNameForCollidingConstants" type="boolean" value="true"/>
             <property name="allowFullyQualifiedNameForCollidingFunctions" type="boolean" value="true"/>
+            <property name="searchAnnotations" type="boolean" value="true"/>
         </properties>
     </rule>
     <!-- Forbid unused use statements -->
