@@ -80,6 +80,12 @@ You might also do automatic fixes using `phpcbf`:
 $ phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
 ```
 
+Versioning
+----------
+
+This library follows semantic versioning, and additions to the code ruleset
+are only performed in major releases.
+
 Testing
 -------
 
