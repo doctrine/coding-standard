@@ -196,6 +196,7 @@
                     @link,
                     @ODM\,
                     @ORM\,
+                    @requires,
                     @Required,
                     @Revs,
                     @runInSeparateProcess,
