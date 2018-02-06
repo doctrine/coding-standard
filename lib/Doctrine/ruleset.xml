@@ -37,7 +37,33 @@
     <!-- Forbid deprecated functions -->
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
     <!-- Forbid alias functions, i.e. `sizeof()`, `delete()` -->
-    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property
+                name="forbiddenFunctions"
+                type="array"
+                value="
+                    chop => rtrim,
+                    close => closedir,
+                    delete => unset,
+                    doubleval => floatval,
+                    fputs => fwrite,
+                    ini_alter => ini_set,
+                    is_double => is_float,
+                    is_integer => is_int,
+                    is_long => is_int,
+                    is_null => null,
+                    is_real => is_float,
+                    is_writeable => is_writable,
+                    join => implode,
+                    key_exists => array_key_exists,
+                    pos => current,
+                    show_source => highlight_file,
+                    sizeof => count,
+                    strchr => strstr
+                "/>
+        </properties>
+    </rule>
     <!-- Forbid useless inline string concatenation -->
     <rule ref="Generic.Strings.UnnecessaryStringConcat">
         <!-- But multiline is useful for readability -->
