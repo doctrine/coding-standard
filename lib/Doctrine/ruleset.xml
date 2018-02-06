@@ -95,6 +95,8 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
     <!-- Require language constructs without parentheses -->
     <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
+    <!-- Require new instances with parentheses -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses"/>
     <!-- Forbid useless unreachable catch blocks -->
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!-- Require using Throwable instead of Exception -->
