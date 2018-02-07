@@ -79,7 +79,7 @@
     <rule ref="Generic.PHP.SAPIUsage"/>
     <!-- Forbid comments starting with # -->
     <rule ref="PEAR.Commenting.InlineComment"/>
-    <!-- Disallow else if in favour elseif -->
+    <!-- Disallow else if in favor of elseif -->
     <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
         <type>error</type>
     </rule>
