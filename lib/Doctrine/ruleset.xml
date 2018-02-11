@@ -100,12 +100,15 @@
                 name="forbiddenAnnotations"
                 type="array"
                 value="
+                    @api,
                     @author,
+                    @category,
                     @copyright,
                     @created,
                     @license,
                     @package,
                     @since,
+                    @subpackage,
                     @version
                 "
             />
