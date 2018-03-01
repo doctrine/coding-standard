@@ -231,6 +231,7 @@
                     @dataProvider,
                     @depends,
                     @deprecated,
+                    @doesNotPerformAssertions,
                     @Enum,
                     @expectedDeprecation,
                     @expectedException,
