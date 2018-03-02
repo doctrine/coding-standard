@@ -12,7 +12,7 @@
     <!-- Forbid empty statements -->
     <rule ref="Generic.CodeAnalysis.EmptyStatement">
         <!-- But allow empty catch -->
-        <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCATCH"/>
+        <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch"/>
     </rule>
     <!-- Forbid final methods in final classes -->
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
