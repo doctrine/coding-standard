@@ -177,6 +177,8 @@
     <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
     <!-- Forbid useless uses of the same namespace -->
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
+    <!-- Forbid use of longhand cast operators -->
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
     <!-- Require presence of declare(strict_types=1) -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
