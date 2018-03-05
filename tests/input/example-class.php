@@ -58,6 +58,8 @@ class Example implements \IteratorAggregate
 
     public function isBaz() : bool
     {
+        list($foo, $bar, $baz) = $this->bar;
+
         return $this->baz;
     }
 
