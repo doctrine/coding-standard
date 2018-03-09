@@ -37,6 +37,7 @@ exceptions/differences/extensions (:white_check_mark: are the implemented sniffs
 - :white_check_mark: Assignment in condition is not allowed
 - :white_check_mark: Use parentheses when creating new instances that do not require arguments `$foo = new Foo()`
 - :white_check_mark: Use Null Coalesce Operator `$foo = $bar ?? $baz`
+- :white_check_mark: Use Elvis Operator `$foo = $bar ?: $baz`
 - :white_check_mark: Use early return
 
 For full reference of enforcements, go through `lib/Doctrine/ruleset.xml` where each sniff is briefly described.
