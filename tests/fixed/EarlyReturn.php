@@ -6,6 +6,9 @@ namespace Example;
 
 class EarlyReturn
 {
+    /**
+     * @TODO improve this method
+     */
     public function bar() : bool
     {
         if ($bar === 'bar') {
