@@ -168,7 +168,7 @@
         <properties>
             <property name="allowFallbackGlobalConstants" type="boolean" value="false"/>
             <property name="allowFallbackGlobalFunctions" type="boolean" value="false"/>
-            <property name="allowFullyQualifiedGlobalClasses" type="boolean" value="true"/>
+            <property name="allowFullyQualifiedGlobalClasses" type="boolean" value="false"/>
             <property name="allowFullyQualifiedGlobalConstants" type="boolean" value="false"/>
             <property name="allowFullyQualifiedGlobalFunctions" type="boolean" value="false"/>
             <property name="allowFullyQualifiedNameForCollidingClasses" type="boolean" value="true"/>
