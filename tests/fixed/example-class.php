@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Example;
 
-use ArrayIterator;
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 use Fancy\TestCase;
-use InvalidArgumentException;
-use IteratorAggregate;
 use const PHP_MINOR_VERSION;
 use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 use const PHP_VERSION;
@@ -19,7 +16,7 @@ use function substr;
 /**
  * Description
  */
-class Example implements IteratorAggregate
+class Example implements \IteratorAggregate
 {
     private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
@@ -57,7 +54,7 @@ class Example implements IteratorAggregate
     public function getIterator() : array
     {
         assert($this->bar !== null);
-        return new ArrayIterator($this->bar);
+        return new \ArrayIterator($this->bar);
     }
 
     public function isBaz() : bool
@@ -68,7 +65,7 @@ class Example implements IteratorAggregate
     public function mangleBar(int $length) : void
     {
         if (! $this->baz) {
-            throw new InvalidArgumentException();
+            throw new \InvalidArgumentException();
         }
 
         $this->bar = (string) $this->baxBax ?? substr($this->bar, stringLength($this->bar - $length));
