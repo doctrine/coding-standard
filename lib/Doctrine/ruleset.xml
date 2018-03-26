@@ -58,6 +58,7 @@
                     join => implode,
                     key_exists => array_key_exists,
                     pos => current,
+                    settype => null,
                     show_source => highlight_file,
                     sizeof => count,
                     strchr => strstr
