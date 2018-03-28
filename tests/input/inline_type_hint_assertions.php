@@ -26,5 +26,7 @@ final class Foo
 
         /** @var int|float|bool|string|null|array $multipleScalarTypes */
         $multipleScalarTypes = expression();
+
+        /** @var Potato $variableThatIsNowhereToBeFound */
     }
 }

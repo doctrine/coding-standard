@@ -26,5 +26,7 @@ final class Foo
 
         $multipleScalarTypes = expression();
         assert(is_int($multipleScalarTypes) || is_float($multipleScalarTypes) || is_bool($multipleScalarTypes) || is_string($multipleScalarTypes) || $multipleScalarTypes === null || is_array($multipleScalarTypes));
+
+        assert($variableThatIsNowhereToBeFound instanceof Potato);
     }
 }
