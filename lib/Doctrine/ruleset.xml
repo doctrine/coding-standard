@@ -45,6 +45,7 @@
                 value="
                     chop => rtrim,
                     close => closedir,
+                    compact => null,
                     delete => unset,
                     doubleval => floatval,
                     extract => null,
