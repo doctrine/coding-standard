@@ -17,7 +17,6 @@ and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-
 exceptions/differences/extensions (:white_check_mark: are the implemented sniffs):
 
 - Keep the nesting of control structures per method as small as possible
-- Prefer early exit over nesting conditions or using else
 - Abstract exception class names and exception interface names should be suffixed with `Exception`
 - :white_check_mark: Abstract classes should not be prefixed with `Abstract`
 - :white_check_mark: Interfaces should not be suffixed with `Interface`
@@ -37,7 +36,7 @@ exceptions/differences/extensions (:white_check_mark: are the implemented sniffs
 - :white_check_mark: Assignment in condition is not allowed
 - :white_check_mark: Use parentheses when creating new instances that do not require arguments `$foo = new Foo()`
 - :white_check_mark: Use Null Coalesce Operator `$foo = $bar ?? $baz`
-- :white_check_mark: Use early return
+- :white_check_mark: Prefer early exit over nesting conditions or using else
 
 For full reference of enforcements, go through `lib/Doctrine/ruleset.xml` where each sniff is briefly described.
 
