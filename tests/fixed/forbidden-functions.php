@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Test;
 
 use function chop;
+use function compact;
 use function extract;
 use function is_null;
 use function settype;
@@ -25,3 +26,5 @@ $bar = [
     'baz' => 3,
 ];
 extract($bar);
+
+compact('foo', 'bar');
