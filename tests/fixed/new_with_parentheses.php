@@ -24,5 +24,5 @@ $y = [new stdClass()];
 
 $z = new stdClass() ? new stdClass() : new stdClass();
 
-$q = $q ?: new stdClass();
+$q = $q ? $qq : new stdClass();
 $e = $e ?? new stdClass();

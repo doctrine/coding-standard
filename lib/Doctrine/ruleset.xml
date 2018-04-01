@@ -159,6 +159,12 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <!-- Forbid weak comparisons -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
+    <!-- Forbid short form of ternary operator (?:) -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator">
+        <properties>
+            <property name="fixable" type="boolean" value="false"/>
+        </properties>
+    </rule>
     <!-- Require usage of early exit -->
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
     <!-- Require language constructs without parentheses -->
