@@ -9,16 +9,17 @@ tests/input/example-class.php                         22      0
 tests/input/forbidden-comments.php                    4       0
 tests/input/forbidden-functions.php                   6       0
 tests/input/namespaces-spacing.php                    6       0
-tests/input/new_with_parentheses.php                  17      0
+tests/input/new_with_parentheses.php                  18      0
 tests/input/not_spacing.php                           7       0
 tests/input/null_coalesce_operator.php                3       0
 tests/input/return_type_on_closures.php               21      0
 tests/input/return_type_on_methods.php                17      0
+tests/input/semicolon_spacing.php                     3       0
 tests/input/test-case.php                             6       0
 ----------------------------------------------------------------------
-A TOTAL OF 137 ERRORS AND 0 WARNINGS WERE FOUND IN 12 FILES
+A TOTAL OF 141 ERRORS AND 0 WARNINGS WERE FOUND IN 13 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 119 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 123 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
