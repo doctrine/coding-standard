@@ -8,6 +8,8 @@
         <exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
     </rule>
 
+    <!-- Force array element indentation with 4 spaces -->
+    <rule ref="Generic.Arrays.ArrayIndent"/>
     <!-- Forbid `array(...)` -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <!-- Forbid duplicate classes -->
