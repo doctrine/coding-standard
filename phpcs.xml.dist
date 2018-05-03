@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<ruleset name="PHPCS Coding Standards for doctrine/coding-standards">
+<ruleset
+    name="PHPCS Coding Standards for doctrine/coding-standards"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
+>
     <description>Check the code of the sniffs in doctrine/coding-standards.</description>
 
     <arg name="basepath" value="."/>

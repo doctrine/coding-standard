@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<ruleset name="Doctrine">
+<ruleset
+    name="Doctrine"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+>
     <description>The Doctrine coding standard.</description>
 
     <!-- Import PSR-2 coding standard (base) -->
