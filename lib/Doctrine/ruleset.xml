@@ -360,6 +360,8 @@
     </rule>
     <!-- Forbid global functions -->
     <rule ref="Squiz.Functions.GlobalFunction"/>
+    <!-- Require increment and decrement operators -->
+    <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
     <!-- Forbid `AND` and `OR`, require `&&` and `||` -->
     <rule ref="Squiz.Operators.ValidLogicalOperators"/>
     <!-- Forbid `global` -->
