@@ -157,6 +157,8 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
+    <!-- Forbid weak empty() -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
     <!-- Forbid weak comparisons -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
     <!-- Require usage of early exit -->
