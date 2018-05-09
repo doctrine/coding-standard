@@ -10,6 +10,8 @@
     <rule ref="PSR2">
         <!-- checked by SlevomatCodingStandard.Namespaces.UseSpacing -->
         <exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
+        <!-- checked by SlevomatCodingStandard.Namespaces.NamespaceSpacing -->
+        <exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter"/>
     </rule>
 
     <!-- Force array element indentation with 4 spaces -->
@@ -175,6 +177,8 @@
     <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
     <!-- Forbid multiple use statements on same line -->
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
+    <!-- Require newlines around namespace declaration -->
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing"/>
     <!-- Forbid using absolute class name references (except global ones) -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
