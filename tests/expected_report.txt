@@ -6,7 +6,7 @@ FILE                                                  ERRORS  WARNINGS
 tests/input/array_indentation.php                     10      0
 tests/input/concatenation_spacing.php                 24      0
 tests/input/EarlyReturn.php                           4       0
-tests/input/example-class.php                         22      0
+tests/input/example-class.php                         23      0
 tests/input/forbidden-comments.php                    4       0
 tests/input/forbidden-functions.php                   6       0
 tests/input/namespaces-spacing.php                    6       0
@@ -18,9 +18,9 @@ tests/input/return_type_on_methods.php                17      0
 tests/input/semicolon_spacing.php                     3       0
 tests/input/test-case.php                             6       0
 ----------------------------------------------------------------------
-A TOTAL OF 151 ERRORS AND 0 WARNINGS WERE FOUND IN 14 FILES
+A TOTAL OF 152 ERRORS AND 0 WARNINGS WERE FOUND IN 14 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 133 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 134 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

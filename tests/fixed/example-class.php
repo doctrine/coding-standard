@@ -62,6 +62,8 @@ class Example implements IteratorAggregate
 
     public function isBaz() : bool
     {
+        [$foo, $bar, $baz] = $this->bar;
+
         return $this->baz;
     }
 

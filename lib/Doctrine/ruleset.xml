@@ -207,6 +207,8 @@
             <property name="linesCountBetweenUseTypes" value="0"/>
         </properties>
     </rule>
+    <!-- Forbid use of list() -->
+    <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
     <!-- Forbid use of longhand cast operators -->
     <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
     <!-- Require presence of declare(strict_types=1) -->
