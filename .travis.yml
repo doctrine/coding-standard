@@ -21,6 +21,7 @@ install: travis_retry composer update --prefer-dist
 script:
   - vendor/bin/phpcs
   - vendor/bin/phpcs $(find tests/input/* | sort) --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
+  - vendor/bin/phpunit
 
 stages:
   - Validate against schema
