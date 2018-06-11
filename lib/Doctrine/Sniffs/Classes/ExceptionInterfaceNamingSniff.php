@@ -6,19 +6,17 @@ namespace Doctrine\Sniffs\Classes;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
+use SlevomatCodingStandard\Helpers\UseStatementHelper;
 use Throwable;
 use const T_EXTENDS;
 use const T_INTERFACE;
 use const T_OPEN_CURLY_BRACKET;
-use const T_USE;
 use function array_map;
 use function count;
 use function explode;
 use function in_array;
 use function preg_grep;
 use function strpos;
-use function strrchr;
-use function trim;
 
 class ExceptionInterfaceNamingSniff implements Sniff
 {
@@ -37,7 +35,7 @@ class ExceptionInterfaceNamingSniff implements Sniff
      */
     public function process(File $phpcsFile, $stackPtr)
     {
-        $importedClassNames = $this->parseImportedClassNames($phpcsFile, $stackPtr);
+        $importedClassNames = $this->parseImportedClassNames($phpcsFile);
         $extendedInterfaces = $this->parseExtendedInterfaces($phpcsFile, $stackPtr);
 
         $hasExceptionName = strpos($phpcsFile->getDeclarationName($stackPtr), 'Exception') !== false;
@@ -75,24 +73,11 @@ class ExceptionInterfaceNamingSniff implements Sniff
      *
      * @return string[]
      */
-    private function parseImportedClassNames(File $phpcsFile, int $stackPtr) : array
+    private function parseImportedClassNames(File $phpcsFile) : array
     {
         $importedClasses = [];
-        $occurence       = 0;
-
-        while (($start = $phpcsFile->findNext([T_USE], $occurence, $stackPtr)) !== false) {
-            $end = $phpcsFile->findEndOfStatement($start);
-
-            $fqcn = $phpcsFile->getTokensAsString($start+2, $end-$start-2);
-
-            $className = strrchr($fqcn, '\\');
-            if ($className === false) {
-                $className = $fqcn;
-            }
-
-            $importedClasses[trim($className, '\\')] = $fqcn;
-
-            $occurence = $end;
+        foreach (UseStatementHelper::getUseStatements($phpcsFile, 0) as $useStatement) {
+            $importedClasses[$useStatement->getNameAsReferencedInFile()] = $useStatement->getFullyQualifiedTypeName();
         }
 
         return $importedClasses;
@@ -111,7 +96,7 @@ class ExceptionInterfaceNamingSniff implements Sniff
         }
 
         $extendedInterfaces = explode(',', $phpcsFile->getTokensAsString($start + 1, $limit - $start));
-        $extendedInterfaces = array_map('trim', $extendedInterfaces);
+        $extendedInterfaces = array_map('\trim', $extendedInterfaces);
 
         return $extendedInterfaces;
     }
