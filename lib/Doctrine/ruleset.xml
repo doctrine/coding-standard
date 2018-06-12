@@ -87,8 +87,6 @@
     </rule>
     <!-- Forbid backtick operator -->
     <rule ref="Generic.PHP.BacktickOperator"/>
-    <!-- Forbid short open tag -->
-    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     <!-- Forbid `php_sapi_name()` function -->
     <rule ref="Generic.PHP.SAPIUsage"/>
     <!-- Forbid comments starting with # -->
