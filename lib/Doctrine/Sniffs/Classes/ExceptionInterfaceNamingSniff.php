@@ -78,8 +78,6 @@ class ExceptionInterfaceNamingSniff implements Sniff
     }
 
     /**
-     * @todo Cover class alias, comma separation and group use declaration (UseStatementHelper)
-     *
      * @return string[]
      */
     private function parseImportedClassNames(File $phpcsFile) : array

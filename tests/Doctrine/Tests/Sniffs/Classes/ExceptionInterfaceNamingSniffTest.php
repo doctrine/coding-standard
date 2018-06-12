@@ -64,6 +64,7 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
             'Throwable namespace alias' => [self::PATH_TO_CLASSES.'ValidFException.php'],
             'Exception namespace alias' => [self::PATH_TO_CLASSES.'ValidGException.php'],
             'Comma separated namespaces' => [self::PATH_TO_CLASSES.'ValidHException.php'],
+            'Group use namespaces' => [self::PATH_TO_CLASSES.'ValidIException.php'],
         ];
     }
 
