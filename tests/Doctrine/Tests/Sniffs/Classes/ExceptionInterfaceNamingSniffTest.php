@@ -63,6 +63,7 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
             'Not relevant for the sniff' => [self::PATH_TO_CLASSES.'NoSuffixAndInterface.php'],
             'Throwable namespace alias' => [self::PATH_TO_CLASSES.'ValidFException.php'],
             'Exception namespace alias' => [self::PATH_TO_CLASSES.'ValidGException.php'],
+            'Comma separated namespaces' => [self::PATH_TO_CLASSES.'ValidHException.php'],
         ];
     }
 
