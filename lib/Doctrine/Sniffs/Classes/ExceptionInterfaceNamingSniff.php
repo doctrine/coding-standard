@@ -38,9 +38,18 @@ class ExceptionInterfaceNamingSniff implements Sniff
         $importedClassNames = $this->parseImportedClassNames($phpcsFile);
         $extendedInterfaces = $this->parseExtendedInterfaces($phpcsFile, $stackPtr);
 
+        // Set original classname instead of alias
+        $extendedInterfaces = array_map(function (string $extendedInterface) use ($importedClassNames) {
+            if (isset($importedClassNames[$extendedInterface])) {
+                return $importedClassNames[$extendedInterface];
+            }
+
+            return $extendedInterface;
+        }, $extendedInterfaces);
+
         $hasExceptionName = strpos($phpcsFile->getDeclarationName($stackPtr), 'Exception') !== false;
 
-        $isExtendingThrowable = (isset($importedClassNames[Throwable::class]) &&
+        $isExtendingThrowable = (in_array(Throwable::class, $importedClassNames, true) &&
             in_array(Throwable::class, $extendedInterfaces, true)) ||
             in_array('\\Throwable', $extendedInterfaces, true);
 

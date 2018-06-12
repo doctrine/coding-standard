@@ -4,7 +4,8 @@ namespace Doctrine\Tests\Sniffs\Classes;
 
 use Doctrine\Sniffs\Classes\ExceptionInterfaceNamingSniff;
 use PHP_CodeSniffer\Config;
-use PHP_CodeSniffer\Files\DummyFile;
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Files\LocalFile;
 use PHP_CodeSniffer\Ruleset;
 use PHPUnit\Framework\TestCase;
 
@@ -60,6 +61,8 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
             'Uses exception interface' => [self::PATH_TO_CLASSES.'ValidDException.php'],
             'Combination of interfaces' => [self::PATH_TO_CLASSES.'ValidEException.php'],
             'Not relevant for the sniff' => [self::PATH_TO_CLASSES.'NoSuffixAndInterface.php'],
+            'Throwable namespace alias' => [self::PATH_TO_CLASSES.'ValidFException.php'],
+            'Exception namespace alias' => [self::PATH_TO_CLASSES.'ValidGException.php'],
         ];
     }
 
@@ -72,15 +75,23 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
         ];
     }
 
-    private function createFile(string $pathToTestFile) : DummyFile
+    private function createFile(string $pathToTestFile) : File
     {
         $config  = new Config();
         $config->standards = ['Generic'];
-        $ruleset = new Ruleset($config);
 
-        $phpcsFile = new DummyFile(file_get_contents($pathToTestFile), $ruleset, $config);
+        $phpcsFile = new class($pathToTestFile, new Ruleset($config), $config) extends LocalFile {
+            public function process()
+            {
+                parent::process();
+
+                $this->errorCount   = 0;
+                $this->warningCount = 0;
+                $this->fixableCount = 0;
+                $this->fixedCount   = 0;
+            }
+        };
         $phpcsFile->process();
-        $phpcsFile->setErrorCounts(0,0,0,0);
 
         return $phpcsFile;
     }
