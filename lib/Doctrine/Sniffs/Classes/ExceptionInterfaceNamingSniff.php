@@ -18,14 +18,14 @@ use function in_array;
 use function preg_grep;
 use function strpos;
 
-class ExceptionInterfaceNamingSniff implements Sniff
+final class ExceptionInterfaceNamingSniff implements Sniff
 {
     private const CODE_NOT_AN_EXCEPTION = 'NotAnException';
 
     /**
      * {@inheritdoc}
      */
-    public function register()
+    public function register() : array
     {
         return [T_INTERFACE];
     }
@@ -33,18 +33,14 @@ class ExceptionInterfaceNamingSniff implements Sniff
     /**
      * {@inheritdoc}
      */
-    public function process(File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr) : void
     {
         $importedClassNames = $this->parseImportedClassNames($phpcsFile);
         $extendedInterfaces = $this->parseExtendedInterfaces($phpcsFile, $stackPtr);
 
         // Set original classname instead of alias
-        $extendedInterfaces = array_map(function (string $extendedInterface) use ($importedClassNames) {
-            if (isset($importedClassNames[$extendedInterface])) {
-                return $importedClassNames[$extendedInterface];
-            }
-
-            return $extendedInterface;
+        $extendedInterfaces = array_map(function (string $extendedInterface) use ($importedClassNames) : string {
+            return $importedClassNames[$extendedInterface] ?? $extendedInterface;
         }, $extendedInterfaces);
 
         $hasExceptionName = strpos($phpcsFile->getDeclarationName($stackPtr), 'Exception') !== false;
@@ -66,15 +62,15 @@ class ExceptionInterfaceNamingSniff implements Sniff
             return;
         }
 
-        if (! $hasExceptionName && ($isExtendingException || $isExtendingThrowable)) {
-            $phpcsFile->addError(
-                'Exception interface needs an "Exception" name suffix',
-                $stackPtr,
-                self::CODE_NOT_AN_EXCEPTION
-            );
-
+        if (! (! $hasExceptionName && ($isExtendingException || $isExtendingThrowable))) {
             return;
         }
+
+        $phpcsFile->addError(
+            'Exception interface needs an "Exception" name suffix',
+            $stackPtr,
+            self::CODE_NOT_AN_EXCEPTION
+        );
     }
 
     /**
@@ -103,7 +99,7 @@ class ExceptionInterfaceNamingSniff implements Sniff
         }
 
         $extendedInterfaces = explode(',', $phpcsFile->getTokensAsString($start + 1, $limit - $start));
-        $extendedInterfaces = array_map('\trim', $extendedInterfaces);
+        $extendedInterfaces = array_map('trim', $extendedInterfaces);
 
         return $extendedInterfaces;
     }
