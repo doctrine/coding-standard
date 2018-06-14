@@ -74,6 +74,7 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
             'Missing exception suffix' => [self::PATH_TO_CLASSES.'NoSuffix.php'],
             'Extends no exception' => [self::PATH_TO_CLASSES.'NoExtendedException.php'],
             'Extends nothing' => [self::PATH_TO_CLASSES.'ExtendedsNothingException.php'],
+            'Wrong throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php'],
         ];
     }
 

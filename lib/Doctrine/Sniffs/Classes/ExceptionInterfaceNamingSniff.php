@@ -11,12 +11,15 @@ use Throwable;
 use const T_EXTENDS;
 use const T_INTERFACE;
 use const T_OPEN_CURLY_BRACKET;
+use function array_combine;
 use function array_map;
 use function count;
 use function explode;
 use function in_array;
 use function preg_grep;
-use function strpos;
+use function preg_match;
+use function substr;
+use function trim;
 
 final class ExceptionInterfaceNamingSniff implements Sniff
 {
@@ -43,11 +46,12 @@ final class ExceptionInterfaceNamingSniff implements Sniff
             return $importedClassNames[$extendedInterface] ?? $extendedInterface;
         }, $extendedInterfaces);
 
-        $hasExceptionName = strpos($phpcsFile->getDeclarationName($stackPtr), 'Exception') !== false;
+        $hasExceptionName = preg_match('/Exception$/', $phpcsFile->getDeclarationName($stackPtr)) === 1;
 
         $isExtendingThrowable = (in_array(Throwable::class, $importedClassNames, true) &&
             in_array(Throwable::class, $extendedInterfaces, true)) ||
-            in_array('\\Throwable', $extendedInterfaces, true);
+            (isset($extendedInterfaces[Throwable::class]) &&
+            substr($extendedInterfaces[Throwable::class], 1) === Throwable::class);
 
         // Expects that an interface with the suffix "Exception" is a valid exception interface
         $isExtendingException = count(preg_grep('/Exception$/', $extendedInterfaces)) > 0;
@@ -99,8 +103,12 @@ final class ExceptionInterfaceNamingSniff implements Sniff
         }
 
         $extendedInterfaces = explode(',', $phpcsFile->getTokensAsString($start + 1, $limit - $start));
-        $extendedInterfaces = array_map('trim', $extendedInterfaces);
 
-        return $extendedInterfaces;
+        $extendedInterfaces = array_map('trim', $extendedInterfaces);
+        $interfaceNames     = array_map(function ($interfaceName) : string {
+            return trim($interfaceName, '\\');
+        }, $extendedInterfaces);
+
+        return array_combine($interfaceNames, $extendedInterfaces);
     }
 }
