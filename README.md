@@ -18,6 +18,7 @@ exceptions/differences/extensions (:white_check_mark: are the implemented sniffs
 
 - Keep the nesting of control structures per method as small as possible
 - Abstract exception class names and exception interface names should be suffixed with `Exception`
+- Exceptions should live in an `Exception` sub-namespace of the namespace of the class that throws them.
 - :white_check_mark: Abstract classes should not be prefixed with `Abstract`
 - :white_check_mark: Interfaces should not be suffixed with `Interface`
 - :white_check_mark: Concrete exception class names should not be suffixed with `Exception`
