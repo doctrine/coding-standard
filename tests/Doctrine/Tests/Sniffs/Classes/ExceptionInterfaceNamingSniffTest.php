@@ -1,24 +1,12 @@
 <?php
 
-namespace Doctrine\Tests\Sniffs\Classes;
+namespace Doctrine\Sniffs\Classes;
 
-use Doctrine\Sniffs\Classes\ExceptionInterfaceNamingSniff;
-use PHP_CodeSniffer\Config;
-use PHP_CodeSniffer\Files\File;
-use PHP_CodeSniffer\Files\LocalFile;
-use PHP_CodeSniffer\Ruleset;
-use PHPUnit\Framework\TestCase;
+use SlevomatCodingStandard\Sniffs\TestCase;
 
 class ExceptionInterfaceNamingSniffTest extends TestCase
 {
     private const PATH_TO_CLASSES = __DIR__.'/../../../../test/';
-
-    public function testRegister()
-    {
-        $sniff = new ExceptionInterfaceNamingSniff();
-
-        self::assertSame([T_INTERFACE], $sniff->register());
-    }
 
     /**
      * @dataProvider provideValidInterfaceFiles
@@ -27,13 +15,8 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
      */
     public function testValidInterface(string $filePath)
     {
-        $phpcsFile = $this->createFile($filePath);
-
-        $stackPtr = $phpcsFile->findNext([T_INTERFACE], 1);
-
-        (new ExceptionInterfaceNamingSniff())->process($phpcsFile, $stackPtr);
-
-        self::assertSame(0, $phpcsFile->getErrorCount());
+        $phpcsFile = self::checkFile($filePath);
+        self::assertNoSniffErrorInFile($phpcsFile);
     }
 
     /**
@@ -41,15 +24,12 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
      *
      * @param string $filePath
      */
-    public function testInvalidInterface(string $filePath)
+    public function testInvalidInterface(string $filePath, int $line)
     {
-        $phpcsFile = $this->createFile($filePath);
-
-        $stackPtr = $phpcsFile->findNext([T_INTERFACE], 1);
-
-        (new ExceptionInterfaceNamingSniff())->process($phpcsFile, $stackPtr);
+        $phpcsFile = self::checkFile($filePath);
 
         self::assertSame(1, $phpcsFile->getErrorCount());
+        self::assertSniffError($phpcsFile, $line, 'NotAnException');
     }
 
     public function provideValidInterfaceFiles() : array
@@ -71,31 +51,10 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
     public function provideInvalidInterfaceFiles() : array
     {
         return [
-            'Missing exception suffix' => [self::PATH_TO_CLASSES.'NoSuffix.php'],
-            'Extends no exception' => [self::PATH_TO_CLASSES.'NoExtendedException.php'],
-            'Extends nothing' => [self::PATH_TO_CLASSES.'ExtendedsNothingException.php'],
-            'Wrong throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php'],
+            'Missing exception suffix' => [self::PATH_TO_CLASSES.'NoSuffix.php', 9],
+            'Extends no exception' => [self::PATH_TO_CLASSES.'NoExtendedException.php', 9],
+            'Extends nothing' => [self::PATH_TO_CLASSES.'ExtendedsNothingException.php', 7],
+            'Wrong throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php', 9],
         ];
-    }
-
-    private function createFile(string $pathToTestFile) : File
-    {
-        $config  = new Config();
-        $config->standards = ['Generic'];
-
-        $phpcsFile = new class($pathToTestFile, new Ruleset($config), $config) extends LocalFile {
-            public function process()
-            {
-                parent::process();
-
-                $this->errorCount   = 0;
-                $this->warningCount = 0;
-                $this->fixableCount = 0;
-                $this->fixedCount   = 0;
-            }
-        };
-        $phpcsFile->process();
-
-        return $phpcsFile;
     }
 }
