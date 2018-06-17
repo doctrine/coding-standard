@@ -56,6 +56,12 @@ final class ExceptionInterfaceNamingSniff implements Sniff
         // Expects that an interface with the suffix "Exception" is a valid exception interface
         $isExtendingException = count(preg_grep('/Exception$/', $extendedInterfaces)) > 0;
 
+        $isValidInterface = $hasExceptionName && ($isExtendingException || $isExtendingThrowable);
+        $isNoException    = ! $hasExceptionName && ! $isExtendingException && ! $isExtendingThrowable;
+        if ($isValidInterface || $isNoException) {
+            return;
+        }
+
         if ($hasExceptionName && ! $isExtendingException && ! $isExtendingThrowable) {
             $phpcsFile->addError(
                 'Interface does not extend an exception interface',
@@ -63,10 +69,6 @@ final class ExceptionInterfaceNamingSniff implements Sniff
                 self::CODE_NOT_AN_EXCEPTION
             );
 
-            return;
-        }
-
-        if (! (! $hasExceptionName && ($isExtendingException || $isExtendingThrowable))) {
             return;
         }
 
