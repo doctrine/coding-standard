@@ -120,7 +120,6 @@
                 name="forbiddenAnnotations"
                 type="array"
                 value="
-                    @api,
                     @author,
                     @category,
                     @copyright,
@@ -258,6 +257,7 @@
                     @after,
                     @afterClass,
                     @AfterMethods,
+                    @api,
                     @Attribute,
                     @Attributes,
                     @before,
