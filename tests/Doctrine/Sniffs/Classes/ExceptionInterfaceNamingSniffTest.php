@@ -6,7 +6,7 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 
 class ExceptionInterfaceNamingSniffTest extends TestCase
 {
-    private const PATH_TO_CLASSES = __DIR__.'/../../../test/';
+    private const PATH_TO_CLASSES = __DIR__.'/../../../test/exception-interface/';
 
     /**
      * @dataProvider provideValidInterfaceFiles
