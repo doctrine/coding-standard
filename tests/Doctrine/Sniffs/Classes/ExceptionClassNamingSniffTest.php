@@ -40,6 +40,7 @@ class ExceptionClassNamingSniffTest extends TestCase
             'Extends fqcn exception' => [self::PATH_TO_CLASSES.'ValidC.php'],
             'Implements fqcn exception' => [self::PATH_TO_CLASSES.'ValidD.php'],
             'Implements Throwable' => [self::PATH_TO_CLASSES.'ValidE.php'],
+            'No exception' => [self::PATH_TO_CLASSES.'ValidF.php'],
             'Abstract extends exception' => [self::PATH_TO_CLASSES.'ValidAException.php'],
             'Abstract implements exception' => [self::PATH_TO_CLASSES.'ValidBException.php'],
         ];
@@ -49,6 +50,9 @@ class ExceptionClassNamingSniffTest extends TestCase
     {
         return [
             'Class with exception suffix' => [self::PATH_TO_CLASSES.'NotAbstractException.php', 7],
+            'Inherits no other class or interface' => [self::PATH_TO_CLASSES.'InheritsNothingException.php', 7],
+            'Abstract without exception suffix' => [self::PATH_TO_CLASSES.'AbstractWithoutSuffix.php', 7],
+            'Implements different throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php', 9],
         ];
     }
 }
