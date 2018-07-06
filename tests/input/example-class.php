@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace Example;
 
 use function strlen as stringLength;
-use Fancy\TestCase;
+use Fancy\TestCase as TestCase;
 use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 

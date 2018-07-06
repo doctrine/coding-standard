@@ -211,6 +211,8 @@
             <property name="linesCountBetweenUseTypes" value="0"/>
         </properties>
     </rule>
+    <!-- Forbid useless alias for classes, constants and functions -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
     <!-- Forbid `list(...)` syntax -->
     <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
     <!-- Forbid use of longhand cast operators -->
