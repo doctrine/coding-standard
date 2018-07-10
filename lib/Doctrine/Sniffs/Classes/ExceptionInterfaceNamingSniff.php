@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Doctrine\Sniffs\Classes;
 
+use Doctrine\Sniffs\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use SlevomatCodingStandard\Helpers\UseStatementHelper;
 use Throwable;
 use const T_EXTENDS;
 use const T_INTERFACE;
@@ -38,7 +38,7 @@ final class ExceptionInterfaceNamingSniff implements Sniff
      */
     public function process(File $phpcsFile, $stackPtr) : void
     {
-        $importedClassNames = $this->parseImportedClassNames($phpcsFile);
+        $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
         $extendedInterfaces = $this->parseExtendedInterfaces($phpcsFile, $stackPtr);
 
         // Set original classname instead of alias
@@ -77,19 +77,6 @@ final class ExceptionInterfaceNamingSniff implements Sniff
             $stackPtr,
             self::CODE_NOT_AN_EXCEPTION
         );
-    }
-
-    /**
-     * @return string[]
-     */
-    private function parseImportedClassNames(File $phpcsFile) : array
-    {
-        $importedClasses = [];
-        foreach (UseStatementHelper::getUseStatements($phpcsFile, 0) as $useStatement) {
-            $importedClasses[$useStatement->getNameAsReferencedInFile()] = $useStatement->getFullyQualifiedTypeName();
-        }
-
-        return $importedClasses;
     }
 
     /**

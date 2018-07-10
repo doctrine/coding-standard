@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Doctrine\Sniffs\Classes;
 
+use Doctrine\Sniffs\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use SlevomatCodingStandard\Helpers\UseStatementHelper;
 use Throwable;
 use const T_ABSTRACT;
 use const T_CLASS;
@@ -81,7 +81,7 @@ final class ExceptionClassNamingSniff implements Sniff
 
         $isImplementingExceptions = count(preg_grep('/Exception$/', $implementedInterfaces)) > 0;
 
-        $importedClassNames = $this->parseImportedClassNames($phpcsFile);
+        $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
 
         // TODO Should throwable be checked separately, because it can't be implemented on non-abstract exception class?
         $isImplementingThrowable = (in_array(Throwable::class, $importedClassNames, true) &&
@@ -94,20 +94,5 @@ final class ExceptionClassNamingSniff implements Sniff
     private function hasExceptionSuffix(string $className) : bool
     {
         return preg_match('/Exception$/', $className) === 1;
-    }
-
-    /**
-     * @todo Move this method into a Trait or Helper class
-     *
-     * @return string[]
-     */
-    private function parseImportedClassNames(File $phpcsFile) : array
-    {
-        $importedClasses = [];
-        foreach (UseStatementHelper::getUseStatements($phpcsFile, 0) as $useStatement) {
-            $importedClasses[$useStatement->getNameAsReferencedInFile()] = $useStatement->getFullyQualifiedTypeName();
-        }
-
-        return $importedClasses;
     }
 }
