@@ -52,6 +52,7 @@ class ExceptionClassNamingSniffTest extends TestCase
             'Class with exception suffix' => [self::PATH_TO_CLASSES.'NotAbstractException.php', 7],
             'Inherits no other class or interface' => [self::PATH_TO_CLASSES.'InheritsNothingException.php', 7],
             'Abstract without exception suffix' => [self::PATH_TO_CLASSES.'AbstractWithoutSuffix.php', 7],
+            'Throwable in same namespace' => [self::PATH_TO_CLASSES.'ThrowableSameNamespaceException.php', 7],
             'Implements different throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php', 9],
         ];
     }

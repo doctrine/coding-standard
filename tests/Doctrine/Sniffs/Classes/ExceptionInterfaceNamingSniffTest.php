@@ -55,6 +55,7 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
             'Extends no exception' => [self::PATH_TO_CLASSES.'NoExtendedException.php', 9],
             'Extends nothing' => [self::PATH_TO_CLASSES.'ExtendedsNothingException.php', 7],
             'Wrong throwable' => [self::PATH_TO_CLASSES.'DifferentThrowableException.php', 9],
+            'Throwable in same namespace' => [self::PATH_TO_CLASSES.'ThrowableSameNamespaceException.php', 7],
         ];
     }
 }
