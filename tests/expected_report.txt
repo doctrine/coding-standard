@@ -18,10 +18,11 @@ tests/input/return_type_on_closures.php               21      0
 tests/input/return_type_on_methods.php                17      0
 tests/input/semicolon_spacing.php                     3       0
 tests/input/test-case.php                             6       0
+tests/input/useless-semicolon.php                     2       0
 ----------------------------------------------------------------------
-A TOTAL OF 156 ERRORS AND 0 WARNINGS WERE FOUND IN 15 FILES
+A TOTAL OF 158 ERRORS AND 0 WARNINGS WERE FOUND IN 16 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 138 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 140 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
