@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Doctrine\Sniffs\Helpers;
+namespace DoctrineCodingStandard\Helpers;
 
 use PHP_CodeSniffer\Files\File;
 use SlevomatCodingStandard\Helpers\UseStatementHelper as UseHelper;

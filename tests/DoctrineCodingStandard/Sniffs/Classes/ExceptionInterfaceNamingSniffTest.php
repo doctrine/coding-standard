@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Doctrine\Sniffs\Classes;
+namespace DoctrineCodingStandard\Sniffs\Classes;
 
 use SlevomatCodingStandard\Sniffs\TestCase;
 

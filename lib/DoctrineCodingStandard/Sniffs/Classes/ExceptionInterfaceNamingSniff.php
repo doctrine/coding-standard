@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Doctrine\Sniffs\Classes;
+namespace DoctrineCodingStandard\Sniffs\Classes;
 
-use Doctrine\Sniffs\Helpers\UseStatementHelper;
+use DoctrineCodingStandard\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use Throwable;

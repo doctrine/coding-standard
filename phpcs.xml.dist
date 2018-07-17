@@ -13,8 +13,8 @@
     <!-- Show progress of the run -->
     <arg value="p"/>
 
-    <rule ref="Doctrine"/>
+    <rule ref="DoctrineCodingStandard"/>
 
     <file>lib</file>
-    <file>tests/Doctrine</file>
+    <file>tests/DoctrineCodingStandard</file>
 </ruleset>

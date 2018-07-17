@@ -10,6 +10,6 @@
 >
 
     <testsuite name="Doctrine Coding Standard Test Suite">
-        <directory suffix="Test.php">./tests/Doctrine</directory>
+        <directory suffix="Test.php">./tests/DoctrineCodingStandard</directory>
     </testsuite>
 </phpunit>

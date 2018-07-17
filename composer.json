@@ -22,7 +22,7 @@
     ],
     "autoload": {
        "psr-4": {
-           "Doctrine\\Sniffs\\": "lib/Doctrine/Sniffs"
+           "DoctrineCodingStandard\\": "lib/DoctrineCodingStandard"
        }
     },
     "require": {
