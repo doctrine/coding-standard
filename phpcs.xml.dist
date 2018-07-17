@@ -16,4 +16,5 @@
     <rule ref="Doctrine"/>
 
     <file>lib</file>
+    <file>tests/Doctrine</file>
 </ruleset>
