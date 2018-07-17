@@ -1,0 +1,6 @@
+parameters:
+    level: 7
+    paths:
+        - "%currentWorkingDirectory%/lib/"
+    autoload_files:
+        - "%currentWorkingDirectory%/tests/bootstrap.php"
