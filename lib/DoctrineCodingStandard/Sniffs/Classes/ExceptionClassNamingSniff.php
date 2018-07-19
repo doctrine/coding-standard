@@ -7,11 +7,9 @@ namespace DoctrineCodingStandard\Sniffs\Classes;
 use DoctrineCodingStandard\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use Throwable;
 use const T_ABSTRACT;
 use const T_CLASS;
 use function count;
-use function in_array;
 use function preg_grep;
 use function preg_match;
 
@@ -84,9 +82,10 @@ final class ExceptionClassNamingSniff implements Sniff
         $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
 
         // TODO Should throwable be checked separately, because it can't be implemented on non-abstract exception class?
-        $isImplementingThrowable = (in_array(Throwable::class, $importedClassNames, true) &&
-            in_array(Throwable::class, $implementedInterfaces, true)) ||
-            in_array('\\' . Throwable::class, $implementedInterfaces, true);
+        $isImplementingThrowable = UseStatementHelper::isImplementingThrowable(
+            $importedClassNames,
+            $implementedInterfaces
+        );
 
         return $isImplementingExceptions || $isImplementingThrowable;
     }

@@ -6,6 +6,8 @@ namespace DoctrineCodingStandard\Helpers;
 
 use PHP_CodeSniffer\Files\File;
 use SlevomatCodingStandard\Helpers\UseStatementHelper as UseHelper;
+use Throwable;
+use function in_array;
 
 class UseStatementHelper
 {
@@ -20,5 +22,16 @@ class UseStatementHelper
         }
 
         return $importedClasses;
+    }
+
+    /**
+     * @param string[] $importedClassNames
+     * @param string[] $implementedInterfaces
+     */
+    public static function isImplementingThrowable(array $importedClassNames, array $implementedInterfaces) : bool
+    {
+        return (in_array(Throwable::class, $importedClassNames, true) &&
+            in_array(Throwable::class, $implementedInterfaces, true)) ||
+            in_array('\\' . Throwable::class, $implementedInterfaces, true);
     }
 }
