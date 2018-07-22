@@ -9,6 +9,7 @@ use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use const T_ABSTRACT;
 use const T_CLASS;
+use const T_FINAL;
 use function count;
 use function preg_grep;
 use function preg_match;
@@ -31,10 +32,12 @@ final class ExceptionClassNamingSniff implements Sniff
     public function process(File $phpcsFile, $stackPtr) : void
     {
         $isAbstract              = $phpcsFile->findFirstOnLine([T_ABSTRACT], $stackPtr) !== false;
+        $isFinal                 = $phpcsFile->findFirstOnLine([T_FINAL], $stackPtr) !== false;
         $isExtendingException    = $this->isExtendingException($phpcsFile, $stackPtr);
         $isImplementingException = $this->isImplementingException($phpcsFile, $stackPtr);
         $hasExceptionName        = $this->hasExceptionSuffix((string) $phpcsFile->getDeclarationName($stackPtr));
-        $hasValidClassName       = ($isAbstract && $hasExceptionName) || (! $isAbstract && ! $hasExceptionName);
+        $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
+            (! $isAbstract && ! $hasExceptionName && $isFinal);
         $isValidException        = $hasValidClassName && ($isExtendingException || $isImplementingException);
         $isNoException           = ! $hasExceptionName && ! $isExtendingException && ! $isImplementingException;
 
