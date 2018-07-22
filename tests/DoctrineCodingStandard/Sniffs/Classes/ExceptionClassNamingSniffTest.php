@@ -10,12 +10,9 @@ class ExceptionClassNamingSniffTest extends TestCase
 {
     private const PATH_TO_CLASSES = __DIR__ . '/../../../test/exception-class/';
 
-    /**
-     * @dataProvider provideValidInterfaceFiles
-     */
-    public function testValidClass(string $filePath) : void
+    public function testValidClass() : void
     {
-        $phpcsFile = self::checkFile($filePath);
+        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffValid.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
 
@@ -28,23 +25,6 @@ class ExceptionClassNamingSniffTest extends TestCase
 
         self::assertSame(1, $phpcsFile->getErrorCount());
         self::assertSniffError($phpcsFile, $line, 'NotAnExceptionClass');
-    }
-
-    /**
-     * @return string[][]
-     */
-    public function provideValidInterfaceFiles() : array
-    {
-        return [
-            'Extends exception' => [self::PATH_TO_CLASSES . 'ValidA.php'],
-            'Implements exception' => [self::PATH_TO_CLASSES . 'ValidB.php'],
-            'Extends fqcn exception' => [self::PATH_TO_CLASSES . 'ValidC.php'],
-            'Implements fqcn exception' => [self::PATH_TO_CLASSES . 'ValidD.php'],
-            'Implements Throwable' => [self::PATH_TO_CLASSES . 'ValidE.php'],
-            'No exception' => [self::PATH_TO_CLASSES . 'ValidF.php'],
-            'Abstract extends exception' => [self::PATH_TO_CLASSES . 'ValidAException.php'],
-            'Abstract implements exception' => [self::PATH_TO_CLASSES . 'ValidBException.php'],
-        ];
     }
 
     /**

@@ -30,7 +30,7 @@ final class ExceptionClassNamingSniff implements Sniff
      */
     public function process(File $phpcsFile, $stackPtr) : void
     {
-        $isAbstract              = $phpcsFile->findNext([T_ABSTRACT], 0) !== false;
+        $isAbstract              = $phpcsFile->findFirstOnLine([T_ABSTRACT], $stackPtr) !== false;
         $isExtendingException    = $this->isExtendingException($phpcsFile, $stackPtr);
         $isImplementingException = $this->isImplementingException($phpcsFile, $stackPtr);
         $hasExceptionName        = $this->hasExceptionSuffix((string) $phpcsFile->getDeclarationName($stackPtr));
@@ -44,7 +44,7 @@ final class ExceptionClassNamingSniff implements Sniff
 
         if (! $hasValidClassName) {
             $phpcsFile->addError(
-                'Use "Exception" suffix for abstract exception classes',
+                'Use "Exception" suffix for abstract exception classes and make non-abstract classes final',
                 $stackPtr,
                 self::CODE_NOT_AN_EXCEPTION_CLASS
             );
