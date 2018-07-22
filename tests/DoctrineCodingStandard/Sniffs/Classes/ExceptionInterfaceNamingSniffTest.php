@@ -10,12 +10,9 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
 {
     private const PATH_TO_CLASSES = __DIR__ . '/../../../test/exception-interface/';
 
-    /**
-     * @dataProvider provideValidInterfaceFiles
-     */
-    public function testValidInterface(string $filePath) : void
+    public function testValidInterface() : void
     {
-        $phpcsFile = self::checkFile($filePath);
+        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffValid.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
 
@@ -28,25 +25,6 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
 
         self::assertSame(1, $phpcsFile->getErrorCount());
         self::assertSniffError($phpcsFile, $line, 'NotAnException');
-    }
-
-    /**
-     * @return string[][]
-     */
-    public function provideValidInterfaceFiles() : array
-    {
-        return [
-            'Imports and uses Throwable' => [self::PATH_TO_CLASSES . 'ValidAException.php'],
-            'Uses Throwable' => [self::PATH_TO_CLASSES . 'ValidBException.php'],
-            'Imports and uses exception interface' => [self::PATH_TO_CLASSES . 'ValidCException.php'],
-            'Uses exception interface' => [self::PATH_TO_CLASSES . 'ValidDException.php'],
-            'Combination of interfaces' => [self::PATH_TO_CLASSES . 'ValidEException.php'],
-            'Not relevant for the sniff' => [self::PATH_TO_CLASSES . 'NoSuffixAndInterface.php'],
-            'Throwable namespace alias' => [self::PATH_TO_CLASSES . 'ValidFException.php'],
-            'Exception namespace alias' => [self::PATH_TO_CLASSES . 'ValidGException.php'],
-            'Comma separated namespaces' => [self::PATH_TO_CLASSES . 'ValidHException.php'],
-            'Group use namespaces' => [self::PATH_TO_CLASSES . 'ValidIException.php'],
-        ];
     }
 
     /**
