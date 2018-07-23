@@ -64,7 +64,6 @@ final class ExceptionClassNamingSniff implements Sniff
 
     private function isExtendingException(File $phpcsFile, int $stackPtr) : bool
     {
-        // TODO Handle exception classes without "Exception" suffix in class name
         $extendsClass = $phpcsFile->findExtendedClassName($stackPtr);
         if ($extendsClass === false) {
             return false;
