@@ -8,36 +8,21 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 
 class ExceptionInterfaceNamingSniffTest extends TestCase
 {
-    private const PATH_TO_CLASSES = __DIR__ . '/../../../test/exception-interface/';
-
     public function testValidInterface() : void
     {
         $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffValid.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
 
-    /**
-     * @dataProvider provideInvalidInterfaceFiles
-     */
-    public function testInvalidInterface(string $filePath, int $line) : void
+    public function testInvalidInterface() : void
     {
-        $phpcsFile = self::checkFile($filePath);
+        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffNotValid.php');
 
-        self::assertSame(1, $phpcsFile->getErrorCount());
-        self::assertSniffError($phpcsFile, $line, 'NotAnException');
-    }
+        self::assertSame(4, $phpcsFile->getErrorCount());
 
-    /**
-     * @return string[][]|int[][]
-     */
-    public function provideInvalidInterfaceFiles() : array
-    {
-        return [
-            'Missing exception suffix' => [self::PATH_TO_CLASSES . 'NoSuffix.php', 9],
-            'Extends no exception' => [self::PATH_TO_CLASSES . 'NoExtendedException.php', 9],
-            'Extends nothing' => [self::PATH_TO_CLASSES . 'ExtendedsNothingException.php', 7],
-            'Wrong throwable' => [self::PATH_TO_CLASSES . 'DifferentThrowableException.php', 9],
-            'Throwable in same namespace' => [self::PATH_TO_CLASSES . 'ThrowableSameNamespaceException.php', 7],
-        ];
+        self::assertSniffError($phpcsFile, 10, 'NotAnException');
+        self::assertSniffError($phpcsFile, 14, 'NotAnException');
+        self::assertSniffError($phpcsFile, 18, 'NotAnException');
+        self::assertSniffError($phpcsFile, 22, 'NotAnException');
     }
 }
