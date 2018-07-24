@@ -18,11 +18,21 @@ class ExceptionInterfaceNamingSniffTest extends TestCase
     {
         $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffNotValid.php');
 
-        self::assertSame(4, $phpcsFile->getErrorCount());
+        self::assertSame(5, $phpcsFile->getErrorCount());
 
         self::assertSniffError($phpcsFile, 10, 'NotAnException');
         self::assertSniffError($phpcsFile, 14, 'NotAnException');
         self::assertSniffError($phpcsFile, 18, 'NotAnException');
         self::assertSniffError($phpcsFile, 22, 'NotAnException');
+        self::assertSniffError($phpcsFile, 26, 'NotAnException');
+    }
+
+    public function testInvalidThrowable() : void
+    {
+        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffSameNamespace.php');
+
+        self::assertSame(1, $phpcsFile->getErrorCount());
+
+        self::assertSniffError($phpcsFile, 7, 'NotAnException');
     }
 }

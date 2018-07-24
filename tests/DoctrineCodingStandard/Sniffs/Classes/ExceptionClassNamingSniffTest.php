@@ -18,12 +18,22 @@ class ExceptionClassNamingSniffTest extends TestCase
     {
         $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffNotValid.php');
 
-        self::assertSame(5, $phpcsFile->getErrorCount());
+        self::assertSame(6, $phpcsFile->getErrorCount());
 
         self::assertSniffError($phpcsFile, 9, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 13, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 17, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 21, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 25, 'NotAnExceptionClass');
+        self::assertSniffError($phpcsFile, 29, 'NotAnExceptionClass');
+    }
+
+    public function testInvalidThrowable() : void
+    {
+        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffSameNamespace.php');
+
+        self::assertSame(1, $phpcsFile->getErrorCount());
+
+        self::assertSniffError($phpcsFile, 7, 'NotAnExceptionClass');
     }
 }

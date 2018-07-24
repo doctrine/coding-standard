@@ -6,7 +6,7 @@ namespace Example;
 
 use My\Throwable;
 
-abstract class AbstractWithoutSuffix extends My\Exception\FooNotFound implements \Throwable
+abstract class AbstractWithoutSuffix extends FooException implements \Throwable
 {
 }
 
@@ -14,11 +14,15 @@ abstract class DifferentThrowableException extends Nothing implements Throwable
 {
 }
 
+abstract class ExtendsNoException extends Nothing
+{
+}
+
 abstract class InheritsNothingException
 {
 }
 
-final class NotAbstractException extends My\Exception\FooNotFound implements \Throwable
+final class NotAbstractException extends My\Exception\FooException implements \Throwable
 {
 }
 

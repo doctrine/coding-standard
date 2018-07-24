@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Example;
 
 use Exception;
+use Exception as Bar;
 use My\Classname\Foo;
 use My\Exception\MyException;
 use My\Exception\{GroupedException, OtherGroupedException};
@@ -35,6 +36,10 @@ final class GroupedUse extends GroupedException
 }
 
 final class ImportedInOneLine extends OnelineException
+{
+}
+
+final class ExtendsAlias extends Bar
 {
 }
 
