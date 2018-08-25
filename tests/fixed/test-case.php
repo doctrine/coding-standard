@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Fancy;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
 /**
  * @requires PHP 7.2
  */
-final class TestCase extends TestCase
+final class TestCase extends BaseTestCase
 {
     /**
      * @beforeClass
