@@ -234,6 +234,8 @@
             />
         </properties>
     </rule>
+    <!-- Forbid useless parentheses -->
+    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
     <!-- Forbid useless semicolon `;` -->
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
     <!-- Require use of short versions of scalar types (i.e. int instead of integer) -->
