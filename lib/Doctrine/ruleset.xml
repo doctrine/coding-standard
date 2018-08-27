@@ -240,6 +240,8 @@
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
     <!-- Require use of short versions of scalar types (i.e. int instead of integer) -->
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+    <!-- Require the `null` type hint to be in the last position of annotations -->
+    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
     <!-- Require ? when default value is null -->
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <!-- Require one space between typehint and variable, require no space between nullability sign and typehint -->
