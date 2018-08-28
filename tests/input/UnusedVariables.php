@@ -10,7 +10,7 @@ class UnusedVariables
     {
         $foo = 'foo';
 
-        $bar = function () use ($foo) : int {
+        $bar = static function () use ($foo) : int {
             return 1;
         };
     }
