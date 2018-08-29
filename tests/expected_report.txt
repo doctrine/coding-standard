@@ -14,16 +14,16 @@ tests/input/namespaces-spacing.php                    7       0
 tests/input/new_with_parentheses.php                  18      0
 tests/input/not_spacing.php                           7       0
 tests/input/null_coalesce_operator.php                3       0
-tests/input/return_type_on_closures.php               21      0
+tests/input/return_type_on_closures.php               31      0
 tests/input/return_type_on_methods.php                17      0
 tests/input/semicolon_spacing.php                     3       0
 tests/input/test-case.php                             6       0
-tests/input/UnusedVariables.php                       1       0
+tests/input/UnusedVariables.php                       2       0
 tests/input/useless-semicolon.php                     2       0
 ----------------------------------------------------------------------
-A TOTAL OF 162 ERRORS AND 0 WARNINGS WERE FOUND IN 17 FILES
+A TOTAL OF 173 ERRORS AND 0 WARNINGS WERE FOUND IN 17 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 144 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 155 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
