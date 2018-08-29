@@ -105,6 +105,8 @@
             <property name="fixable" type="boolean" value="true"/>
         </properties>
     </rule>
+    <!-- Require usage of ::class instead of __CLASS__, get_class(), get_class($this), get_called_class() and get_parent_class() -->
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
     <!-- Forbid dead code -->
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid suffix "Abstract" for abstract classes -->
