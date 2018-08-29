@@ -171,6 +171,8 @@
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!-- Require using Throwable instead of Exception -->
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+    <!-- Require closures not referencing $this be static -->
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
     <!-- Forbid unused variables passed to closures via `use` -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
     <!-- Require use statements to be alphabetically sorted -->
