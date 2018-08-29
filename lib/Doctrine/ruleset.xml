@@ -173,6 +173,8 @@
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
     <!-- Forbid unused variables passed to closures via `use` -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
+    <!-- Require static closures and they don't use `$this` -->
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
     <!-- Require use statements to be alphabetically sorted -->
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
     <!-- Forbid fancy group uses -->
