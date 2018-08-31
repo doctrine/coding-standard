@@ -14,7 +14,7 @@
         "sniffs",
         "checks"
     ],
-    "homepage": "http://www.doctrine-project.org",
+    "homepage": "https://www.doctrine-project.org/projects/coding-standard.html",
     "license": "MIT",
     "authors": [
         {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
