@@ -107,6 +107,17 @@
     </rule>
     <!-- Require usage of ::class instead of __CLASS__, get_class(), get_class($this), get_called_class() and get_parent_class() -->
     <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
+    <!-- Forbid uses of multiple traits separated by comma -->
+    <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
+    <!-- Require no spaces before trait use, between trait uses and one space after trait uses -->
+    <rule ref="SlevomatCodingStandard.Classes.TraitUseSpacing">
+        <properties>
+            <property name="linesCountAfterLastUse" value="1"/>
+            <property name="linesCountAfterLastUseWhenLastInClass" value="0"/>
+            <property name="linesCountBeforeFirstUse" value="0"/>
+            <property name="linesCountBetweenUses" value="0"/>
+        </properties>
+    </rule>
     <!-- Forbid dead code -->
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid suffix "Abstract" for abstract classes -->
