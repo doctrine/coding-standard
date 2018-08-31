@@ -323,6 +323,8 @@
             />
         </properties>
     </rule>
+    <!-- Forbid useless @var for constants -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
     <!-- Forbid empty lines around type declarations -->
     <rule ref="SlevomatCodingStandard.Types.EmptyLinesAroundTypeBraces">
         <properties>
