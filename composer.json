@@ -1,8 +1,19 @@
 {
     "name": "doctrine/coding-standard",
     "type": "phpcodesniffer-standard",
-    "description": "Doctrine Coding Standard",
-    "keywords": ["doctrine", "coding", "standard", "cs", "code", "style", "sniffer"],
+    "description": "The Doctrine Coding Standard is a set of PHPCS rules applied to all Doctrine projects.",
+    "keywords": [
+        "doctrine",
+        "coding",
+        "standard",
+        "cs",
+        "code",
+        "style",
+        "sniffer",
+        "rules",
+        "sniffs",
+        "checks"
+    ],
     "homepage": "http://www.doctrine-project.org",
     "license": "MIT",
     "authors": [

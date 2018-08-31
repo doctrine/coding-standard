@@ -1,0 +1,24 @@
+{
+    "active": true,
+    "name": "Coding Standard",
+    "slug": "coding-standard",
+    "docsSlug": "doctrine-coding-standard",
+    "versions": [
+        {
+            "name": "5.0",
+            "branchName": "master",
+            "slug": "latest",
+            "upcoming": true
+        },
+        {
+            "name": "4.0",
+            "branchName": "4.x",
+            "slug": "4.0",
+            "current": true,
+            "aliases": [
+                "current",
+                "stable"
+            ]
+        }
+    ]
+}
