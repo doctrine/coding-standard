@@ -21,11 +21,23 @@ script:
   - vendor/bin/phpcs
   - vendor/bin/phpcs $(find tests/input/* | sort) --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
 
+stages:
+  - Validate against schema
+  - Test
+  - Apply fixes
+
 jobs:
   allow_failures:
     - php: nightly
 
   include:
+    - stage: Validate against schema
+      addons:
+        apt:
+          packages:
+            - libxml2-utils
+      script: xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd lib/Doctrine/ruleset.xml
+
     - stage: Apply fixes
       before_script:
         - cp -R tests/input/ tests/input2/
