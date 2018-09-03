@@ -102,7 +102,7 @@
     <!-- Require presence of constant visibility -->
     <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility">
         <properties>
-            <property name="fixable" type="boolean" value="true"/>
+            <property name="fixable" value="true"/>
         </properties>
     </rule>
     <!-- Require usage of ::class instead of __CLASS__, get_class(), get_class($this), get_called_class() and get_parent_class() -->
@@ -199,21 +199,21 @@
     <!-- Forbid using absolute class name references (except global ones) -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
-            <property name="allowFallbackGlobalConstants" type="boolean" value="false"/>
-            <property name="allowFallbackGlobalFunctions" type="boolean" value="false"/>
-            <property name="allowFullyQualifiedGlobalClasses" type="boolean" value="false"/>
-            <property name="allowFullyQualifiedGlobalConstants" type="boolean" value="false"/>
-            <property name="allowFullyQualifiedGlobalFunctions" type="boolean" value="false"/>
-            <property name="allowFullyQualifiedNameForCollidingClasses" type="boolean" value="true"/>
-            <property name="allowFullyQualifiedNameForCollidingConstants" type="boolean" value="true"/>
-            <property name="allowFullyQualifiedNameForCollidingFunctions" type="boolean" value="true"/>
-            <property name="searchAnnotations" type="boolean" value="true"/>
+            <property name="allowFallbackGlobalConstants" value="false"/>
+            <property name="allowFallbackGlobalFunctions" value="false"/>
+            <property name="allowFullyQualifiedGlobalClasses" value="false"/>
+            <property name="allowFullyQualifiedGlobalConstants" value="false"/>
+            <property name="allowFullyQualifiedGlobalFunctions" value="false"/>
+            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
+            <property name="searchAnnotations" value="true"/>
         </properties>
     </rule>
     <!-- Forbid unused use statements -->
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
-            <property name="searchAnnotations" type="boolean" value="true"/>
+            <property name="searchAnnotations" value="true"/>
         </properties>
     </rule>
     <!-- Forbid superfluous leading backslash in use statements -->
