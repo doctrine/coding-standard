@@ -49,13 +49,13 @@ Then you can use it like:
 
 .. code-block:: bash
 
-    $ ./vendor/bin/phpcs --standard=Doctrine /path/to/some/file/to/sniff.php
+    $ vendor/bin/phpcs --standard=Doctrine /path/to/some/file/to/sniff.php
 
 You might also do automatic fixes using ``phpcbf``:
 
 .. code-block:: bash
 
-    $ ./vendor/bin/phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
+    $ vendor/bin/phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
 
 Composer Global Installation
 ----------------------------
@@ -77,6 +77,45 @@ You might also do automatic fixes using ``phpcbf``:
 .. code-block:: bash
 
     $ phpcbf --standard=Doctrine /path/to/some/file/to/sniff.php
+
+Project-level ruleset
+=====================
+
+To enable Doctrine Coding Standard for your project, create a ``phpcs.xml.dist`` file with the following content:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <ruleset>
+        <arg name="basepath" value="."/>
+        <arg name="extensions" value="php"/>
+        <arg name="parallel" value="80"/>
+        <arg name="cache" value=".phpcs-cache"/>
+        <arg name="colors"/>
+
+        <!-- Ignore warnings, show progress of the run and show sniff names -->
+        <arg value="nps"/>
+
+        <!-- Directories to be checked -->
+        <file>lib</file>
+        <file>tests</file>
+
+        <!-- Include full Doctrine Coding Standard -->
+        <rule ref="Doctrine"/>
+    </ruleset>
+
+This will enable verbatim Doctrine Coding Standard with all rules included with their defaults.
+From now on you can just run ``vendor/bin/phpcs`` and ``vendor/bin/phpcbf`` without any arguments.
+
+Don't forget to add ``.phpcs-cache`` and ``phpcs.xml`` (without ``.dist`` suffix) to your ``.gitignore``.
+The first ignored file is a cache used by PHP CodeSniffer to speed things up,
+the second one allows any developer to adjust configuration locally without touching the versioned file.
+
+For further reading about the CodeSniffer configuration, please refer to
+`the configuration format overview <https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset>`_
+and `the list of configuration options <https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options>`_
+
+To learn about customizing the rules, please refer to the :ref:`customizing` chapter.
 
 Versioning
 ==========
