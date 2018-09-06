@@ -39,12 +39,6 @@ final class ExceptionClassNamingSniff implements Sniff
         $hasExceptionName        = ClassHelper::hasExceptionSuffix((string) $declarationName);
         $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
             (! $isAbstract && ! $hasExceptionName && $isFinal);
-        $isValidException        = $hasValidClassName && ($isExtendingException || $isImplementingException);
-        $isNoException           = ! $hasExceptionName && ! $isExtendingException && ! $isImplementingException;
-
-        if ($isValidException || $isNoException) {
-            return;
-        }
 
         if (! $hasValidClassName) {
             $phpcsFile->addError(
@@ -53,6 +47,16 @@ final class ExceptionClassNamingSniff implements Sniff
                 self::CODE_NOT_AN_EXCEPTION_CLASS
             );
 
+            return;
+        }
+
+        // Class is a valid exception
+        if ($hasValidClassName && ($isExtendingException || $isImplementingException)) {
+            return;
+        }
+
+        // Class is not an exception
+        if (! $hasExceptionName && ! $isExtendingException && ! $isImplementingException) {
             return;
         }
 
