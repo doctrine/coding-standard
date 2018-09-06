@@ -40,16 +40,6 @@ final class ExceptionClassNamingSniff implements Sniff
         $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
             (! $isAbstract && ! $hasExceptionName && $isFinal);
 
-        if (! $hasValidClassName) {
-            $phpcsFile->addError(
-                'Exception classes must end with an "Exception" suffix',
-                $pointer,
-                self::CODE_NOT_AN_EXCEPTION_CLASS
-            );
-
-            return;
-        }
-
         // Class is a valid exception
         if ($hasValidClassName && ($isExtendingException || $isImplementingException)) {
             return;
@@ -57,6 +47,16 @@ final class ExceptionClassNamingSniff implements Sniff
 
         // Class is not an exception
         if (! $hasExceptionName && ! $isExtendingException && ! $isImplementingException) {
+            return;
+        }
+
+        if (! $hasValidClassName) {
+            $phpcsFile->addError(
+                'Exception classes must end with an "Exception" suffix',
+                $pointer,
+                self::CODE_NOT_AN_EXCEPTION_CLASS
+            );
+
             return;
         }
 
