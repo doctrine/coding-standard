@@ -19,7 +19,7 @@ final class ExceptionClassNamingSniff implements Sniff
     private const CODE_NOT_AN_EXCEPTION_CLASS = 'NotAnExceptionClass';
 
     /**
-     * {@inheritdoc}
+     * @return int[]
      */
     public function register() : array
     {
@@ -27,15 +27,16 @@ final class ExceptionClassNamingSniff implements Sniff
     }
 
     /**
-     * {@inheritdoc}
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
+     * @param int $pointer
      */
-    public function process(File $phpcsFile, $stackPtr) : void
+    public function process(File $phpcsFile, $pointer) : void
     {
-        $isAbstract              = $phpcsFile->findFirstOnLine([T_ABSTRACT], $stackPtr) !== false;
-        $isFinal                 = $phpcsFile->findFirstOnLine([T_FINAL], $stackPtr) !== false;
-        $isExtendingException    = $this->isExtendingException($phpcsFile, $stackPtr);
-        $isImplementingException = $this->isImplementingException($phpcsFile, $stackPtr);
-        $hasExceptionName        = $this->hasExceptionSuffix((string) $phpcsFile->getDeclarationName($stackPtr));
+        $isAbstract              = $phpcsFile->findFirstOnLine([T_ABSTRACT], $pointer) !== false;
+        $isFinal                 = $phpcsFile->findFirstOnLine([T_FINAL], $pointer) !== false;
+        $isExtendingException    = $this->isExtendingException($phpcsFile, $pointer);
+        $isImplementingException = $this->isImplementingException($phpcsFile, $pointer);
+        $hasExceptionName        = $this->hasExceptionSuffix((string) $phpcsFile->getDeclarationName($pointer));
         $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
             (! $isAbstract && ! $hasExceptionName && $isFinal);
         $isValidException        = $hasValidClassName && ($isExtendingException || $isImplementingException);
@@ -47,8 +48,8 @@ final class ExceptionClassNamingSniff implements Sniff
 
         if (! $hasValidClassName) {
             $phpcsFile->addError(
-                'Use "Exception" suffix for abstract exception classes and make non-abstract classes final',
-                $stackPtr,
+                'Exception classes must end with an "Exception" suffix',
+                $pointer,
                 self::CODE_NOT_AN_EXCEPTION_CLASS
             );
 
@@ -56,8 +57,8 @@ final class ExceptionClassNamingSniff implements Sniff
         }
 
         $phpcsFile->addError(
-            'Class is not a valid exception',
-            $stackPtr,
+            'Exception classes must be either abstract or final.',
+            $pointer,
             self::CODE_NOT_AN_EXCEPTION_CLASS
         );
     }
