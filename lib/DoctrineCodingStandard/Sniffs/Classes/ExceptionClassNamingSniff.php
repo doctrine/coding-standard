@@ -18,7 +18,7 @@ final class ExceptionClassNamingSniff implements Sniff
     private const CODE_NOT_AN_EXCEPTION_CLASS = 'NotAnExceptionClass';
 
     /**
-     * @return int[]
+     * @return int[]|string[]
      */
     public function register() : array
     {

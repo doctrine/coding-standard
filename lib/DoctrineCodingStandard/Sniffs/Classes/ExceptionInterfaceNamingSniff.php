@@ -17,7 +17,7 @@ final class ExceptionInterfaceNamingSniff implements Sniff
     private const CODE_NOT_AN_EXCEPTION = 'NotAnException';
 
     /**
-     * @return int[]
+     * @return int[]|string[]
      */
     public function register() : array
     {
