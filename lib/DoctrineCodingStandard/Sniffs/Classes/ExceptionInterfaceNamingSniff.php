@@ -4,20 +4,13 @@ declare(strict_types=1);
 
 namespace DoctrineCodingStandard\Sniffs\Classes;
 
+use DoctrineCodingStandard\Helpers\ClassHelper;
+use DoctrineCodingStandard\Helpers\InheritanceHelper;
 use DoctrineCodingStandard\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use SlevomatCodingStandard\Helpers\TokenHelper;
-use const T_EXTENDS;
 use const T_INTERFACE;
-use const T_OPEN_CURLY_BRACKET;
-use function array_combine;
 use function array_map;
-use function count;
-use function explode;
-use function preg_grep;
-use function preg_match;
-use function trim;
 
 final class ExceptionInterfaceNamingSniff implements Sniff
 {
@@ -38,19 +31,20 @@ final class ExceptionInterfaceNamingSniff implements Sniff
     public function process(File $phpcsFile, $pointer) : void
     {
         $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
-        $extendedInterfaces = $this->parseExtendedInterfaces($phpcsFile, $pointer);
+        $extendedInterfaces = InheritanceHelper::parseExtendedInterfaces($phpcsFile, $pointer);
 
         // Set original classname instead of alias
         $extendedInterfaces = array_map(function (string $extendedInterface) use ($importedClassNames) : string {
             return $importedClassNames[$extendedInterface] ?? $extendedInterface;
         }, $extendedInterfaces);
 
-        $endsWithExceptionSuffix = preg_match('/Exception$/', (string) $phpcsFile->getDeclarationName($pointer)) === 1;
+        $declarationName         = $phpcsFile->getDeclarationName($pointer);
+        $endsWithExceptionSuffix = ClassHelper::hasExceptionSuffix((string) $declarationName);
 
         $isExtendingThrowable = UseStatementHelper::isImplementingThrowable($importedClassNames, $extendedInterfaces);
 
         // Expects that an interface with the suffix "Exception" is a valid exception interface
-        $isExtendingException = count(preg_grep('/Exception$/', $extendedInterfaces)) > 0;
+        $isExtendingException = InheritanceHelper::hasExceptionInterface($extendedInterfaces);
 
         if ($endsWithExceptionSuffix && ($isExtendingException || $isExtendingThrowable)) {
             return;
@@ -75,27 +69,5 @@ final class ExceptionInterfaceNamingSniff implements Sniff
             $pointer,
             self::CODE_NOT_AN_EXCEPTION
         );
-    }
-
-    /**
-     * @return string[]
-     */
-    private function parseExtendedInterfaces(File $phpcsFile, int $stackPtr) : array
-    {
-        $limit = TokenHelper::findNext($phpcsFile, [T_OPEN_CURLY_BRACKET], $stackPtr) - 1;
-        $start = TokenHelper::findNext($phpcsFile, [T_EXTENDS], $stackPtr + 1, $limit);
-
-        if ($start === null) {
-            return [];
-        }
-
-        $extendedInterfaces = explode(',', $phpcsFile->getTokensAsString($start + 1, $limit - $start));
-
-        $extendedInterfaces = array_map('trim', $extendedInterfaces);
-        $interfaceNames     = array_map(function ($interfaceName) : string {
-            return trim($interfaceName, '\\');
-        }, $extendedInterfaces);
-
-        return array_combine($interfaceNames, $extendedInterfaces);
     }
 }

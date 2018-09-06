@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace DoctrineCodingStandard\Sniffs\Classes;
 
+use DoctrineCodingStandard\Helpers\ClassHelper;
+use DoctrineCodingStandard\Helpers\InheritanceHelper;
 use DoctrineCodingStandard\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use const T_ABSTRACT;
 use const T_CLASS;
 use const T_FINAL;
-use function count;
-use function preg_grep;
-use function preg_match;
 
 final class ExceptionClassNamingSniff implements Sniff
 {
@@ -36,7 +35,8 @@ final class ExceptionClassNamingSniff implements Sniff
         $isFinal                 = $phpcsFile->findFirstOnLine([T_FINAL], $pointer) !== false;
         $isExtendingException    = $this->isExtendingException($phpcsFile, $pointer);
         $isImplementingException = $this->isImplementingException($phpcsFile, $pointer);
-        $hasExceptionName        = $this->hasExceptionSuffix((string) $phpcsFile->getDeclarationName($pointer));
+        $declarationName         = $phpcsFile->getDeclarationName($pointer);
+        $hasExceptionName        = ClassHelper::hasExceptionSuffix((string) $declarationName);
         $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
             (! $isAbstract && ! $hasExceptionName && $isFinal);
         $isValidException        = $hasValidClassName && ($isExtendingException || $isImplementingException);
@@ -70,7 +70,7 @@ final class ExceptionClassNamingSniff implements Sniff
             return false;
         }
 
-        return $this->hasExceptionSuffix($extendsClass);
+        return ClassHelper::hasExceptionSuffix($extendsClass);
     }
 
     private function isImplementingException(File $phpcsFile, int $stackPtr) : bool
@@ -80,7 +80,10 @@ final class ExceptionClassNamingSniff implements Sniff
             return false;
         }
 
-        $isImplementingExceptions = count(preg_grep('/Exception$/', $implementedInterfaces)) > 0;
+        $isImplementingExceptions = InheritanceHelper::hasExceptionInterface($implementedInterfaces);
+        if ($isImplementingExceptions) {
+            return true;
+        }
 
         $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
 
@@ -90,11 +93,6 @@ final class ExceptionClassNamingSniff implements Sniff
             $implementedInterfaces
         );
 
-        return $isImplementingExceptions || $isImplementingThrowable;
-    }
-
-    private function hasExceptionSuffix(string $className) : bool
-    {
-        return preg_match('/Exception$/', $className) === 1;
+        return $isImplementingThrowable;
     }
 }
