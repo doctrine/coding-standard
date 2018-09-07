@@ -6,6 +6,7 @@ namespace DoctrineCodingStandard\Sniffs\Classes;
 
 use DoctrineCodingStandard\Helpers\ClassHelper;
 use DoctrineCodingStandard\Helpers\InheritanceHelper;
+use DoctrineCodingStandard\Helpers\TokenHelper;
 use DoctrineCodingStandard\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
@@ -31,8 +32,9 @@ final class ExceptionClassNamingSniff implements Sniff
      */
     public function process(File $phpcsFile, $pointer) : void
     {
-        $isAbstract              = $phpcsFile->findFirstOnLine([T_ABSTRACT], $pointer) !== false;
-        $isFinal                 = $phpcsFile->findFirstOnLine([T_FINAL], $pointer) !== false;
+        $previousToken           = TokenHelper::findPreviousToken($phpcsFile, $pointer);
+        $isAbstract              = $previousToken === T_ABSTRACT;
+        $isFinal                 = $previousToken === T_FINAL;
         $isExtendingException    = $this->isExtendingException($phpcsFile, $pointer);
         $isImplementingException = $this->isImplementingException($phpcsFile, $pointer);
         $declarationName         = $phpcsFile->getDeclarationName($pointer);
