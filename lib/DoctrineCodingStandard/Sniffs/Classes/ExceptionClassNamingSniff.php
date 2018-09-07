@@ -43,7 +43,7 @@ final class ExceptionClassNamingSniff implements Sniff
             (! $isAbstract && ! $hasExceptionName && $isFinal);
 
         // Class is a valid exception
-        if ($hasValidClassName && ($isExtendingException || $isImplementingException)) {
+        if ($hasValidClassName && $isExtendingException) {
             return;
         }
 
@@ -93,7 +93,6 @@ final class ExceptionClassNamingSniff implements Sniff
 
         $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
 
-        // TODO Should throwable be checked separately, because it can't be implemented on non-abstract exception class?
         $isImplementingThrowable = UseStatementHelper::isImplementingThrowable(
             $importedClassNames,
             $implementedInterfaces

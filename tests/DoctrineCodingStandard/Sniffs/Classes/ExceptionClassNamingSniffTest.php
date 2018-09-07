@@ -18,7 +18,7 @@ class ExceptionClassNamingSniffTest extends TestCase
     {
         $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffNotValid.php');
 
-        self::assertSame(6, $phpcsFile->getErrorCount());
+        self::assertSame(7, $phpcsFile->getErrorCount());
 
         self::assertSniffError($phpcsFile, 9, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 13, 'NotAnExceptionClass');
@@ -26,6 +26,7 @@ class ExceptionClassNamingSniffTest extends TestCase
         self::assertSniffError($phpcsFile, 21, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 25, 'NotAnExceptionClass');
         self::assertSniffError($phpcsFile, 29, 'NotAnExceptionClass');
+        self::assertSniffError($phpcsFile, 33, 'NotAnExceptionClass');
     }
 
     public function testInvalidThrowable() : void

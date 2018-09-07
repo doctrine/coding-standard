@@ -10,10 +10,6 @@ abstract class AbstractWithoutSuffix extends FooException implements \Throwable
 {
 }
 
-abstract class DifferentThrowableException extends Nothing implements Throwable
-{
-}
-
 abstract class ExtendsNoException extends Nothing
 {
 }
@@ -27,5 +23,13 @@ final class NotAbstractException extends My\Exception\FooException implements \T
 }
 
 class NotFinal extends \Exception
+{
+}
+
+final class NoExtension implements \Throwable
+{
+}
+
+final class StillNoExtension implements FooException
 {
 }

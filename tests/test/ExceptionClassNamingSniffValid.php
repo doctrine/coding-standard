@@ -6,7 +6,6 @@ namespace Example;
 
 use Exception;
 use Exception as Bar;
-use My\Classname\Foo;
 use My\Exception\MyException;
 use My\Exception\{GroupedException, OtherGroupedException};
 use My\Exception\OnelineException, My\Exception\OtherOnelineException;
@@ -24,10 +23,6 @@ final class Fqcn extends \Exception
 }
 
 abstract class FqcnException extends \Exception
-{
-}
-
-abstract class InterfaceUsedException extends Foo implements MyException
 {
 }
 
