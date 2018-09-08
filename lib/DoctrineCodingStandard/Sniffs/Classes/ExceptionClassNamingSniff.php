@@ -32,14 +32,13 @@ final class ExceptionClassNamingSniff implements Sniff
      */
     public function process(File $phpcsFile, $pointer) : void
     {
-        $previousToken           = TokenHelper::findPreviousToken($phpcsFile, $pointer);
-        $isAbstract              = $previousToken === T_ABSTRACT;
-        $isFinal                 = $previousToken === T_FINAL;
-        $isExtendingException    = $this->isExtendingException($phpcsFile, $pointer);
-        $isImplementingException = $this->isImplementingException($phpcsFile, $pointer);
-        $declarationName         = $phpcsFile->getDeclarationName($pointer);
-        $hasExceptionName        = ClassHelper::hasExceptionSuffix((string) $declarationName);
-        $hasValidClassName       = ($isAbstract && $hasExceptionName) ||
+        $previousToken        = TokenHelper::findPreviousToken($phpcsFile, $pointer);
+        $isAbstract           = $previousToken === T_ABSTRACT;
+        $isFinal              = $previousToken === T_FINAL;
+        $isExtendingException = $this->isExtendingException($phpcsFile, $pointer);
+        $declarationName      = $phpcsFile->getDeclarationName($pointer);
+        $hasExceptionName     = ClassHelper::hasExceptionSuffix((string) $declarationName);
+        $hasValidClassName    = ($isAbstract && $hasExceptionName) ||
             (! $isAbstract && ! $hasExceptionName && $isFinal);
 
         // Class is a valid exception
@@ -48,7 +47,7 @@ final class ExceptionClassNamingSniff implements Sniff
         }
 
         // Class is not an exception
-        if (! $hasExceptionName && ! $isExtendingException && ! $isImplementingException) {
+        if (! $hasExceptionName && ! $isExtendingException && ! $this->isImplementingException($phpcsFile, $pointer)) {
             return;
         }
 
