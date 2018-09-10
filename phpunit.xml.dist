@@ -6,10 +6,10 @@
          beStrictAboutTodoAnnotatedTests="true"
          failOnRisky="true"
          failOnWarning="true"
-         bootstrap="./tests/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
 >
 
     <testsuite name="Doctrine Coding Standard Test Suite">
-        <directory suffix="Test.php">./tests/DoctrineCodingStandard</directory>
+        <directory suffix="Test.php">tests/Doctrine/</directory>
     </testsuite>
 </phpunit>

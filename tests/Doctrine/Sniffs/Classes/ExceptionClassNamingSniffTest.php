@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace DoctrineCodingStandard\Sniffs\Classes;
+namespace Doctrine\Sniffs\Classes;
 
 use SlevomatCodingStandard\Sniffs\TestCase;
 
-class ExceptionClassNamingSniffTest extends TestCase
+final class ExceptionClassNamingSniffTest extends TestCase
 {
     public function testValidClass() : void
     {

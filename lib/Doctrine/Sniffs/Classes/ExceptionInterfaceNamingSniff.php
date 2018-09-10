@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace DoctrineCodingStandard\Sniffs\Classes;
+namespace Doctrine\Sniffs\Classes;
 
-use DoctrineCodingStandard\Helpers\ClassHelper;
-use DoctrineCodingStandard\Helpers\InheritanceHelper;
-use DoctrineCodingStandard\Helpers\UseStatementHelper;
+use Doctrine\Helpers\ClassHelper;
+use Doctrine\Helpers\InheritanceHelper;
+use Doctrine\Helpers\UseStatementHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use const T_INTERFACE;
-use function array_map;
 
 final class ExceptionInterfaceNamingSniff implements Sniff
 {
