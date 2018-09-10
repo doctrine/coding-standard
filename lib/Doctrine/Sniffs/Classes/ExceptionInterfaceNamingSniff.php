@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Sniffs\Classes;
 
-use Doctrine\Helpers\ClassHelper;
 use Doctrine\Helpers\InheritanceHelper;
-use Doctrine\Helpers\UseStatementHelper;
+use Doctrine\Helpers\NamingHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use const T_INTERFACE;
@@ -24,38 +23,34 @@ final class ExceptionInterfaceNamingSniff implements Sniff
     }
 
     /**
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
      * @param int $pointer
+     *
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
      */
     public function process(File $phpcsFile, $pointer) : void
     {
-        $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
-        $extendedInterfaces = InheritanceHelper::parseExtendedInterfaces($phpcsFile, $pointer);
+        $declarationName    = $phpcsFile->getDeclarationName($pointer);
+        $extendedInterfaces = InheritanceHelper::getExtendedInterfaces($phpcsFile, $pointer);
+        $extendsThrowable   = NamingHelper::containsThrowable($extendedInterfaces);
+        $hasSuffix          = NamingHelper::hasExceptionSuffix((string) $declarationName);
 
-        // Set original classname instead of alias
-        $extendedInterfaces = array_map(function (string $extendedInterface) use ($importedClassNames) : string {
-            return $importedClassNames[$extendedInterface] ?? $extendedInterface;
-        }, $extendedInterfaces);
-
-        $declarationName         = $phpcsFile->getDeclarationName($pointer);
-        $endsWithExceptionSuffix = ClassHelper::hasExceptionSuffix((string) $declarationName);
-
-        $isExtendingThrowable = UseStatementHelper::isImplementingThrowable($importedClassNames, $extendedInterfaces);
-
-        // Expects that an interface with the suffix "Exception" is a valid exception interface
-        $isExtendingException = InheritanceHelper::hasExceptionInterface($extendedInterfaces);
-
-        if ($endsWithExceptionSuffix && ($isExtendingException || $isExtendingThrowable)) {
+        if ($hasSuffix && $extendsThrowable) {
+            // interface FooException extends Throwable
             return;
         }
 
-        if (! $endsWithExceptionSuffix && ! $isExtendingException && ! $isExtendingThrowable) {
+        // assumes that an interface with the "Exception" suffix is a valid exception interface
+        $extendsException = NamingHelper::containsException($extendedInterfaces);
+
+        if ($hasSuffix && $extendsException) {
+            // interface FooException extends BarException
             return;
         }
 
-        if ($endsWithExceptionSuffix && ! $isExtendingException && ! $isExtendingThrowable) {
+        if ($hasSuffix && ! $extendsException && ! $extendsThrowable) {
+            // interface FooException
             $phpcsFile->addError(
-                'Interface must extend an exception interface',
+                'Exception interface must extend another exception interface or Throwable.',
                 $pointer,
                 self::CODE_NOT_AN_EXCEPTION
             );
@@ -63,8 +58,14 @@ final class ExceptionInterfaceNamingSniff implements Sniff
             return;
         }
 
+        if (! $extendsException && ! $extendsThrowable) {
+            return;
+        }
+
+        // interface Foo extends Throwable
+        // interface Foo extends BarException
         $phpcsFile->addError(
-            'Exception interface must end with "Exception" name suffix',
+            'Exception interface must end with the "Exception" name suffix.',
             $pointer,
             self::CODE_NOT_AN_EXCEPTION
         );

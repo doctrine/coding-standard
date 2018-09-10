@@ -21,15 +21,3 @@ abstract class InheritsNothingException
 final class NotAbstractException extends My\Exception\FooException implements \Throwable
 {
 }
-
-class NotFinal extends \Exception
-{
-}
-
-final class NoExtension implements \Throwable
-{
-}
-
-final class StillNoExtension implements FooException
-{
-}

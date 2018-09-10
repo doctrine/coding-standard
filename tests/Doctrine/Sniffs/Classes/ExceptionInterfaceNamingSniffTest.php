@@ -8,15 +8,21 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 
 final class ExceptionInterfaceNamingSniffTest extends TestCase
 {
-    public function testValidInterface() : void
+    public function testNoErrors() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffValid.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionInterfaceNaming.noErrors.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
 
-    public function testInvalidInterface() : void
+    public function testNoErrorsNoNamespace() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffNotValid.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionInterfaceNaming.noErrors.noNamespace.php');
+        self::assertNoSniffErrorInFile($phpcsFile);
+    }
+
+    public function testErrors() : void
+    {
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionInterfaceNaming.errors.php');
 
         self::assertSniffError($phpcsFile, 10, 'NotAnException');
         self::assertSniffError($phpcsFile, 14, 'NotAnException');
@@ -27,9 +33,9 @@ final class ExceptionInterfaceNamingSniffTest extends TestCase
         self::assertSame(5, $phpcsFile->getErrorCount());
     }
 
-    public function testInvalidThrowable() : void
+    public function testErrorsInvalidThrowable() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionInterfaceNamingSniffSameNamespace.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionInterfaceNaming.errors.sameNamespace.php');
 
         self::assertSame(1, $phpcsFile->getErrorCount());
 

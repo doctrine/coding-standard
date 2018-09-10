@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Helpers;
 
-use function preg_match;
+use PHP_CodeSniffer\Files\File;
 
 class ClassHelper
 {
-    public static function hasExceptionSuffix(string $className) : bool
+    public static function isAbstract(File $phpcsFile, int $classPointer) : bool
     {
-        return preg_match('/Exception$/', $className) === 1;
+        return $phpcsFile->getClassProperties($classPointer)['is_abstract'];
     }
 }

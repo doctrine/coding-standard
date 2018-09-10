@@ -8,33 +8,35 @@ use SlevomatCodingStandard\Sniffs\TestCase;
 
 final class ExceptionClassNamingSniffTest extends TestCase
 {
-    public function testValidClass() : void
+    public function testNoErrors() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffValid.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.noErrors.php');
+        self::assertNoSniffErrorInFile($phpcsFile);
+    }
+    public function testNoErrorsNoNamespace() : void
+    {
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.noErrors.noNamespace.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
 
-    public function testInvalidClass() : void
+    public function testErrors() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffNotValid.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.errors.php');
 
-        self::assertSniffError($phpcsFile, 9, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 13, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 17, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 21, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 25, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 29, 'NotAnExceptionClass');
-        self::assertSniffError($phpcsFile, 33, 'NotAnExceptionClass');
+        self::assertSame(4, $phpcsFile->getErrorCount());
 
-        self::assertSame(7, $phpcsFile->getErrorCount());
+        self::assertSniffError($phpcsFile, 9, ExceptionClassNamingSniff::CODE_MISSING_SUFFIX);
+        self::assertSniffError($phpcsFile, 13, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
+        self::assertSniffError($phpcsFile, 17, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
+        self::assertSniffError($phpcsFile, 21, ExceptionClassNamingSniff::CODE_SUPERFLUOUS_SUFFIX);
     }
 
-    public function testInvalidThrowable() : void
+    public function testErrorsInvalidThrowable() : void
     {
-        $phpcsFile = self::checkFile(__DIR__ . '/../../../test/ExceptionClassNamingSniffSameNamespace.php');
+        $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.errors.sameNamespace.php');
 
         self::assertSame(1, $phpcsFile->getErrorCount());
 
-        self::assertSniffError($phpcsFile, 7, 'NotAnExceptionClass');
+        self::assertSniffError($phpcsFile, 7, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
     }
 }

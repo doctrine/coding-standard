@@ -9,12 +9,21 @@ use Exception as Bar;
 use My\Exception\MyException;
 use My\Exception\{GroupedException, OtherGroupedException};
 use My\Exception\OnelineException, My\Exception\OtherOnelineException;
+use My\Exception\MySpecialException as MySpecialExceptionAliased;
 
 final class Imported extends Exception
 {
 }
 
 abstract class ImportedException extends Exception
+{
+}
+
+abstract class ImportedCustomException extends Exception
+{
+}
+
+abstract class ImportedCustomAliasedException extends MySpecialExceptionAliased
 {
 }
 
@@ -41,3 +50,11 @@ final class ExtendsAlias extends Bar
 class RegularClassToIgnore
 {
 }
+
+abstract class RegularAbstractClassToIgnore
+{
+}
+
+new class extends SomeException
+{
+};

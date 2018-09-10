@@ -6,17 +6,17 @@ namespace Doctrine\Sniffs\Classes;
 
 use Doctrine\Helpers\ClassHelper;
 use Doctrine\Helpers\InheritanceHelper;
-use Doctrine\Helpers\TokenHelper;
-use Doctrine\Helpers\UseStatementHelper;
+use Doctrine\Helpers\NamingHelper;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use const T_ABSTRACT;
 use const T_CLASS;
-use const T_FINAL;
+use function assert;
 
 final class ExceptionClassNamingSniff implements Sniff
 {
-    private const CODE_NOT_AN_EXCEPTION_CLASS = 'NotAnExceptionClass';
+    public const CODE_NOT_EXTENDING_EXCEPTION = 'NotExtendingException';
+    public const CODE_MISSING_SUFFIX          = 'MissingSuffix';
+    public const CODE_SUPERFLUOUS_SUFFIX      = 'SuperfluousSuffix';
 
     /**
      * @return int[]|string[]
@@ -27,76 +27,72 @@ final class ExceptionClassNamingSniff implements Sniff
     }
 
     /**
-     * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
      * @param int $pointer
+     *
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
      */
     public function process(File $phpcsFile, $pointer) : void
     {
-        $previousToken        = TokenHelper::findPreviousToken($phpcsFile, $pointer);
-        $isAbstract           = $previousToken === T_ABSTRACT;
-        $isFinal              = $previousToken === T_FINAL;
-        $isExtendingException = $this->isExtendingException($phpcsFile, $pointer);
-        $declarationName      = $phpcsFile->getDeclarationName($pointer);
-        $hasExceptionName     = ClassHelper::hasExceptionSuffix((string) $declarationName);
-        $hasValidClassName    = ($isAbstract && $hasExceptionName) ||
-            (! $isAbstract && ! $hasExceptionName && $isFinal);
+        $declarationName = $phpcsFile->getDeclarationName($pointer);
+        assert($declarationName !== null);
 
-        // Class is a valid exception
-        if ($hasValidClassName && $isExtendingException) {
+        $isAbstract       = ClassHelper::isAbstract($phpcsFile, $pointer);
+        $extendsException = InheritanceHelper::classExtendsException($phpcsFile, $pointer);
+        $hasSuffix        = NamingHelper::hasExceptionSuffix($declarationName);
+
+        if (! $hasSuffix && ! $extendsException) {
+            // class Foo
+            // class Foo extends Bar
+            // abstract class Foo
+            // abstract class Foo extends Bar
+
             return;
         }
 
-        // Class is not an exception
-        if (! $hasExceptionName && ! $isExtendingException && ! $this->isImplementingException($phpcsFile, $pointer)) {
+        if (! $hasSuffix && ! $isAbstract && $extendsException) {
+            // class FooProblem extends BarException
+
             return;
         }
 
-        if (! $hasValidClassName) {
+        if ($hasSuffix && $isAbstract && $extendsException) {
+            // class FooException extends BarException
+
+            return;
+        }
+
+        if ($hasSuffix && $isAbstract && ! $extendsException) {
+            // abstract class FooException extends Bar
+
             $phpcsFile->addError(
-                'Exception classes must end with an "Exception" suffix',
+                'Abstract exception must extend another exception.',
                 $pointer,
-                self::CODE_NOT_AN_EXCEPTION_CLASS
+                self::CODE_NOT_EXTENDING_EXCEPTION
             );
 
             return;
         }
 
+        if (! $hasSuffix && $isAbstract && $extendsException) {
+            // class Foo extends BarException
+
+            $phpcsFile->addError(
+                'Abstract exceptions must use the "Exception" suffix.',
+                $pointer,
+                self::CODE_MISSING_SUFFIX
+            );
+
+            return;
+        }
+
+        assert($hasSuffix && ! $isAbstract);
+
+        // class FooException
+
         $phpcsFile->addError(
-            'Exception classes must be either abstract or final.',
+            'Leaf exception classes must not end with the "Exception" suffix.',
             $pointer,
-            self::CODE_NOT_AN_EXCEPTION_CLASS
+            self::CODE_SUPERFLUOUS_SUFFIX
         );
-    }
-
-    private function isExtendingException(File $phpcsFile, int $stackPtr) : bool
-    {
-        $extendsClass = $phpcsFile->findExtendedClassName($stackPtr);
-        if ($extendsClass === false) {
-            return false;
-        }
-
-        return ClassHelper::hasExceptionSuffix($extendsClass);
-    }
-
-    private function isImplementingException(File $phpcsFile, int $stackPtr) : bool
-    {
-        $implementedInterfaces = $phpcsFile->findImplementedInterfaceNames($stackPtr);
-        if ($implementedInterfaces === false) {
-            return false;
-        }
-
-        $isImplementingExceptions = InheritanceHelper::hasExceptionInterface($implementedInterfaces);
-        if ($isImplementingExceptions) {
-            return true;
-        }
-
-        $importedClassNames = UseStatementHelper::getUseStatements($phpcsFile);
-
-        $isImplementingThrowable = UseStatementHelper::isImplementingThrowable(
-            $importedClassNames,
-            $implementedInterfaces
-        );
-
-        return $isImplementingThrowable;
     }
 }

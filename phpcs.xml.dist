@@ -17,4 +17,6 @@
 
     <file>lib/</file>
     <file>tests/Doctrine/</file>
+
+    <exclude-pattern>tests/**/data/*</exclude-pattern>
 </ruleset>
