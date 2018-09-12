@@ -119,8 +119,6 @@
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid suffix "Abstract" for abstract classes -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
-    <!-- Forbid suffix "Exception" for exception classes -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
     <!-- Forbid suffix "Interface" for interfaces -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
     <!-- Require specific order of phpDoc annotations with empty newline between specific groups -->
@@ -475,4 +473,6 @@
         <!-- turned off by PSR2 -> turning back on -->
         <severity>5</severity>
     </rule>
+
+
 </ruleset>
