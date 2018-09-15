@@ -10,7 +10,7 @@ use My\Exception\{MyGroupedException, Classname3};
 use One\More\Classname1, My\Exception\MyOnelineException, Two\More\Classname2;
 use Test1;
 use TestException;
-use Throwable as TrowableAlias;
+use Throwable as ThrowableAlias;
 use Throwable;
 
 interface ThrowableException extends Throwable
@@ -33,7 +33,7 @@ interface ExtendingMultipleInterfacesException extends Test1, Throwable, TestExc
 {
 }
 
-interface ThrowableAliasException extends TrowableAlias
+interface ThrowableAliasException extends ThrowableAlias
 {
 }
 
