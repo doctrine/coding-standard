@@ -8,8 +8,9 @@ tests/input/assignment-operators.php                  4       0
 tests/input/class-references.php                      10      0
 tests/input/concatenation_spacing.php                 24      0
 tests/input/constants-var.php                         3       0
+tests/input/doc-comment-spacing.php                   10      0
 tests/input/EarlyReturn.php                           5       0
-tests/input/example-class.php                         26      0
+tests/input/example-class.php                         28      0
 tests/input/forbidden-comments.php                    4       0
 tests/input/forbidden-functions.php                   6       0
 tests/input/LowCaseTypes.php                          2       0
@@ -26,9 +27,9 @@ tests/input/traits-uses.php                           10      0
 tests/input/UnusedVariables.php                       1       0
 tests/input/useless-semicolon.php                     2       0
 ----------------------------------------------------------------------
-A TOTAL OF 190 ERRORS AND 0 WARNINGS WERE FOUND IN 22 FILES
+A TOTAL OF 202 ERRORS AND 0 WARNINGS WERE FOUND IN 23 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 163 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 173 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
