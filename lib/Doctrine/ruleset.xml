@@ -259,6 +259,8 @@
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
     <!-- Require the usage of assignment operators, eg `+=`, `.=` when possible -->
     <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
+    <!-- forbid argument unpacking for functions specialized by PHP VM -->
+    <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
     <!-- Forbid `list(...)` syntax -->
     <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
     <!-- Forbid use of longhand cast operators -->
