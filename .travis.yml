@@ -37,12 +37,7 @@ jobs:
           packages:
             - libxml2-utils
       script:
-        - |
-          if dpkg --compare-versions "$(composer show -n | grep squizlabs/php_codesniffer | tr -s ' ' | cut -d ' ' -f 2)" '>=' "3.3.2"; then
-            xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd lib/Doctrine/ruleset.xml
-          else
-            echo "Validation skipped, PHPCS 3.3.2+ required"
-          fi
+        - xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd lib/Doctrine/ruleset.xml
 
     - stage: Apply fixes
       before_script:
