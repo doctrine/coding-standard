@@ -50,32 +50,29 @@
     <!-- Forbid alias functions, i.e. `sizeof()`, `delete()` -->
     <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
-            <property
-                name="forbiddenFunctions"
-                type="array"
-                value="
-                    chop => rtrim,
-                    close => closedir,
-                    compact => null,
-                    delete => unset,
-                    doubleval => floatval,
-                    extract => null,
-                    fputs => fwrite,
-                    ini_alter => ini_set,
-                    is_double => is_float,
-                    is_integer => is_int,
-                    is_long => is_int,
-                    is_null => null,
-                    is_real => is_float,
-                    is_writeable => is_writable,
-                    join => implode,
-                    key_exists => array_key_exists,
-                    pos => current,
-                    settype => null,
-                    show_source => highlight_file,
-                    sizeof => count,
-                    strchr => strstr
-                "/>
+            <property name="forbiddenFunctions" type="array">
+                <element key="chop" value="rtrim"/>
+                <element key="close" value="closedir"/>
+                <element key="compact" value="null"/>
+                <element key="delete" value="unset"/>
+                <element key="doubleval" value="floatval"/>
+                <element key="extract" value="null"/>
+                <element key="fputs" value="fwrite"/>
+                <element key="ini_alter" value="ini_set"/>
+                <element key="is_double" value="is_float"/>
+                <element key="is_integer" value="is_int"/>
+                <element key="is_long" value="is_int"/>
+                <element key="is_null" value="null"/>
+                <element key="is_real" value="is_float"/>
+                <element key="is_writeable" value="is_writable"/>
+                <element key="join" value="implode"/>
+                <element key="key_exists" value="array_key_exists"/>
+                <element key="pos" value="current"/>
+                <element key="settype" value="null"/>
+                <element key="show_source" value="highlight_file"/>
+                <element key="sizeof" value="count"/>
+                <element key="strchr" value="strstr"/>
+            </property>
         </properties>
     </rule>
     <!-- Forbid useless inline string concatenation -->
@@ -156,22 +153,18 @@
     <!-- Forbid useless annotations - Git and LICENCE file provide more accurate information -->
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
         <properties>
-            <property
-                name="forbiddenAnnotations"
-                type="array"
-                value="
-                    @api,
-                    @author,
-                    @category,
-                    @copyright,
-                    @created,
-                    @license,
-                    @package,
-                    @since,
-                    @subpackage,
-                    @version
-                "
-            />
+            <property name="forbiddenAnnotations" type="array">
+                <element value="@api"/>
+                <element value="@author"/>
+                <element value="@category"/>
+                <element value="@copyright"/>
+                <element value="@created"/>
+                <element value="@license"/>
+                <element value="@package"/>
+                <element value="@since"/>
+                <element value="@subpackage"/>
+                <element value="@version"/>
+            </property>
         </properties>
     </rule>
     <!-- Forbid empty comments -->
@@ -179,14 +172,11 @@
     <!-- Forbid useless comments -->
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenComments">
         <properties>
-            <property
-                name="forbiddenCommentPatterns"
-                type="array"
-                value="
-                    ~^(?:(?!private|protected|static)\S+ )?(?:con|de)structor\.\z~i,
-                    ~^Created by \S+\.\z~i,
-                    ~^\S+ [gs]etter\.\z~i,
-                " />
+            <property name="forbiddenCommentPatterns" type="array">
+                <element value="~^(?:(?!private|protected|static)\S+ )?(?:con|de)structor\.\z~i"/>
+                <element value="~^Created by \S+\.\z~i"/>
+                <element value="~^\S+ [gs]etter\.\z~i"/>
+            </property>
         </properties>
     </rule>
     <!-- report invalid format of inline phpDocs with @var -->
@@ -306,52 +296,50 @@
     <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
         <properties>
             <property name="enableEachParameterAndReturnInspection" value="true"/>
-            <property name="traversableTypeHints" type="array" value="Doctrine\Common\Collections\Collection"/>
-            <property
-                name="usefulAnnotations"
-                type="array"
-                value="
-                    @after,
-                    @afterClass,
-                    @AfterMethods,
-                    @Attribute,
-                    @Attributes,
-                    @before,
-                    @beforeClass,
-                    @BeforeMethods,
-                    @covers,
-                    @coversDefaultClass,
-                    @coversNothing,
-                    @dataProvider,
-                    @depends,
-                    @deprecated,
-                    @doesNotPerformAssertions,
-                    @Enum,
-                    @expectedDeprecation,
-                    @expectedException,
-                    @expectedExceptionCode,
-                    @expectedExceptionMessage,
-                    @expectedExceptionMessageRegExp,
-                    @group,
-                    @Groups,
-                    @IgnoreAnnotation,
-                    @internal,
-                    @Iterations,
-                    @link,
-                    @ODM\,
-                    @ORM\,
-                    @requires,
-                    @Required,
-                    @Revs,
-                    @runInSeparateProcess,
-                    @runTestsInSeparateProcesses,
-                    @see,
-                    @Target,
-                    @test,
-                    @throws,
-                    @uses
-                "
-            />
+            <property name="traversableTypeHints" type="array">
+                <element value="Doctrine\Common\Collections\Collection"/>
+            </property>
+            <property name="usefulAnnotations" type="array">
+                <element value="@after"/>
+                <element value="@afterClass"/>
+                <element value="@AfterMethods"/>
+                <element value="@Attribute"/>
+                <element value="@Attributes"/>
+                <element value="@before"/>
+                <element value="@beforeClass"/>
+                <element value="@BeforeMethods"/>
+                <element value="@covers"/>
+                <element value="@coversDefaultClass"/>
+                <element value="@coversNothing"/>
+                <element value="@dataProvider"/>
+                <element value="@depends"/>
+                <element value="@deprecated"/>
+                <element value="@doesNotPerformAssertions"/>
+                <element value="@Enum"/>
+                <element value="@expectedDeprecation"/>
+                <element value="@expectedException"/>
+                <element value="@expectedExceptionCode"/>
+                <element value="@expectedExceptionMessage"/>
+                <element value="@expectedExceptionMessageRegExp"/>
+                <element value="@group"/>
+                <element value="@Groups"/>
+                <element value="@IgnoreAnnotation"/>
+                <element value="@internal"/>
+                <element value="@Iterations"/>
+                <element value="@link"/>
+                <element value="@ODM\"/>
+                <element value="@ORM\"/>
+                <element value="@requires"/>
+                <element value="@Required"/>
+                <element value="@Revs"/>
+                <element value="@runInSeparateProcess"/>
+                <element value="@runTestsInSeparateProcesses"/>
+                <element value="@see"/>
+                <element value="@Target"/>
+                <element value="@test"/>
+                <element value="@throws"/>
+                <element value="@uses"/>
+            </property>
         </properties>
     </rule>
     <!-- Forbid useless @var for constants -->
