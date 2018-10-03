@@ -36,7 +36,7 @@ class UseStatementHelper
         $uses             = self::getUseStatements($phpcsFile);
         $currentNamespace = NamespaceHelper::findCurrentNamespaceName($phpcsFile, $pointer);
 
-        return array_map(function (string $extendedInterface) use ($uses, $currentNamespace) : string {
+        return array_map(static function (string $extendedInterface) use ($uses, $currentNamespace) : string {
             if ($extendedInterface[0] === '\\') {
                 return ltrim($extendedInterface, '\\');
             }
