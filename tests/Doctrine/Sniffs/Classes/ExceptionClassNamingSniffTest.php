@@ -13,6 +13,7 @@ final class ExceptionClassNamingSniffTest extends TestCase
         $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.noErrors.php');
         self::assertNoSniffErrorInFile($phpcsFile);
     }
+
     public function testNoErrorsNoNamespace() : void
     {
         $phpcsFile = self::checkFile(__DIR__ . '/data/exceptionClassNaming.noErrors.noNamespace.php');
@@ -25,10 +26,10 @@ final class ExceptionClassNamingSniffTest extends TestCase
 
         self::assertSame(4, $phpcsFile->getErrorCount());
 
-        self::assertSniffError($phpcsFile, 9, ExceptionClassNamingSniff::CODE_MISSING_SUFFIX);
-        self::assertSniffError($phpcsFile, 13, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
-        self::assertSniffError($phpcsFile, 17, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
-        self::assertSniffError($phpcsFile, 21, ExceptionClassNamingSniff::CODE_SUPERFLUOUS_SUFFIX);
+        self::assertSniffError($phpcsFile, 9, 'MissingSuffix');
+        self::assertSniffError($phpcsFile, 13, 'NotExtendingException');
+        self::assertSniffError($phpcsFile, 17, 'NotExtendingException');
+        self::assertSniffError($phpcsFile, 21, 'SuperfluousSuffix');
     }
 
     public function testErrorsInvalidThrowable() : void
@@ -37,6 +38,6 @@ final class ExceptionClassNamingSniffTest extends TestCase
 
         self::assertSame(1, $phpcsFile->getErrorCount());
 
-        self::assertSniffError($phpcsFile, 7, ExceptionClassNamingSniff::CODE_NOT_EXTENDING_EXCEPTION);
+        self::assertSniffError($phpcsFile, 7, 'NotExtendingException');
     }
 }
