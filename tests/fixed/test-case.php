@@ -27,11 +27,10 @@ final class TestCase extends BaseTestCase
     }
 
     /**
-     * @test
-     *
-     * @covers MyClass::test
-     *
      * @uses MyClass::__construct
+     *
+     * @test
+     * @covers MyClass::test
      */
     public function methodShouldDoStuff() : void
     {
