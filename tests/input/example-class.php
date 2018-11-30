@@ -47,6 +47,7 @@ class Example implements \IteratorAggregate
         return $this->foo;
     }
 
+
     /**
      * @return iterable
      */
@@ -83,4 +84,5 @@ class Example implements \IteratorAggregate
     {
         return new TestCase();
     }
+
 }
