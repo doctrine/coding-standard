@@ -11,7 +11,7 @@ If this documentation is not helping to answer questions you have about
 Doctrine Coding Standards don't panic. You can get help from different sources:
 
 -  The `Doctrine Mailing List <https://groups.google.com/group/doctrine-user>`_
--  Gitter chat room `#doctrine/coding-standard <https://gitter.im/doctrine/coding-standard>`_
+-  Slack chat room `#coding-standard <https://www.doctrine-project.org/slack>`_
 -  Report a bug on `GitHub <https://github.com/doctrine/coding-standard/issues>`_.
 -  On `StackOverflow <https://stackoverflow.com/questions/tagged/doctrine-coding-standard>`_
 
