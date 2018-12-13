@@ -6,6 +6,9 @@ declare(strict_types=1);
 
 namespace Test;
 
+/**
+ * Class Foo
+ */
 class Foo
 {
     /**
