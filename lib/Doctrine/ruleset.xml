@@ -174,7 +174,8 @@
         <properties>
             <property name="forbiddenCommentPatterns" type="array">
                 <element value="~^(?:(?!private|protected|static)\S+ )?(?:con|de)structor\.\z~i"/>
-                <element value="~^Created by \S+\.\z~i"/>
+                <element value="~^Created by .+\.\z~i"/>
+                <element value="~^(User|Date|Time): \S+\z~i"/>
                 <element value="~^\S+ [gs]etter\.\z~i"/>
                 <element value="~^Class \S+\z~i"/>
             </property>
