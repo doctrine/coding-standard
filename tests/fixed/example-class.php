@@ -67,6 +67,9 @@ class Example implements IteratorAggregate
         return $this->baz;
     }
 
+    /**
+     * @throws InvalidArgumentException if this example cannot baz.
+     */
     public function mangleBar(int $length) : void
     {
         if (! $this->baz) {
