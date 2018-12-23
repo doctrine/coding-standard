@@ -461,6 +461,8 @@
             <property name="spacingAfterLast" value="0"/>
         </properties>
     </rule>
+    <!-- Require there be no space between increment/decrement operator and its operand -->
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <!-- Require space after language constructs -->
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
