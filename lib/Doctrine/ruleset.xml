@@ -56,6 +56,8 @@
     </rule>
     <!-- Force whitespace after `!` -->
     <rule ref="Generic.Formatting.SpaceAfterNot"/>
+    <!-- Force whitespace before a type cast -->
+    <rule ref="Generic.Formatting.SpaceBeforeCast"/>
     <!-- Forbid PHP 4 constructors -->
     <rule ref="Generic.NamingConventions.ConstructorName"/>
     <!-- Forbid any content before opening tag -->

@@ -21,3 +21,9 @@ while (    !    true) {
 do {
     echo 1;
 } while (    !    true);
+
+$testing =(string) $test;
+
+if ((int) $test) {
+    echo 2;
+}
