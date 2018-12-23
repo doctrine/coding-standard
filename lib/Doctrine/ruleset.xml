@@ -38,7 +38,11 @@
         </properties>
     </rule>
     <!-- Force whitespace after a type cast -->
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast">
+        <properties>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
     <!-- Force whitespace after `!` -->
     <rule ref="Generic.Formatting.SpaceAfterNot"/>
     <!-- Forbid PHP 4 constructors -->
