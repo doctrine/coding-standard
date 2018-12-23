@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 $test = 1;
 
+$test ++;
+
 if (!$test > 0) {
     echo 1;
 } elseif ( !$test === 0) {

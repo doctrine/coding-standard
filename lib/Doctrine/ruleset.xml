@@ -38,7 +38,11 @@
         </properties>
     </rule>
     <!-- Force whitespace after a type cast -->
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast">
+        <properties>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
     <!-- Force whitespace after `!` -->
     <rule ref="Generic.Formatting.SpaceAfterNot"/>
     <!-- Forbid PHP 4 constructors -->
@@ -457,6 +461,8 @@
             <property name="spacingAfterLast" value="0"/>
         </properties>
     </rule>
+    <!-- Require there be no space between increment/decrement operator and its operand -->
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <!-- Require space after language constructs -->
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
