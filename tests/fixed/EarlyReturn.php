@@ -8,11 +8,7 @@ class EarlyReturn
 {
     public function bar() : bool
     {
-        if ($bar === 'bar') {
-            return true;
-        }
-
-        return false;
+        return $bar === 'bar';
     }
 
     public function foo() : ?string
@@ -43,10 +39,6 @@ class EarlyReturn
             return false;
         }
 
-        if (false === false) {
-            return true;
-        }
-
-        return true;
+        return false === false;
     }
 }
