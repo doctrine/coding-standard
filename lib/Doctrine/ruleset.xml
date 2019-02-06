@@ -303,50 +303,10 @@
          forbid useless/duplicated information in phpDoc -->
     <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
         <properties>
+            <property name="allAnnotationsAreUseful" value="true"/>
             <property name="enableEachParameterAndReturnInspection" value="true"/>
             <property name="traversableTypeHints" type="array">
                 <element value="Doctrine\Common\Collections\Collection"/>
-            </property>
-            <property name="usefulAnnotations" type="array">
-                <element value="@after"/>
-                <element value="@afterClass"/>
-                <element value="@AfterMethods"/>
-                <element value="@Attribute"/>
-                <element value="@Attributes"/>
-                <element value="@before"/>
-                <element value="@beforeClass"/>
-                <element value="@BeforeMethods"/>
-                <element value="@covers"/>
-                <element value="@coversDefaultClass"/>
-                <element value="@coversNothing"/>
-                <element value="@dataProvider"/>
-                <element value="@depends"/>
-                <element value="@deprecated"/>
-                <element value="@doesNotPerformAssertions"/>
-                <element value="@Enum"/>
-                <element value="@expectedDeprecation"/>
-                <element value="@expectedException"/>
-                <element value="@expectedExceptionCode"/>
-                <element value="@expectedExceptionMessage"/>
-                <element value="@expectedExceptionMessageRegExp"/>
-                <element value="@group"/>
-                <element value="@Groups"/>
-                <element value="@IgnoreAnnotation"/>
-                <element value="@internal"/>
-                <element value="@Iterations"/>
-                <element value="@link"/>
-                <element value="@ODM\"/>
-                <element value="@ORM\"/>
-                <element value="@requires"/>
-                <element value="@Required"/>
-                <element value="@Revs"/>
-                <element value="@runInSeparateProcess"/>
-                <element value="@runTestsInSeparateProcesses"/>
-                <element value="@see"/>
-                <element value="@Target"/>
-                <element value="@test"/>
-                <element value="@throws"/>
-                <element value="@uses"/>
             </property>
         </properties>
     </rule>
