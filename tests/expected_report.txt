@@ -33,7 +33,7 @@ tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
 A TOTAL OF 238 ERRORS AND 0 WARNINGS WERE FOUND IN 27 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 207 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 202 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
