@@ -44,12 +44,20 @@ class UselessConditions
 
     public function uselessIfConditionWithParameter(bool $bool) : bool
     {
-        return ! $bool;
+        if ($bool) {
+            return false;
+        }
+
+        return true;
     }
 
     public function uselessIfConditionWithBoolMethod() : bool
     {
-        return ! $this->isTrue();
+        if ($this->isTrue()) {
+            return false;
+        }
+
+        return true;
     }
 
     public function uselessIfConditionWithComplexIf() : bool
@@ -70,7 +78,7 @@ class UselessConditions
     public function uselessIfConditionWithTernary() : bool
     {
         if ($this->isTrue()) {
-            return $this->isTrulyTrue();
+            return $this->isTrulyTrue() ? true : false;
         }
 
         return false;
@@ -103,12 +111,12 @@ class UselessConditions
 
     public function uselessTernaryWithParameter(bool $condition) : bool
     {
-        return $condition;
+        return $condition ? true : false;
     }
 
     public function uselessTernaryWithMethod() : bool
     {
-        return $this->isFalse();
+        return $this->isFalse() ? true : false;
     }
 
     /**
