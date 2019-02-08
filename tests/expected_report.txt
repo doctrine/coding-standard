@@ -23,6 +23,7 @@ tests/input/optimized-functions.php                   1       0
 tests/input/return_type_on_closures.php               21      0
 tests/input/return_type_on_methods.php                17      0
 tests/input/semicolon_spacing.php                     3       0
+tests/input/spread-operator.php                       6       0
 tests/input/static-closures.php                       1       0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
@@ -31,9 +32,9 @@ tests/input/UnusedVariables.php                       1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 238 ERRORS AND 0 WARNINGS WERE FOUND IN 27 FILES
+A TOTAL OF 244 ERRORS AND 0 WARNINGS WERE FOUND IN 28 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 202 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 208 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

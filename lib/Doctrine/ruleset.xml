@@ -270,6 +270,8 @@
     <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
     <!-- Require the usage of assignment operators, eg `+=`, `.=` when possible -->
     <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
+    <!-- Require no spacing after spread operator -->
+    <rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
     <!-- forbid argument unpacking for functions specialized by PHP VM -->
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
     <!-- Forbid `list(...)` syntax -->
