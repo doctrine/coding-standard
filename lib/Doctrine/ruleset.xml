@@ -136,6 +136,8 @@
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
     <!-- Forbid suffix "Interface" for interfaces -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+    <!-- Forbid suffix "Trait" for interfaces -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
     <!-- Require specific order of phpDoc annotations with empty newline between specific groups -->
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
         <properties>
