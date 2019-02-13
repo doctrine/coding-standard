@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         colors="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         bootstrap="tests/bootstrap.php"
+>
+
+    <testsuite name="Doctrine Coding Standard Test Suite">
+        <directory suffix="Test.php">tests/Doctrine/</directory>
+    </testsuite>
+</phpunit>
