@@ -1,0 +1,17 @@
+parameters:
+        level: 7
+        paths:
+        - "%currentWorkingDirectory%/lib/"
+        - "%currentWorkingDirectory%/tests/Doctrine"
+        autoload_files:
+        - "%currentWorkingDirectory%/tests/bootstrap.php"
+        ignoreErrors:
+                -
+                        message: '#Method [a-zA-Z0-9\\_]+::process\(\) has parameter \$pointer with no typehint specified#'
+                        path: %currentWorkingDirectory%/lib/Doctrine/Sniffs/*
+
+includes:
+        - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+        - vendor/phpstan/phpstan-phpunit/extension.neon
+        - vendor/phpstan/phpstan-phpunit/rules.neon
+        - vendor/phpstan/phpstan-strict-rules/rules.neon

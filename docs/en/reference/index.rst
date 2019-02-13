@@ -132,3 +132,15 @@ need to execute PHP_CodeSniffer with the tests folder and ensure it matches the 
 .. code-block:: bash
 
     $ ./vendor/bin/phpcs tests/input --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
+
+If you have implemented custom sniff also run PHPStan and PHPUnit.
+The PHPUnit version to be used is the one installed as a dev- dependency
+via composer (same rules are for PHPStan):
+
+.. code-block:: console
+
+   $ ./vendor/bin/phpunit
+   $ ./vendor/bin/phpstan analyse
+
+Accepted coverage for new contributions is 80%. There must not be any errors shown by PHPStan.
+Any contribution not satisfying this requirement won’t be merged.
