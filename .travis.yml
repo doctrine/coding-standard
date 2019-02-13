@@ -43,4 +43,4 @@ jobs:
     - stage: Apply fixes
       before_script:
         - cp -R tests/input/ tests/input2/
-      script: vendor/bin/phpcbf tests/input2; diff tests/input2 tests/fixed
+      script: vendor/bin/phpcbf tests/input2; [ $? -ne 2 ] && diff tests/input2 tests/fixed
