@@ -8,9 +8,9 @@ exceptions/differences/extensions.
 
 - Keep the nesting of control structures per method as small as possible
 - Abstract exception class names and exception interface names should be suffixed with ``Exception``
-- Abstract classes should not be prefixed with ``Abstract``
-- Interfaces should not be suffixed with ``Interface``
-- Concrete exception class names should not be suffixed with ``Exception``
+- Abstract classes should not be prefixed or suffixed with ``Abstract``
+- Interfaces should not be prefixed or suffixed with ``Interface``
+- Concrete exception class names should not be prefixed or suffixed with ``Exception``
 - Align equals (``=``) signs in assignments
 - Add spaces around a concatenation operator ``$foo = 'Hello ' . 'World!';``
 - Add spaces between assignment, control and return statements
