@@ -8,12 +8,20 @@
 
     <arg name="basepath" value="."/>
     <arg name="extensions" value="php"/>
-    <arg name="colors" />
+    <arg name="parallel" value="80"/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
 
-    <!-- Show progress of the run -->
-    <arg value="p"/>
+    <!-- Ignore warnings, show progress of the run and show sniff names -->
+    <arg value="nps"/>
 
     <rule ref="Doctrine"/>
 
     <file>lib</file>
+    <file>tests</file>
+
+    <exclude-pattern>tests/Doctrine/Tests/CodingStandard/data/*</exclude-pattern>
+    <exclude-pattern>tests/input/*</exclude-pattern>
+    <!-- TODO: test as well, but ignore non-fixable errors -->
+    <exclude-pattern>tests/fixed/*</exclude-pattern>
 </ruleset>

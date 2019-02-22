@@ -1,5 +1,6 @@
-vendor/
-phpcs.xml
-composer.lock
-tests/input2
-phpcs.log
+/composer.lock
+/phpcs.xml
+/phpunit.xml
+/vendor/
+/.phpcs-cache
+/.phpunit.result.cache
