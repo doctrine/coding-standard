@@ -10,7 +10,8 @@ use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 
 /**
- * Description
+ * Description of the
+ * class example.
  * @author Invalid
  * @since 0.1
  */
