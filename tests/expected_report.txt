@@ -15,6 +15,7 @@ tests/input/EarlyReturn.php                           6       0
 tests/input/example-class.php                         33      0
 tests/input/forbidden-comments.php                    8       0
 tests/input/forbidden-functions.php                   6       0
+tests/input/inline_type_hint_assertions.php           5       0
 tests/input/LowCaseTypes.php                          2       0
 tests/input/namespaces-spacing.php                    7       0
 tests/input/new_with_parentheses.php                  18      0
@@ -34,9 +35,9 @@ tests/input/UnusedVariables.php                       1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 258 ERRORS AND 0 WARNINGS WERE FOUND IN 30 FILES
+A TOTAL OF 263 ERRORS AND 0 WARNINGS WERE FOUND IN 31 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 210 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 215 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

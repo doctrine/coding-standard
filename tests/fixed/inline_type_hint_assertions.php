@@ -6,7 +6,7 @@ $simpleType = expression();
 assert($simpleType instanceof Type);
 
 $typeDeclaredAfterExpression = expression();
-assert($typeDeclaredAfterExpression instanceof Type);
+/** @var Type $typeDeclaredAfterExpression */
 
 $typeDeclaredViaAssertion = expression();
 assert($typeDeclaredViaAssertion instanceof Type);
@@ -23,4 +23,4 @@ assert($nullableType instanceof Type || $nullableType === null);
 $multipleScalarTypes = expression();
 assert(is_int($multipleScalarTypes) || is_float($multipleScalarTypes) || is_bool($multipleScalarTypes) || is_string($multipleScalarTypes) || is_array($multipleScalarTypes) || $multipleScalarTypes === null);
 
-assert($variableThatIsNowhereToBeFound instanceof Potato);
+/** @var Potato $variableThatIsNowhereToBeFound */
