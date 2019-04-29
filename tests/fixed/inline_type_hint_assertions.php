@@ -6,7 +6,7 @@ $simpleType = expression();
 assert($simpleType instanceof Type);
 
 $typeDeclaredAfterExpression = expression();
-/** @var Type $typeDeclaredAfterExpression */
+assert($typeDeclaredAfterExpression instanceof Type);
 
 $typeDeclaredViaAssertion = expression();
 assert($typeDeclaredViaAssertion instanceof Type);
