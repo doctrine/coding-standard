@@ -27,8 +27,6 @@
     </rule>
     <!-- Forbid final methods in final classes -->
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
-    <!-- Forbid useless empty method overrides -->
-    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
     <!-- Forbid inline HTML in PHP code -->
     <rule ref="Generic.Files.InlineHTML"/>
     <!-- Align corresponding assignment statement tokens -->
