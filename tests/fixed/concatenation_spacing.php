@@ -27,9 +27,9 @@ $string = $doctrine . 'rulez';
 
 $string = $doctrine . $rulez . 'even' . 'more' . $string;
 
-$string .=$doctrine;
 $string .= $doctrine;
-$string .=$doctrine;
+$string .= $doctrine;
+$string .= $doctrine;
 
 $string = $doctrine .
     $rulez .

@@ -460,6 +460,12 @@
             <property name="ignoreNewlines" value="true"/>
         </properties>
     </rule>
+    <!-- Require spaces around binary operators -->
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
     <!-- Forbid spaces before semicolon `;` -->
     <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
     <!-- Forbid superfluous whitespaces -->

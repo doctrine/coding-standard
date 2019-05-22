@@ -11,7 +11,7 @@ if (! $test > 0) {
 } elseif (! $test === 0) {
     echo 0;
 } else {
-    echo -1;
+    echo - 1;
 }
 
 while (! true) {
