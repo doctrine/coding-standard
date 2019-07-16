@@ -53,6 +53,8 @@ class Test
      * @ORM\Column
      * @ODM\Id
      * @ODM\Column
+     * @PHPCR\Uuid
+     * @PHPCR\Field
      *
      * @param int[] $foo
      * @param int[] $bar
