@@ -158,6 +158,7 @@
                 <element value="
                     @ORM\,
                     @ODM\,
+                    @PHPCR\,
                 "/>
                 <element value="@param"/>
                 <element value="@return"/>

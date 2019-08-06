@@ -43,7 +43,6 @@ class Test
      * Description
      * More Description
      * @throws FooException
-     * @deprecated
      * @param int[] $foo
      * @uses other
      * @throws BarException
@@ -52,7 +51,10 @@ class Test
      * @internal
      * @link https://example.com
      * @ODM\Id
+     * @deprecated
+     * @PHPCR\Uuid
      * @param int[] $bar
+     * @PHPCR\Field
      * @ODM\Column
      * @ORM\Column
      * @see  other
