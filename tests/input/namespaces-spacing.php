@@ -6,10 +6,10 @@ use DateInterval;
 use DateTimeImmutable;
 use DateTimeZone;
 
-use const DATE_RFC3339;
-
 use function strrev;
 use function time;
+
+use const DATE_RFC3339;
 strrev(
     (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
         ->sub(new DateInterval('P1D'))
