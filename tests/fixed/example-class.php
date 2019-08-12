@@ -9,12 +9,12 @@ use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 use Fancy\TestCase;
 use InvalidArgumentException;
 use IteratorAggregate;
-use const PHP_MINOR_VERSION;
-use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
-use const PHP_VERSION;
 use function assert;
 use function strlen as stringLength;
 use function substr;
+use const PHP_MINOR_VERSION;
+use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
+use const PHP_VERSION;
 
 /**
  * Description
