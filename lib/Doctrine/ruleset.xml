@@ -16,6 +16,12 @@
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterVariadic"/>
     </rule>
 
+    <!-- Require spaces around math, comparison, assignment, ... operators -->
+    <rule ref="Doctrine.Operators.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
     <!-- Force array element indentation with 4 spaces -->
     <rule ref="Generic.Arrays.ArrayIndent"/>
     <!-- Forbid `array(...)` -->

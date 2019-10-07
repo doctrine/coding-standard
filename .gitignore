@@ -1,4 +1,5 @@
 vendor/
+.phpunit.result.cache
 phpcs.xml
 composer.lock
 tests/input2
