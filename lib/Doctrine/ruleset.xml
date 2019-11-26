@@ -214,6 +214,9 @@
         <properties>
             <property name="tokensToCheck" type="array">
                 <element value="T_RETURN" />
+                <element value="T_THROW" />
+                <element value="T_YIELD" />
+                <element value="T_YIELD_FROM" />
             </property>
         </properties>
     </rule>
