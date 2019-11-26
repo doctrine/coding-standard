@@ -205,18 +205,21 @@
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
     <!-- Forbid assignments in conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
-    <!-- Require consistent spacing for control structures -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.ControlStructureSpacing">
-        <properties>
-            <property name="tokensToCheck" type="array">
-                <element value="T_RETURN" />
-            </property>
-        </properties>
-    </rule>
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <!-- Require usage of early exit -->
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+    <!-- Require consistent spacing for jump statements -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing">
+        <properties>
+            <property name="tokensToCheck" type="array">
+                <element value="T_RETURN" />
+                <element value="T_THROW" />
+                <element value="T_YIELD" />
+                <element value="T_YIELD_FROM" />
+            </property>
+        </properties>
+    </rule>
     <!-- Require language constructs without parentheses -->
     <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
     <!-- Require new instances with parentheses -->

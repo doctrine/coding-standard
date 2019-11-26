@@ -89,4 +89,37 @@ class Example implements IteratorAggregate
     {
         return new TestCase();
     }
+
+    /**
+     * @return iterable<int>
+     */
+    public function yieldSomething() : iterable
+    {
+        if (self::VERSION === 0) {
+            yield 0;
+        }
+
+        yield 1;
+    }
+
+    /**
+     * @return iterable<int>
+     */
+    public function yieldFromSomething() : iterable
+    {
+        if (self::VERSION === 0) {
+            yield 0;
+        }
+
+        yield from [];
+    }
+
+    public function throwWhenInvalid() : void
+    {
+        if (self::VERSION === 0) {
+            return;
+        }
+
+        throw new InvalidArgumentException();
+    }
 }
