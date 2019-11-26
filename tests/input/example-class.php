@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Example;
 
+use Throwable;
 use function strlen as stringLength;
 use Fancy\TestCase as TestCase;
 use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
@@ -116,6 +117,27 @@ class Example implements \IteratorAggregate
             return;
         }
         throw new \InvalidArgumentException();
+    }
+
+    public function trySwitchSpace() : void
+    {
+        try {
+            switch (self::VERSION) {
+                default:
+            }
+            foreach ([] as $item) {
+                echo $item;
+            }
+            while (true) {
+                echo 2;
+            }
+            if (true) {
+                echo 3;
+            }
+            echo 1;
+        } catch (Throwable $throwable) {
+        }
+        echo 2;
     }
 
 }
