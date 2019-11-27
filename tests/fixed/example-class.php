@@ -127,6 +127,7 @@ class Example implements IteratorAggregate
     public function trySwitchSpace() : void
     {
         try {
+            $var = 1;
             switch (self::VERSION) {
                 default:
             }
