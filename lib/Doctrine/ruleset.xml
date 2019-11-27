@@ -205,6 +205,8 @@
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
     <!-- Forbid assignments in conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+    <!-- Require consistent spacing for block structures -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing"/>
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <!-- Require usage of early exit -->

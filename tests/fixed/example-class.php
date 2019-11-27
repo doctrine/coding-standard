@@ -9,6 +9,7 @@ use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 use Fancy\TestCase;
 use InvalidArgumentException;
 use IteratorAggregate;
+use Throwable;
 use function assert;
 use function strlen as stringLength;
 use function substr;
@@ -121,5 +122,31 @@ class Example implements IteratorAggregate
         }
 
         throw new InvalidArgumentException();
+    }
+
+    public function trySwitchSpace() : void
+    {
+        try {
+            switch (self::VERSION) {
+                default:
+            }
+
+            foreach ([] as $item) {
+                echo $item;
+            }
+
+            while (true) {
+                echo 2;
+            }
+
+            if (true) {
+                echo 3;
+            }
+
+            echo 1;
+        } catch (Throwable $throwable) {
+        }
+
+        echo 2;
     }
 }
