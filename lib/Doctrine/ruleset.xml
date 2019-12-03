@@ -334,10 +334,23 @@
     <!-- Require types to be written as natively if possible;
          require iterable types to specify phpDoc with their content;
          forbid useless/duplicated information in phpDoc -->
-    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <properties>
-            <property name="allAnnotationsAreUseful" value="true"/>
-            <property name="enableEachParameterAndReturnInspection" value="true"/>
+            <property name="traversableTypeHints" type="array">
+                <element value="Doctrine\Common\Collections\Collection"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <properties>
+            <property name="enableNativeTypeHint" value="false"/>
+            <property name="traversableTypeHints" type="array">
+                <element value="Doctrine\Common\Collections\Collection"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <properties>
             <property name="traversableTypeHints" type="array">
                 <element value="Doctrine\Common\Collections\Collection"/>
             </property>
@@ -345,6 +358,16 @@
     </rule>
     <!-- Forbid useless @var for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+    <!-- Forbid useless phpDocs for functions -->
+    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment">
+        <properties>
+            <property name="traversableTypeHints" type="array">
+                <element value="Doctrine\Common\Collections\Collection"/>
+            </property>
+        </properties>
+    </rule>
+    <!-- Forbid useless inherit doc comment -->
+    <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
     <!-- Forbid duplicated variables assignments -->
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
     <!-- Forbid useless variables -->
