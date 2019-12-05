@@ -42,3 +42,7 @@ jobs:
 
     - stage: Apply fixes
       script: make test-fix
+
+    - stage: Apply fixes
+      php: 7.4snapshot
+      script: make test-fix
