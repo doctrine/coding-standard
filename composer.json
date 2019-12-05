@@ -28,8 +28,8 @@
     "require": {
         "php": "^7.2",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-        "slevomat/coding-standard": "dev-master#469368cc6d8fe83aceba259ef65f1c0a2f63055b",
-        "squizlabs/php_codesniffer": "^3.5.0"
+        "slevomat/coding-standard": "^6.0",
+        "squizlabs/php_codesniffer": "^3.5"
     },
     "config": {
         "sort-packages": true
