@@ -337,7 +337,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <properties>
             <property name="traversableTypeHints" type="array">
-                <element value="Doctrine\Common\Collections\Collection"/>
+                <element value="Traversable"/>
             </property>
         </properties>
     </rule>
@@ -345,14 +345,14 @@
         <properties>
             <property name="enableNativeTypeHint" value="false"/>
             <property name="traversableTypeHints" type="array">
-                <element value="Doctrine\Common\Collections\Collection"/>
+                <element value="Traversable"/>
             </property>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <properties>
             <property name="traversableTypeHints" type="array">
-                <element value="Doctrine\Common\Collections\Collection"/>
+                <element value="Traversable"/>
             </property>
         </properties>
     </rule>
@@ -362,7 +362,7 @@
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment">
         <properties>
             <property name="traversableTypeHints" type="array">
-                <element value="Doctrine\Common\Collections\Collection"/>
+                <element value="Traversable"/>
             </property>
         </properties>
     </rule>
