@@ -1,15 +1,19 @@
 .PHONY: test test-report test-fix
 
+PHP_74_OR_NEWER=`php -r "echo (int) version_compare(PHP_VERSION, '7.4', '>=');"`
+
 test: test-report test-fix
 
 test-report: vendor
-	@vendor/bin/phpcs `find tests/input/* | sort` --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
-
+	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply tests/php-compatibility.patch; fi
+	@vendor/bin/phpcs `find tests/input/* | sort` --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log; if [ $$? -ne 0 ] && [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; exit 1; fi
+	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi
 
 test-fix: vendor
+	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply tests/php-compatibility.patch; fi
 	@cp -R tests/input/ tests/input2/
-	@vendor/bin/phpcbf tests/input2; diff tests/input2 tests/fixed; if [ $$? -ne 0 ]; then rm -rf tests/input2/; exit 1; fi
-	@rm -rf tests/input2/
+	@vendor/bin/phpcbf tests/input2; diff tests/input2 tests/fixed; if [ $$? -ne 0 ]; then rm -rf tests/input2/ && if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi; exit 1; fi
+	@rm -rf tests/input2/ && if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi
 
 vendor: composer.json
 	composer update

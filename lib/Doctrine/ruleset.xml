@@ -349,7 +349,6 @@
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
-            <property name="enableNativeTypeHint" value="false"/>
             <property name="traversableTypeHints" type="array">
                 <element value="Traversable"/>
                 <element value="Iterator"/>
