@@ -30,7 +30,7 @@ class Test
      *
      * Second Paragraph Description
      *
-     * @param int[] $foo
+     * @param array<int> $foo
      *
      * @throws FooException
      */
@@ -56,10 +56,10 @@ class Test
      * @PHPCR\Uuid
      * @PHPCR\Field
      *
-     * @param int[] $foo
-     * @param int[] $bar
+     * @param array<int> $foo
+     * @param array<int> $bar
      *
-     * @return int[]
+     * @return array<int>
      *
      * @throws FooException
      * @throws BarException

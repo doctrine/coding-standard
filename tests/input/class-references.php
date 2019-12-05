@@ -9,7 +9,7 @@ class Foo
 class Bar extends Foo
 {
     /**
-     * @return string[]
+     * @return iterable<string>
      */
     public function names() : iterable
     {

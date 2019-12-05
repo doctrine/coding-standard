@@ -32,14 +32,15 @@ tests/input/superfluous-naming.php                    11      0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
 tests/input/traits-uses.php                           11      0
+tests/input/type-hints.php                            2       0
 tests/input/UnusedVariables.php                       1       0
 tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 289 ERRORS AND 0 WARNINGS WERE FOUND IN 33 FILES
+A TOTAL OF 231 ERRORS AND 0 WARNINGS WERE FOUND IN 34 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 232 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 233 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

@@ -32,7 +32,7 @@ class Test
      *
      * Second Paragraph Description
      * @throws FooException
-     * @param int[] $foo
+     * @param array<int> $foo
      */
     public function c(iterable $foo) : void
     {
@@ -43,17 +43,17 @@ class Test
      * Description
      * More Description
      * @throws FooException
-     * @param int[] $foo
+     * @param array<int> $foo
      * @uses other
      * @throws BarException
-     * @return int[]
+     * @return array<int>
      * @ORM\Id
      * @internal
      * @link https://example.com
      * @ODM\Id
      * @deprecated
      * @PHPCR\Uuid
-     * @param int[] $bar
+     * @param array<int> $bar
      * @PHPCR\Field
      * @ODM\Column
      * @ORM\Column

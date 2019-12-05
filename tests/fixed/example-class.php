@@ -27,7 +27,7 @@ class Example implements IteratorAggregate
     /** @var int|null */
     private $foo;
 
-    /** @var string[] */
+    /** @var array<string> */
     private $bar;
 
     /** @var bool */
