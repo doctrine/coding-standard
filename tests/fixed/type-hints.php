@@ -9,13 +9,13 @@ use Traversable;
 
 class TraversableTypeHints
 {
-    /** @var Traversable */
+    /** @var Traversable|string[] */
     private $parameter;
 
     /**
-     * @param Iterator $iterator
+     * @param Iterator|string[] $iterator
      *
-     * @return Traversable
+     * @return Traversable|string[]
      */
     public function get(Iterator $iterator) : Traversable
     {

@@ -38,7 +38,7 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 289 ERRORS AND 0 WARNINGS WERE FOUND IN 33 FILES
+A TOTAL OF 293 ERRORS AND 0 WARNINGS WERE FOUND IN 34 FILES
 ----------------------------------------------------------------------
 PHPCBF CAN FIX 232 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------

@@ -338,6 +338,9 @@
         <properties>
             <property name="traversableTypeHints" type="array">
                 <element value="Traversable"/>
+                <element value="Iterator"/>
+                <element value="IteratorAggregate"/>
+                <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
     </rule>
@@ -346,6 +349,9 @@
             <property name="enableNativeTypeHint" value="false"/>
             <property name="traversableTypeHints" type="array">
                 <element value="Traversable"/>
+                <element value="Iterator"/>
+                <element value="IteratorAggregate"/>
+                <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
     </rule>
@@ -353,6 +359,9 @@
         <properties>
             <property name="traversableTypeHints" type="array">
                 <element value="Traversable"/>
+                <element value="Iterator"/>
+                <element value="IteratorAggregate"/>
+                <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
     </rule>
@@ -363,6 +372,9 @@
         <properties>
             <property name="traversableTypeHints" type="array">
                 <element value="Traversable"/>
+                <element value="Iterator"/>
+                <element value="IteratorAggregate"/>
+                <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
     </rule>
