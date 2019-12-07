@@ -20,7 +20,7 @@ install: travis_retry composer update --prefer-dist
 
 script:
   - vendor/bin/phpcs
-  - vendor/bin/phpcs $(find tests/input/* | sort) --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
+  - make test-report
 
 stages:
   - Validate against schema
@@ -41,6 +41,8 @@ jobs:
         - xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd lib/Doctrine/ruleset.xml
 
     - stage: Apply fixes
-      before_script:
-        - cp -R tests/input/ tests/input2/
-      script: vendor/bin/phpcbf tests/input2; [ $? -ne 2 ] && diff tests/input2 tests/fixed
+      script: make test-fix
+
+    - stage: Apply fixes
+      php: 7.4snapshot
+      script: make test-fix

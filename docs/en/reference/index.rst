@@ -127,8 +127,22 @@ Testing
 =======
 
 If you are contributing to the Doctrine Coding Standard and want to test your contribution, you just
-need to execute PHP_CodeSniffer with the tests folder and ensure it matches the expected report:
+need to execute the ``test`` GNU make target:
 
 .. code-block:: bash
 
-    $ ./vendor/bin/phpcs tests/input --report=summary --report-file=phpcs.log; diff tests/expected_report.txt phpcs.log
+    $ make test
+
+Sometimes you are enabling a sniff that enforces some features for a specific PHP version, that will
+probably cause our build pipeline to fail when running on such versions.
+
+We have created the ``update-compatibility-patch`` GNU make target to help you with that:
+
+.. code-block:: bash
+
+    $ make update-compatibility-patch
+
+That target will apply the latest version of our compatibility patch and ask you to adjust the code in ``tests/fixed`` and
+``tests/expected_report.txt`` using the editor of your preference.
+Once you are done, please type "y" to resume the command, which will update the compatibility patch and create a commit
+with your changes for you to push to your remote branch.
