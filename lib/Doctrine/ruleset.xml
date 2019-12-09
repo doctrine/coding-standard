@@ -209,6 +209,18 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeControlStructure" />
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeFirstControlStructure" />
+        <properties>
+            <property name="tokensToCheck" type="array">
+                <element value="T_IF" />
+                <element value="T_DO" />
+                <element value="T_WHILE" />
+                <element value="T_FOR" />
+                <element value="T_FOREACH" />
+                <element value="T_SWITCH" />
+                <element value="T_TRY" />
+                <element value="T_DEFAULT" />
+            </property>
+        </properties>
     </rule>
     <!-- Forbid fancy yoda conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
