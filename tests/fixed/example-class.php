@@ -9,7 +9,6 @@ use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 use Fancy\TestCase;
 use InvalidArgumentException;
 use IteratorAggregate;
-use Throwable;
 use function assert;
 use function strlen as stringLength;
 use function substr;
@@ -89,65 +88,5 @@ class Example implements IteratorAggregate
     public static function getTestCase() : TestCase
     {
         return new TestCase();
-    }
-
-    /**
-     * @return iterable<int>
-     */
-    public function yieldSomething() : iterable
-    {
-        if (self::VERSION === 0) {
-            yield 0;
-        }
-
-        yield 1;
-    }
-
-    /**
-     * @return iterable<int>
-     */
-    public function yieldFromSomething() : iterable
-    {
-        if (self::VERSION === 0) {
-            yield 0;
-        }
-
-        yield from [];
-    }
-
-    public function throwWhenInvalid() : void
-    {
-        if (self::VERSION === 0) {
-            return;
-        }
-
-        throw new InvalidArgumentException();
-    }
-
-    public function trySwitchSpace() : void
-    {
-        try {
-            $var = 1;
-            switch (self::VERSION) {
-                default:
-            }
-
-            foreach ([] as $item) {
-                echo $item;
-            }
-
-            while (true) {
-                echo 2;
-            }
-
-            if (true) {
-                echo 3;
-            }
-
-            echo 1;
-        } catch (Throwable $throwable) {
-        }
-
-        echo 2;
     }
 }
