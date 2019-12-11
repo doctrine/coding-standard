@@ -79,6 +79,22 @@ class ControlStructures
         }
     }
 
+    public function noSpaceAfterReturn() : void
+    {
+        switch (self::VERSION) {
+            case 1:
+                return;
+            case 2:
+                // do something
+                return;
+            case 3:
+                $var = 1;
+
+                return;
+            default:
+        }
+    }
+
     public function spaceBelowBlocks() : void
     {
         if (true) {

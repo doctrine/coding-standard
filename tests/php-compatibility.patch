@@ -2,7 +2,7 @@ diff --git a/tests/expected_report.txt b/tests/expected_report.txt
 index 11b8d1c..5072a64 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -13,7 +13,7 @@ tests/input/ControlStructures.php                     13      0
+@@ -13,7 +13,7 @@ tests/input/ControlStructures.php                     14      0
  tests/input/doc-comment-spacing.php                   10      0
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           6       0
@@ -22,11 +22,11 @@ index 11b8d1c..5072a64 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 292 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
-+A TOTAL OF 296 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
+-A TOTAL OF 293 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
++A TOTAL OF 297 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 231 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 235 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 232 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 236 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
