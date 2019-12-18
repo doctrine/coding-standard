@@ -5,7 +5,7 @@ language: php
 php:
   - 7.2
   - 7.3
-  - 7.4snapshot
+  - 7.4
   - nightly
 
 cache:
@@ -44,5 +44,5 @@ jobs:
       script: make test-fix
 
     - stage: Apply fixes
-      php: 7.4snapshot
+      php: 7.4
       script: make test-fix
