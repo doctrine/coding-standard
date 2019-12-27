@@ -112,4 +112,19 @@ class ControlStructures
 
         echo 5;
     }
+
+    public function spaceAroundMultilineIfs() : void
+    {
+        if (
+            true
+            && false
+        ) {
+            echo 1;
+        } elseif (
+            false
+            || true
+        ) {
+            echo 2;
+        }
+    }
 }

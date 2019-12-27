@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$array =  [
+$array = [
     'key1' => 'value',
     'key2' => 'value'
 ];
