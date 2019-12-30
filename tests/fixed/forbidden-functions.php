@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Test;
 
+use stdClass;
 use function chop;
 use function compact;
 use function extract;
+use function is_a;
 use function is_null;
 use function settype;
 use function sizeof;
@@ -28,3 +30,5 @@ $bar = [
 extract($bar);
 
 compact('foo', 'bar');
+
+is_a($bar, stdClass::class);

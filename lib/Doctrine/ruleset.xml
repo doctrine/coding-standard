@@ -65,6 +65,7 @@
                 <element key="extract" value="null"/>
                 <element key="fputs" value="fwrite"/>
                 <element key="ini_alter" value="ini_set"/>
+                <element key="is_a" value="null"/>
                 <element key="is_double" value="is_float"/>
                 <element key="is_integer" value="is_int"/>
                 <element key="is_long" value="is_int"/>
