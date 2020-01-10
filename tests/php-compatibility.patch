@@ -9,7 +9,7 @@ index 11b8d1c..5072a64 100644
 -tests/input/example-class.php                         34      0
 +tests/input/example-class.php                         37      0
  tests/input/forbidden-comments.php                    8       0
- tests/input/forbidden-functions.php                   6       0
+ tests/input/forbidden-functions.php                   7       0
  tests/input/inline_type_hint_assertions.php           7       0
 @@ -33,15 +33,15 @@ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
@@ -22,8 +22,8 @@ index 11b8d1c..5072a64 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 292 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
-+A TOTAL OF 296 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
+-A TOTAL OF 293 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
++A TOTAL OF 297 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 231 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 235 OF THESE SNIFF VIOLATIONS AUTOMATICALLY

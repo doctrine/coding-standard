@@ -10,6 +10,7 @@ use function extract;
 use function is_null;
 use function settype;
 use function sizeof;
+use function trigger_error;
 use function var_dump;
 
 echo chop('abc ');
@@ -28,3 +29,12 @@ $bar = [
 extract($bar);
 
 compact('foo', 'bar');
+
+trigger_error(
+    'Do not use runtime errors as a way to convey deprecations to users. '
+    . 'Warnings, notices, and errors in general (which aren\'t exceptions) are not usable '
+    . 'in downstream projects, and propagate to global error handlers, causing massive issues '
+    . 'in anything relying on STDOUT, STDERR, aggressive logging, or just expects decent performance '
+    . 'from a dependency. In addition to that, introducing additional runtime effects is a potential '
+    . 'BC break'
+);

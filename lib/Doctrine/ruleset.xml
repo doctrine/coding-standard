@@ -78,6 +78,15 @@
                 <element key="show_source" value="highlight_file"/>
                 <element key="sizeof" value="count"/>
                 <element key="strchr" value="strstr"/>
+                <!--
+                Do not use runtime errors as a way to convey deprecations to users.
+                Warnings, notices, and errors in general (which aren\'t exceptions) are not usable
+                in downstream projects, and propagate to global error handlers, causing massive issues
+                in anything relying on STDOUT, STDERR, aggressive logging, or just expects decent performance
+                from a dependency. In addition to that, introducing additional runtime effects is a potential
+                BC break
+                -->
+                <element key="trigger_error" value="null"/>
             </property>
         </properties>
     </rule>
