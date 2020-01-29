@@ -1,3 +1,4 @@
+/.docker export-ignore
 /.doctrine-project.json export-ignore
 /.gitattributes export-ignore
 /.github export-ignore
