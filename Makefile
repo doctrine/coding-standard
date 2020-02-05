@@ -12,7 +12,7 @@ test-report: vendor
 test-fix: vendor
 	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply tests/php-compatibility.patch; fi
 	@cp -R tests/input/ tests/input2/
-	@vendor/bin/phpcbf tests/input2; diff tests/input2 tests/fixed; if [ $$? -ne 0 ]; then rm -rf tests/input2/ && if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi; exit 1; fi
+	@vendor/bin/phpcbf tests/input2; diff -u tests/input2 tests/fixed; if [ $$? -ne 0 ]; then rm -rf tests/input2/ && if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi; exit 1; fi
 	@rm -rf tests/input2/ && if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi
 
 update-compatibility-patch:
