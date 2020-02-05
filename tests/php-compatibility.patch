@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d1fdd9f..eab4288 100644
+index d1fdd9f..50f5de6 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -5,21 +5,23 @@ FILE                                                  ERRORS  WARNINGS
@@ -28,7 +28,14 @@ index d1fdd9f..eab4288 100644
  tests/input/new_with_parentheses.php                  18      0
  tests/input/not_spacing.php                           8       0
  tests/input/null_coalesce_operator.php                3       0
-@@ -33,15 +35,15 @@ tests/input/superfluous-naming.php                    11      0
+@@ -27,21 +29,22 @@ tests/input/optimized-functions.php                   1       0
+ tests/input/return_type_on_closures.php               21      0
+ tests/input/return_type_on_methods.php                17      0
+ tests/input/semicolon_spacing.php                     3       0
++tests/input/single-line-array-spacing.php             5       0
+ tests/input/spread-operator.php                       6       0
+ tests/input/static-closures.php                       1       0
+ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
  tests/input/traits-uses.php                           11      0
@@ -40,10 +47,10 @@ index d1fdd9f..eab4288 100644
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
 -A TOTAL OF 296 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
-+A TOTAL OF 338 ERRORS AND 0 WARNINGS WERE FOUND IN 37 FILES
++A TOTAL OF 343 ERRORS AND 0 WARNINGS WERE FOUND IN 38 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 235 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 277 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 282 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
