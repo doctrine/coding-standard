@@ -149,7 +149,7 @@
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
     <!-- Forbid prefix and suffix "Interface" for interfaces -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-    <!-- Forbid suffix "Trait" for interfaces -->
+    <!-- Forbid suffix "Trait" for traits -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
     <!-- Require specific order of phpDoc annotations with empty newline between specific groups -->
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
@@ -210,7 +210,7 @@
             </property>
         </properties>
     </rule>
-    <!-- report invalid format of inline phpDocs with @var -->
+    <!-- Report invalid format of inline phpDocs with @var -->
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
     <!-- Require comments with single line written as one-liners -->
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
@@ -314,7 +314,7 @@
     <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
     <!-- Require no spacing after spread operator -->
     <rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
-    <!-- forbid argument unpacking for functions specialized by PHP VM -->
+    <!-- Forbid argument unpacking for functions specialized by PHP VM -->
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
     <!-- Forbid `list(...)` syntax -->
     <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
