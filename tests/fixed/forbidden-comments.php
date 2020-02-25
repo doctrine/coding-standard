@@ -24,3 +24,11 @@ class Foo
         return 456;
     }
 }
+
+interface Bar
+{
+}
+
+trait Baz
+{
+}

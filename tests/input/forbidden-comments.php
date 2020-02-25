@@ -40,3 +40,17 @@ class Foo
         return 456;
     }
 }
+
+/**
+ * Interface Bar
+ */
+interface Bar
+{
+}
+
+/**
+ * Trait Baz
+ */
+trait Baz
+{
+}

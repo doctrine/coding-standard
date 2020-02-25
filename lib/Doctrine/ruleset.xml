@@ -206,7 +206,7 @@
                 <element value="~^Created by .+\.\z~i"/>
                 <element value="~^(User|Date|Time): \S+\z~i"/>
                 <element value="~^\S+ [gs]etter\.\z~i"/>
-                <element value="~^Class \S+\z~i"/>
+                <element value="~^(Class|Interface|Trait) \S+\z~i"/>
             </property>
         </properties>
     </rule>
