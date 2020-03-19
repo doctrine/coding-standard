@@ -354,7 +354,7 @@
     <!-- Require space around colon in return types -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
         <properties>
-            <property name="spacesCountBeforeColon" value="1"/>
+            <property name="spacesCountBeforeColon" value="0"/>
         </properties>
     </rule>
     <!-- Require types to be written as natively if possible;

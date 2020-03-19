@@ -17,7 +17,7 @@ final class TestCase extends BaseTestCase
      * @beforeClass
      * @afterClass
      */
-    static public function doStuff(): void
+    static public function doStuff() : void
     {
     }
 

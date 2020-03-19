@@ -17,7 +17,7 @@ class TraversableTypeHints
      *
      * @return Traversable
      */
-    public function get(Iterator $iterator) : Traversable
+    public function get(Iterator $iterator): Traversable
     {
         return $this->parameter;
     }
