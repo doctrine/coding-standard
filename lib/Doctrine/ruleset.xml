@@ -301,7 +301,7 @@
         <properties>
             <property name="linesCountAfterLastUse" value="1"/>
             <property name="linesCountBeforeFirstUse" value="1"/>
-            <property name="linesCountBetweenUseTypes" value="0"/>
+            <property name="linesCountBetweenUseTypes" value="1"/>
         </properties>
     </rule>
     <!-- Forbid useless alias for classes, constants and functions -->

@@ -6,6 +6,7 @@ namespace ControlStructures;
 
 use InvalidArgumentException;
 use Throwable;
+
 use const PHP_VERSION;
 
 class ControlStructures
