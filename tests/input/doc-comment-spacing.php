@@ -14,7 +14,7 @@ class Test
      * Description
      *
      */
-    public function a() : void
+    public function a(): void
     {
     }
 
@@ -23,7 +23,7 @@ class Test
      * More Description
      * Even More Description
      */
-    public function b() : void
+    public function b(): void
     {
     }
 
@@ -34,7 +34,7 @@ class Test
      * @throws FooException
      * @param int[] $foo
      */
-    public function c(iterable $foo) : void
+    public function c(iterable $foo): void
     {
     }
 
@@ -60,7 +60,7 @@ class Test
      * @see  other
      *
      */
-    public function d(iterable $foo, iterable $bar) : iterable
+    public function d(iterable $foo, iterable $bar): iterable
     {
     }
 }

@@ -15,7 +15,7 @@ class NamingCamelCase
     /** @var mixed */
     private $C;
 
-    public function fcn(string $A) : void
+    public function fcn(string $A): void
     {
         $Test = $A;
     }

@@ -15,14 +15,14 @@ final class TestCase extends BaseTestCase
      * @beforeClass
      * @afterClass
      */
-    public static function doStuff() : void
+    public static function doStuff(): void
     {
     }
 
     /**
      * @before
      */
-    public function createDependencies() : void
+    public function createDependencies(): void
     {
     }
 
@@ -32,7 +32,7 @@ final class TestCase extends BaseTestCase
      * @test
      * @covers MyClass::test
      */
-    public function methodShouldDoStuff() : void
+    public function methodShouldDoStuff(): void
     {
     }
 }

@@ -6,11 +6,11 @@ namespace Example;
 
 class UnusedVariables
 {
-    public function unusedInheritedVariablePassedToClosure() : void
+    public function unusedInheritedVariablePassedToClosure(): void
     {
         $foo = 'foo';
 
-        $bar = static function () use ($foo) : int {
+        $bar = static function () use ($foo): int {
             return 1;
         };
     }

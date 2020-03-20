@@ -9,7 +9,7 @@ use function strpos;
 
 class UselessConditions
 {
-    public function uselessCondition() : bool
+    public function uselessCondition(): bool
     {
         if ($foo === 'foo') {
             return true;
@@ -18,7 +18,7 @@ class UselessConditions
         }
     }
 
-    public function uselessIfCondition() : bool
+    public function uselessIfCondition(): bool
     {
         if ($bar === 'bar') {
             return true;
@@ -27,7 +27,7 @@ class UselessConditions
         return false;
     }
 
-    public function uselessNegativeCondition() : bool
+    public function uselessNegativeCondition(): bool
     {
         if ($foo !== 'foo') {
             return false;
@@ -36,7 +36,7 @@ class UselessConditions
         }
     }
 
-    public function uselessIfNegativeCondition() : bool
+    public function uselessIfNegativeCondition(): bool
     {
         if ($bar === 'bar') {
             return false;
@@ -45,7 +45,7 @@ class UselessConditions
         return true;
     }
 
-    public function unecessaryIfMethodForEarlyReturn() : bool
+    public function unecessaryIfMethodForEarlyReturn(): bool
     {
         if ($bar === 'bar') {
             return false;
@@ -62,7 +62,7 @@ class UselessConditions
         return true;
     }
 
-    public function uselessIfConditionWithParameter(bool $bool) : bool
+    public function uselessIfConditionWithParameter(bool $bool): bool
     {
         if ($bool) {
             return false;
@@ -71,7 +71,7 @@ class UselessConditions
         return true;
     }
 
-    public function uselessIfConditionWithBoolMethod() : bool
+    public function uselessIfConditionWithBoolMethod(): bool
     {
         if ($this->isTrue()) {
             return false;
@@ -80,7 +80,7 @@ class UselessConditions
         return true;
     }
 
-    public function uselessIfConditionWithComplexIf() : bool
+    public function uselessIfConditionWithComplexIf(): bool
     {
         if ($bar === 'bar' && $foo === 'foo' && $baz !== 'quox') {
             return true;
@@ -89,7 +89,7 @@ class UselessConditions
         }
     }
 
-    public function uselessIfConditionWithEvenMoreComplexIf() : bool
+    public function uselessIfConditionWithEvenMoreComplexIf(): bool
     {
         if ($bar === 'bar' || $foo === 'foo' || $baz !== 'quox') {
             return true;
@@ -98,7 +98,7 @@ class UselessConditions
         }
     }
 
-    public function uselessIfConditionWithComplexCondition() : bool
+    public function uselessIfConditionWithComplexCondition(): bool
     {
         if ($bar === 'bar' || $foo === 'foo' || $baz !== 'quox') {
             return false;
@@ -107,7 +107,7 @@ class UselessConditions
         return true;
     }
 
-    public function uselessIfConditionWithTernary() : bool
+    public function uselessIfConditionWithTernary(): bool
     {
         if ($this->isTrue()) {
             return $this->isTrulyTrue() ? true : false;
@@ -116,7 +116,7 @@ class UselessConditions
         }
     }
 
-    public function necessaryIfConditionWithMethodCall() : bool
+    public function necessaryIfConditionWithMethodCall(): bool
     {
         if ($this->shouldBeQueued()) {
             $this->queue();
@@ -127,7 +127,7 @@ class UselessConditions
         return false;
     }
 
-    public function nullShouldNotBeTreatedAsFalse() : ?bool
+    public function nullShouldNotBeTreatedAsFalse(): ?bool
     {
         if (! $this->isAdmin) {
             return null;
@@ -136,17 +136,17 @@ class UselessConditions
         return true;
     }
 
-    public function uselessTernary() : bool
+    public function uselessTernary(): bool
     {
         return $foo !== 'bar' ? true : false;
     }
 
-    public function uselessTernaryWithParameter(bool $condition) : bool
+    public function uselessTernaryWithParameter(bool $condition): bool
     {
         return $condition ? true : false;
     }
 
-    public function uselessTernaryWithMethod() : bool
+    public function uselessTernaryWithMethod(): bool
     {
         return $this->isFalse() ? true : false;
     }
@@ -154,12 +154,12 @@ class UselessConditions
     /**
      * @param string[] $words
      */
-    public function uselessTernaryCheck(array $words) : bool
+    public function uselessTernaryCheck(array $words): bool
     {
         return count($words) >= 1 ? false : true;
     }
 
-    public function necessaryTernary() : int
+    public function necessaryTernary(): int
     {
         return strpos('foo', 'This is foo and bar') !== false ? 1 : 0;
     }

@@ -6,11 +6,11 @@ namespace Blah;
 
 class Test
 {
-    public function a():void
+    public function a() :void
     {
     }
 
-    public function b(): void
+    public function b() : void
     {
     }
 
@@ -32,7 +32,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ):void {
+    ) :void {
     }
 
     public function g(
@@ -59,7 +59,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ): void {
+    ) : void {
     }
 
     public function j(

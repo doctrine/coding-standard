@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-(function () : void {
+(function (): void {
     echo 'Hello';
 })();
 
 new class {
     public function __construct()
     {
-        (function () : iterable {
+        (function (): iterable {
             yield $this;
         })();
     }

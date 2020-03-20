@@ -11,7 +11,7 @@ class Foo
         echo 'Hello';
     }
 
-    public function getBar() : int
+    public function getBar(): int
     {
         return 123;
     }
@@ -19,7 +19,7 @@ class Foo
     /**
      * Very important getter.
      */
-    public function getBaz() : int
+    public function getBaz(): int
     {
         return 456;
     }

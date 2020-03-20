@@ -46,7 +46,7 @@ class Example implements IteratorAggregate
     /**
      * Description
      */
-    public function getFoo() : ?int
+    public function getFoo(): ?int
     {
         return $this->foo;
     }
@@ -54,14 +54,14 @@ class Example implements IteratorAggregate
     /**
      * @return iterable
      */
-    public function getIterator() : array
+    public function getIterator(): array
     {
         assert($this->bar !== null);
 
         return new ArrayIterator($this->bar);
     }
 
-    public function isBaz() : bool
+    public function isBaz(): bool
     {
         [$foo, $bar, $baz] = $this->bar;
 
@@ -71,7 +71,7 @@ class Example implements IteratorAggregate
     /**
      * @throws InvalidArgumentException if this example cannot baz.
      */
-    public function mangleBar(int $length) : void
+    public function mangleBar(int $length): void
     {
         if (! $this->baz) {
             throw new InvalidArgumentException();
@@ -80,12 +80,12 @@ class Example implements IteratorAggregate
         $this->bar = (string) $this->baxBax ?? substr($this->bar, stringLength($this->bar - $length));
     }
 
-    public static function getMinorVersion() : int
+    public static function getMinorVersion(): int
     {
         return self::VERSION;
     }
 
-    public static function getTestCase() : TestCase
+    public static function getTestCase(): TestCase
     {
         return new TestCase();
     }

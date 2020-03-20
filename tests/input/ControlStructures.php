@@ -15,7 +15,7 @@ class ControlStructures
     /**
      * @return iterable<int>
      */
-    public function varAndIfNoSpaceBetween() : iterable
+    public function varAndIfNoSpaceBetween(): iterable
     {
         $var = 1;
         if (self::VERSION === 0) {
@@ -26,7 +26,7 @@ class ControlStructures
     /**
      * @return iterable<int>
      */
-    public function ifAndYieldSpaceBetween() : iterable
+    public function ifAndYieldSpaceBetween(): iterable
     {
         if (self::VERSION === 0) {
             yield 0;
@@ -37,7 +37,7 @@ class ControlStructures
     /**
      * @return iterable<int>
      */
-    public function ifAndYieldFromSpaceBetween() : iterable
+    public function ifAndYieldFromSpaceBetween(): iterable
     {
         if (self::VERSION === 0) {
             yield 0;
@@ -45,7 +45,7 @@ class ControlStructures
         yield from [];
     }
 
-    public function ifAndThrowSpaceBetween() : void
+    public function ifAndThrowSpaceBetween(): void
     {
         if (self::VERSION === 0) {
             return;
@@ -53,7 +53,7 @@ class ControlStructures
         throw new InvalidArgumentException();
     }
 
-    public function ifAndReturnSpaceBetween() : int
+    public function ifAndReturnSpaceBetween(): int
     {
         if (self::VERSION === 0) {
             return 0;
@@ -62,7 +62,7 @@ class ControlStructures
         return 1;
     }
 
-    public function noSpaceAroundCase() : void
+    public function noSpaceAroundCase(): void
     {
         switch (self::VERSION) {
             case 1:
@@ -76,7 +76,7 @@ class ControlStructures
         }
     }
 
-    public function spaceBelowBlocks() : void
+    public function spaceBelowBlocks(): void
     {
         if (true) {
             echo 1;
@@ -103,7 +103,7 @@ class ControlStructures
         echo 5;
     }
 
-    public function spaceAroundMultilineIfs() : void
+    public function spaceAroundMultilineIfs(): void
     {
         if (true
         && false) {

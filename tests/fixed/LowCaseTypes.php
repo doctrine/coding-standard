@@ -6,12 +6,12 @@ namespace Types;
 
 class LowCaseTypes
 {
-    public function stringToInt(string $string) : int
+    public function stringToInt(string $string): int
     {
         return (int) $string;
     }
 
-    public function returnString() : string
+    public function returnString(): string
     {
         return 'foo';
     }

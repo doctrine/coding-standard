@@ -6,7 +6,7 @@ namespace Example;
 
 class EarlyReturn
 {
-    public function bar() : bool
+    public function bar(): bool
     {
         if ($bar === 'bar') {
             return true;
@@ -15,7 +15,7 @@ class EarlyReturn
         }
     }
 
-    public function foo() : ?string
+    public function foo(): ?string
     {
         foreach ($itens as $item) {
             if (! ($item->isItem())) {
@@ -28,7 +28,7 @@ class EarlyReturn
         return null;
     }
 
-    public function baz() : string
+    public function baz(): string
     {
         if ($number > 0) {
             return 'Number is grater then 0';
@@ -37,7 +37,7 @@ class EarlyReturn
         }
     }
 
-    public function quoox() : bool
+    public function quoox(): bool
     {
         if (true === 'true') {
             if (false === false) {

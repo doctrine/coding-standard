@@ -6,23 +6,23 @@ namespace Blah;
 
 class Test
 {
-    public function a() : void
+    public function a(): void
     {
     }
 
-    public function b() : void
+    public function b(): void
     {
     }
 
-    public function c() : void
+    public function c(): void
     {
     }
 
-    public function d() : void
+    public function d(): void
     {
     }
 
-    public function e() : void
+    public function e(): void
     {
     }
 
@@ -32,7 +32,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ) : void {
+    ): void {
     }
 
     public function g(
@@ -41,7 +41,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ) : void {
+    ): void {
     }
 
     public function h(
@@ -50,7 +50,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ) : void {
+    ): void {
     }
 
     public function i(
@@ -59,7 +59,7 @@ class Test
         int $d,
         int $e,
         int $b
-    ) : void {
+    ): void {
     }
 
     public function j(
@@ -68,6 +68,6 @@ class Test
         int $d,
         int $e,
         int $b
-    ) : void {
+    ): void {
     }
 }
