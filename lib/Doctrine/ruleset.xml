@@ -252,6 +252,8 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
     <!-- Require usage of null coalesce operator when possible -->
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+    <!-- Require usage of null coalesce operator equal operator (`??`) when possible -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator"/>
     <!-- Forbid usage of conditions when a simple return can be used -->
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
     <!-- Forbid usage of boolean-only ternary operator usage (e.g. $foo ? true : false) -->
