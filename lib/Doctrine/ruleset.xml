@@ -105,6 +105,12 @@
     <rule ref="Generic.PHP.SAPIUsage"/>
     <!-- Forbid comments starting with # -->
     <rule ref="PEAR.Commenting.InlineComment"/>
+    <!-- Force proper indentation for multi-line object calls -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent">
+        <properties>
+            <property name="multilevel" value="true" />
+        </properties>
+    </rule>
     <!-- Disallow else if in favor of elseif -->
     <rule ref="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed">
         <type>error</type>
