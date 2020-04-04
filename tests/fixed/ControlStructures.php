@@ -128,4 +128,21 @@ class ControlStructures
             echo 2;
         }
     }
+
+    public function spacingAroundCasesWithBreakAndReturn(): void
+    {
+        switch (true) {
+            case 1:
+                throw new InvalidArgumentException();
+
+            case 2:
+                return;
+
+            case 3:
+                break;
+
+            case 4:
+                echo 1;
+        }
+    }
 }
