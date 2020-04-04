@@ -1,8 +1,8 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d1fdd9f..577922e 100644
+index 1e809f9..4776284 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -5,43 +5,47 @@ FILE                                                  ERRORS  WARNINGS
+@@ -5,44 +5,48 @@ FILE                                                  ERRORS  WARNINGS
  ----------------------------------------------------------------------
  tests/input/array_indentation.php                     10      0
  tests/input/assignment-operators.php                  4       0
@@ -25,9 +25,12 @@ index d1fdd9f..577922e 100644
  tests/input/LowCaseTypes.php                          2       0
  tests/input/namespaces-spacing.php                    7       0
  tests/input/NamingCamelCase.php                       7       0
+-tests/input/new_with_parentheses.php                  18      0
 +tests/input/negation-operator.php                     2       0
- tests/input/new_with_parentheses.php                  18      0
++tests/input/new_with_parentheses.php                  19      0
  tests/input/not_spacing.php                           8       0
+-tests/input/null_coalesce_equal_operator.php          1       0
++tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
  tests/input/optimized-functions.php                   1       0
 +tests/input/PropertyTypeHintSpacing.php               6       0
@@ -48,11 +51,11 @@ index d1fdd9f..577922e 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 296 ERRORS AND 0 WARNINGS WERE FOUND IN 35 FILES
-+A TOTAL OF 355 ERRORS AND 0 WARNINGS WERE FOUND IN 39 FILES
+-A TOTAL OF 297 ERRORS AND 0 WARNINGS WERE FOUND IN 36 FILES
++A TOTAL OF 361 ERRORS AND 0 WARNINGS WERE FOUND IN 40 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 235 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 290 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 236 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 296 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -78,6 +81,53 @@ index dbec9cb..dca22ed 100644
  
      /** @var ControlStructureSniff|int|string|null */
      private $baxBax;
+diff --git a/tests/fixed/new_with_parentheses.php b/tests/fixed/new_with_parentheses.php
+index 6e81bbe..47a06ec 100644
+--- a/tests/fixed/new_with_parentheses.php
++++ b/tests/fixed/new_with_parentheses.php
+@@ -24,5 +24,5 @@ $y = [new stdClass()];
+ 
+ $z = new stdClass() ? new stdClass() : new stdClass();
+ 
+-$q = $q ?: new stdClass();
+-$e = $e ?? new stdClass();
++$q   = $q ?: new stdClass();
++$e ??= new stdClass();
+diff --git a/tests/fixed/null_coalesce_equal_operator.php b/tests/fixed/null_coalesce_equal_operator.php
+index b997469..6703d30 100644
+--- a/tests/fixed/null_coalesce_equal_operator.php
++++ b/tests/fixed/null_coalesce_equal_operator.php
+@@ -2,12 +2,12 @@
+ 
+ declare(strict_types=1);
+ 
+-$bar = $bar ?? 'bar';
++$bar ??= 'bar';
+ 
+-$bar['baz'] = $bar['baz'] ?? 'baz';
++$bar['baz'] ??= 'baz';
+ 
+-$bar = $bar ?? 'bar';
++$bar ??= 'bar';
+ 
+-$object->property = $object->property ?? 'Default Value';
++$object->property ??= 'Default Value';
+ 
+-Test::$foo = Test::$foo ?? 123;
++Test::$foo ??= 123;
+diff --git a/tests/fixed/null_coalesce_operator.php b/tests/fixed/null_coalesce_operator.php
+index 8846dd1..51c361c 100644
+--- a/tests/fixed/null_coalesce_operator.php
++++ b/tests/fixed/null_coalesce_operator.php
+@@ -4,7 +4,7 @@ declare(strict_types=1);
+ 
+ $foo = $_GET['foo'] ?? 'foo';
+ 
+-$bar = $bar ?? 'bar';
++$bar ??= 'bar';
+ 
+ $bar = $bar['baz'] ?? 'baz';
+ 
 diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
 index 0e952fc..9824fb0 100644
 --- a/tests/fixed/type-hints.php
