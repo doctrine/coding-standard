@@ -4,7 +4,7 @@ index 1e809f9..490fcbd 100644
 +++ b/tests/expected_report.txt
 @@ -5,44 +5,48 @@ FILE                                                  ERRORS  WARNINGS
  ----------------------------------------------------------------------
- tests/input/array_indentation.php                     10      0
+ tests/input/array_indentation.php                     11      0
  tests/input/assignment-operators.php                  4       0
 +tests/input/binary_operators.php                      9       0
  tests/input/class-references.php                      10      0
@@ -52,11 +52,11 @@ index 1e809f9..490fcbd 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 299 ERRORS AND 0 WARNINGS WERE FOUND IN 36 FILES
-+A TOTAL OF 373 ERRORS AND 0 WARNINGS WERE FOUND IN 40 FILES
+-A TOTAL OF 300 ERRORS AND 0 WARNINGS WERE FOUND IN 36 FILES
++A TOTAL OF 374 ERRORS AND 0 WARNINGS WERE FOUND IN 40 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 238 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 308 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 239 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 309 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  

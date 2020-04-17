@@ -22,3 +22,6 @@ $multiArray = [
          9,
     ],
 ];
+
+MyClass::baz([new MyObject(),
+]);
