@@ -1,6 +1,6 @@
-dist: xenial
-sudo: false
+dist: bionic
 language: php
+os: linux
 
 php:
   - 7.2
