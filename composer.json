@@ -20,11 +20,6 @@
         {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
         {"name": "Steve Müller", "email": "st.mueller@dzh-online.de"}
     ],
-    "autoload": {
-       "psr-4": {
-           "Doctrine\\Sniffs\\": "lib/Doctrine/Sniffs"
-       }
-    },
     "require": {
         "php": "^7.2",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
