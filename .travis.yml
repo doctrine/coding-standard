@@ -28,8 +28,6 @@ stages:
   - Apply fixes
 
 jobs:
-  allow_failures:
-    - php: nightly
 
   include:
     - stage: Validate against schema
