@@ -5,20 +5,25 @@
     "docsSlug": "doctrine-coding-standard",
     "versions": [
         {
-            "name": "7.0",
+            "name": "8.0",
             "branchName": "master",
-            "slug": "latest",
+            "slug": "8.0",
             "upcoming": true
+        },
+        {
+            "name": "7.0",
+            "branchName": "7.x",
+            "slug": "latest",
+            "aliases": [
+                "current",
+                "stable"
+            ]
         },
         {
             "name": "6.0",
             "branchName": "6.x",
             "slug": "6.0",
-            "current": true,
-            "aliases": [
-                "current",
-                "stable"
-            ]
+            "maintained": false
         },
         {
             "name": "5.0",
