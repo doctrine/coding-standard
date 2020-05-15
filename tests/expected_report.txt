@@ -6,6 +6,7 @@ FILE                                                  ERRORS  WARNINGS
 tests/input/array_indentation.php                     10      0
 tests/input/assignment-operators.php                  4       0
 tests/input/class-references.php                      10      0
+tests/input/classes.php                               3       0
 tests/input/concatenation_spacing.php                 24      0
 tests/input/constants-no-lsb.php                      2       0
 tests/input/constants-var.php                         6       0

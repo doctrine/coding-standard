@@ -8,6 +8,10 @@
 
     <!-- Import PSR-12 coding standard (base) -->
     <rule ref="PSR12">
+        <!-- Allow multiline extends in class declarations -->
+        <exclude name="PSR2.Classes.ClassDeclaration.ExtendsLine" />
+        <!-- Allow multiline implements in class declarations -->
+        <exclude name="PSR2.Classes.ClassDeclaration.ImplementsLine" />
         <!-- checked by SlevomatCodingStandard.Namespaces.UseSpacing -->
         <exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
         <exclude name="PSR12.Files.FileHeader"/>
