@@ -5,6 +5,7 @@ index 1e809f9..490fcbd 100644
 @@ -5,44 +5,48 @@ FILE                                                  ERRORS  WARNINGS
  ----------------------------------------------------------------------
  tests/input/array_indentation.php                     10      0
+ tests/input/arrow-functions-format.php                10      0
  tests/input/assignment-operators.php                  4       0
 +tests/input/binary_operators.php                      9       0
  tests/input/class-references.php                      10      0
@@ -52,11 +53,11 @@ index 1e809f9..490fcbd 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 299 ERRORS AND 0 WARNINGS WERE FOUND IN 36 FILES
-+A TOTAL OF 373 ERRORS AND 0 WARNINGS WERE FOUND IN 40 FILES
+-A TOTAL OF 309 ERRORS AND 0 WARNINGS WERE FOUND IN 37 FILES
++A TOTAL OF 383 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 238 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 308 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 248 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 318 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
