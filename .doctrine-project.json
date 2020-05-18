@@ -12,7 +12,7 @@
         },
         {
             "name": "7.0",
-            "branchName": "7.x",
+            "branchName": "7.0.x",
             "slug": "latest",
             "aliases": [
                 "current",
