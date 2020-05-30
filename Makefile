@@ -1,6 +1,6 @@
 .PHONY: test test-report test-fix update-compatibility-patch
 
-PHP_74_OR_NEWER=`php -r "echo (int) version_compare(PHP_VERSION, '7.4', '>=');"`
+PHP_74_OR_NEWER:=$(shell php -r "echo (int) version_compare(PHP_VERSION, '7.4', '>=');")
 
 test: test-report test-fix
 
