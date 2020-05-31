@@ -13,8 +13,8 @@ index 1e809f9..490fcbd 100644
 +tests/input/concatenation_spacing.php                 49      0
  tests/input/constants-no-lsb.php                      2       0
  tests/input/constants-var.php                         6       0
--tests/input/ControlStructures.php                     17      0
-+tests/input/ControlStructures.php                     27      0
+-tests/input/ControlStructures.php                     18      0
++tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   10      0
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           6       0
@@ -53,11 +53,11 @@ index 1e809f9..490fcbd 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 309 ERRORS AND 0 WARNINGS WERE FOUND IN 37 FILES
-+A TOTAL OF 383 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
+-A TOTAL OF 310 ERRORS AND 0 WARNINGS WERE FOUND IN 37 FILES
++A TOTAL OF 384 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 248 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 318 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 249 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 319 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
