@@ -24,3 +24,4 @@ update-compatibility-patch:
 
 vendor: composer.json
 	composer update
+	touch -c vendor
