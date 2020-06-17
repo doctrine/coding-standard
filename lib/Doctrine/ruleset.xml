@@ -87,6 +87,7 @@
                 <element key="show_source" value="highlight_file"/>
                 <element key="sizeof" value="count"/>
                 <element key="strchr" value="strstr"/>
+                <element key="user_error" value="trigger_error"/>
             </property>
         </properties>
     </rule>
