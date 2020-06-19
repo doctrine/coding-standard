@@ -550,12 +550,12 @@
     <!-- Forbid superfluous whitespaces -->
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
         <properties>
-            <!-- turned on by PSR2 -> turning back off -->
+            <!-- turned on by PSR-12 -> turning back off -->
             <property name="ignoreBlankLines" value="false"/>
         </properties>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
-        <!-- turned off by PSR2 -> turning back on -->
+        <!-- turned off by PSR-12 -> turning back on -->
         <severity>5</severity>
     </rule>
 </ruleset>
