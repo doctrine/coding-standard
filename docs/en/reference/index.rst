@@ -2,8 +2,8 @@ Introduction
 ============
 
 The Doctrine Coding Standard is a set of rules for `PHP_CodeSniffer <https://github.com/squizlabs/PHP_CodeSniffer>`_
-and applies to all Doctrine projects. It is based on `PSR-1 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
-and `PSR-2 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md>`_, with some noticeable
+and applies to all Doctrine projects. It is based on `PSR-1 <https://www.php-fig.org/psr/psr-1>`_
+and `PSR-12 <https://www.php-fig.org/psr/psr-12/>`_, with some noticeable
 exceptions/differences/extensions.
 
 - Keep the nesting of control structures per method as small as possible
