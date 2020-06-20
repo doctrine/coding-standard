@@ -12,7 +12,7 @@ class FooException extends RuntimeException
 {
 }
 
-class FooError extends \Error
+class FooError extends Error
 {
 }
 
