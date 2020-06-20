@@ -12,6 +12,10 @@ class FooException extends RuntimeException
 {
 }
 
+class FooError extends \Error
+{
+}
+
 interface FooInterface
 {
 }

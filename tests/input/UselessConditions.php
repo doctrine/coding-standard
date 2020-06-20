@@ -27,6 +27,17 @@ class UselessConditions
         return false;
     }
 
+    public function uselessIfConditionWithComment(): bool
+    {
+        if ($bar === 'bar') {
+            // Return true here in case $bar is bar
+            return true;
+        }
+
+        // Return true here in case $bar is bar
+        return false;
+    }
+
     public function uselessNegativeCondition(): bool
     {
         if ($foo !== 'foo') {

@@ -9,3 +9,6 @@ echo 'foo';
 $qb->select()
     ->from()
     ->where();
+
+$qb->select()
+    ->from('mytable'); // we select from my table
