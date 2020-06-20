@@ -14,7 +14,7 @@ for (;;) {
     echo 'To infity and beyond';
 };
 
-for ($i = 0 ; $i < 10; $i++)
+for ($i = 0 ; $i < 10; $i++);
 {
     echo 'This will not be executed inside the for-loop';
 }
