@@ -57,8 +57,8 @@ class Test
      * @PHPCR\Field
      * @ODM\Column
      * @ORM\Column
-     * @see    Something else and make this see annotation
-     *         multiline
+     * @see  Something else and make this see annotation
+     *       multiline
      *
      */
     public function d(iterable $foo, iterable $bar): iterable

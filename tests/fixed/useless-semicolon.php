@@ -22,4 +22,8 @@ for (
     echo 'This will not be executed inside the for-loop';
 }
 
+{
+    $var = 'This is useless';
+};
+
 $myvar = 3;

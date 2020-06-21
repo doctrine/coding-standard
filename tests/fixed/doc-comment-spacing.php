@@ -46,8 +46,8 @@ class Test
      * @deprecated
      *
      * @link https://example.com
-     * @see    Something else and make this see annotation
-     *         multiline
+     * @see  Something else and make this see annotation
+     *       multiline
      * @uses other
      *
      * @ORM\Id
