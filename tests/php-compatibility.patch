@@ -8,7 +8,7 @@ index 1e809f9..490fcbd 100644
  tests/input/arrow-functions-format.php                10      0
  tests/input/assignment-operators.php                  4       0
 +tests/input/binary_operators.php                      9       0
- tests/input/class-references.php                      10      0
+ tests/input/class-references.php                      11      0
 -tests/input/concatenation_spacing.php                 24      0
 +tests/input/concatenation_spacing.php                 49      0
  tests/input/constants-no-lsb.php                      2       0
