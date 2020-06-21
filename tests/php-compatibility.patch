@@ -42,10 +42,10 @@ index 1e809f9..490fcbd 100644
 +tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
  tests/input/static-closures.php                       1       0
- tests/input/superfluous-naming.php                    11      0
+ tests/input/superfluous-naming.php                    14      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
- tests/input/traits-uses.php                           11      0
+ tests/input/traits-uses.php                           12      0
 -tests/input/type-hints.php                            4       0
 +tests/input/type-hints.php                            5       0
  tests/input/UnusedVariables.php                       1       0
