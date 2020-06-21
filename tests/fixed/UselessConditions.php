@@ -19,6 +19,11 @@ class UselessConditions
         return $bar === 'bar';
     }
 
+    public function uselessIfConditionWithComment(): bool
+    {
+        return $bar === 'bar';
+    }
+
     public function uselessNegativeCondition(): bool
     {
         return $foo === 'foo';
