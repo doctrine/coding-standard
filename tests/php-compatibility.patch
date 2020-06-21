@@ -21,7 +21,7 @@ index 1e809f9..490fcbd 100644
 -tests/input/example-class.php                         34      0
 -tests/input/forbidden-comments.php                    8       0
 +tests/input/example-class.php                         39      0
-+tests/input/forbidden-comments.php                    14      0
++tests/input/forbidden-comments.php                    16      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
  tests/input/LowCaseTypes.php                          2       0
@@ -54,7 +54,7 @@ index 1e809f9..490fcbd 100644
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
 -A TOTAL OF 310 ERRORS AND 0 WARNINGS WERE FOUND IN 37 FILES
-+A TOTAL OF 384 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
++A TOTAL OF 391 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 249 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 319 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
