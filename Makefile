@@ -6,7 +6,7 @@ test: test-report test-fix
 
 test-report: vendor
 	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply tests/php-compatibility.patch; fi
-	@vendor/bin/phpcs `find tests/input/* | sort` --report=summary --report-file=phpcs.log; diff -u tests/expected_report.txt phpcs.log; if [ $$? -ne 0 ] && [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; exit 1; fi
+	@vendor/bin/phpcs `find tests/input/* | sort` --report=summary --report-file=phpcs.log; diff -u tests/expected_report.txt phpcs.log; if [ $$? -ne 0 ]; then if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi; exit 1; fi
 	@if [ $(PHP_74_OR_NEWER) -eq 1 ]; then git apply -R tests/php-compatibility.patch; fi
 
 test-fix: vendor
