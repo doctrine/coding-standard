@@ -23,6 +23,7 @@ class Example implements \IteratorAggregate
 {
     private const VERSION = \PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
+
     /** @var null|int */
     private $foo;
 
