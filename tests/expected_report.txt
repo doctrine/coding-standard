@@ -6,7 +6,7 @@ FILE                                                  ERRORS  WARNINGS
 tests/input/array_indentation.php                     10      0
 tests/input/arrow-functions-format.php                10      0
 tests/input/assignment-operators.php                  4       0
-tests/input/class-references.php                      10      0
+tests/input/class-references.php                      11      0
 tests/input/concatenation_spacing.php                 24      0
 tests/input/constants-no-lsb.php                      2       0
 tests/input/constants-var.php                         6       0
@@ -31,10 +31,10 @@ tests/input/return_type_on_methods.php                17      0
 tests/input/semicolon_spacing.php                     3       0
 tests/input/spread-operator.php                       6       0
 tests/input/static-closures.php                       1       0
-tests/input/superfluous-naming.php                    11      0
+tests/input/superfluous-naming.php                    14      0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
-tests/input/traits-uses.php                           11      0
+tests/input/traits-uses.php                           12      0
 tests/input/type-hints.php                            4       0
 tests/input/UnusedVariables.php                       1       0
 tests/input/use-ordering.php                          1       0

@@ -42,6 +42,8 @@
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
     <!-- Forbid inline HTML in PHP code -->
     <rule ref="Generic.Files.InlineHTML"/>
+    <!-- Only one structure (class/interface/trait) should be allowed per file -->
+    <rule ref="Generic.Files.OneObjectStructurePerFile" />
     <!-- Align corresponding assignment statement tokens -->
     <rule ref="Generic.Formatting.MultipleStatementAlignment">
         <properties>
