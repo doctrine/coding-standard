@@ -1,7 +1,7 @@
 Customizing to your needs
 =========================
 
-While Doctrine Coding Standard is based on `PSR-2 <https://www.php-fig.org/psr/psr-2/>`_,
+While Doctrine Coding Standard is based on `PSR-12 <https://www.php-fig.org/psr/psr-12/>`_,
 it also consists of a lot of additional advanced and opinionated rules and checks, mostly imported from
 the `Slevomat Coding Standard <https://github.com/slevomat/coding-standard>`_.
 
