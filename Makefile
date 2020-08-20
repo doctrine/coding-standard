@@ -1,6 +1,6 @@
 .PHONY: test test-report test-fix update-compatibility-patch
 
-PHP_74_OR_NEWER=`php -r "echo (int) version_compare(PHP_VERSION, '7.4', '>=');"`
+PHP_74_OR_NEWER:=$(shell php -r "echo (int) version_compare(PHP_VERSION, '7.4', '>=');")
 
 test: test-report test-fix
 
@@ -17,10 +17,11 @@ test-fix: vendor
 
 update-compatibility-patch:
 	@git apply tests/php-compatibility.patch
-	@echo -e "Please open your editor and apply your changes\n"
+	@printf "Please open your editor and apply your changes\n"
 	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
 	@git diff -- tests/expected_report.txt tests/fixed > .tmp-patch && mv .tmp-patch tests/php-compatibility.patch && git apply -R tests/php-compatibility.patch
 	@git commit -m 'Update compatibility patch' tests/php-compatibility.patch
 
 vendor: composer.json
 	composer update
+	touch -c vendor
