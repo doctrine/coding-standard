@@ -8,9 +8,9 @@ index fd5432c..233e24d 100644
  tests/input/EarlyReturn.php                           6       0
 -tests/input/example-class.php                         36      0
 +tests/input/example-class.php                         39      0
+ tests/input/exception-naming.php                      2       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
- tests/input/inline_type_hint_assertions.php           7       0
 @@ -23,9 +23,9 @@ tests/input/LowCaseTypes.php                          2       0
  tests/input/namespaces-spacing.php                    7       0
  tests/input/NamingCamelCase.php                       7       0
@@ -34,8 +34,8 @@ index fd5432c..233e24d 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 375 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
-+A TOTAL OF 384 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
+-A TOTAL OF 376 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
++A TOTAL OF 385 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 310 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 319 OF THESE SNIFF VIOLATIONS AUTOMATICALLY

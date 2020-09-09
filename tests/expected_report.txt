@@ -16,6 +16,7 @@ tests/input/doc-comment-spacing.php                   10      0
 tests/input/duplicate-assignment-variable.php         1       0
 tests/input/EarlyReturn.php                           6       0
 tests/input/example-class.php                         36      0
+tests/input/exception-naming.php                      2       0
 tests/input/forbidden-comments.php                    14      0
 tests/input/forbidden-functions.php                   6       0
 tests/input/inline_type_hint_assertions.php           7       0
@@ -35,7 +36,7 @@ tests/input/semicolon_spacing.php                     3       0
 tests/input/single-line-array-spacing.php             5       0
 tests/input/spread-operator.php                       6       0
 tests/input/static-closures.php                       1       0
-tests/input/superfluous-naming.php                    11      0
+tests/input/superfluous-naming.php                    10      0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
 tests/input/traits-uses.php                           11      0
@@ -45,7 +46,7 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 375 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
+A TOTAL OF 376 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
 ----------------------------------------------------------------------
 PHPCBF CAN FIX 310 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
