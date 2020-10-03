@@ -21,8 +21,6 @@
         <exclude name="PSR12.Traits.UseDeclaration"/>
         <!-- checked by SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing.WhitespaceAfterNullabilitySymbol -->
         <exclude name="PSR12.Functions.NullableTypeDeclaration.WhitespaceFound"/>
-        <!-- checked by PSR12.ControlStructures.ControlStructureSpacing -->
-        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
 
     <!-- Force array element indentation with 4 spaces -->
