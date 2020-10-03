@@ -102,6 +102,8 @@
     <rule ref="Generic.PHP.LowerCaseType"/>
     <!-- Forbid `php_sapi_name()` function -->
     <rule ref="Generic.PHP.SAPIUsage"/>
+    <!-- Require there be no space between increment/decrement operator and its operand -->
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <!-- Forbid comments starting with # -->
     <rule ref="PEAR.Commenting.InlineComment"/>
     <!-- Disallow else if in favor of elseif -->
@@ -529,8 +531,6 @@
             <property name="spacingAfterLast" value="0"/>
         </properties>
     </rule>
-    <!-- Require there be no space between increment/decrement operator and its operand -->
-    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <!-- Require space after language constructs -->
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <!-- Require space around logical operators -->
