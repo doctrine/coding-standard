@@ -148,8 +148,6 @@
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
-    <!-- Forbid prefix and suffix "Exception" for exception classes -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
     <!-- Forbid prefix and suffix "Interface" for interfaces -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
     <!-- Forbid suffix "Trait" for traits -->
@@ -558,4 +556,6 @@
         <!-- turned off by PSR-12 -> turning back on -->
         <severity>5</severity>
     </rule>
+
+    <rule ref="Doctrine.NamingConventions.ExceptionNaming"/>
 </ruleset>
