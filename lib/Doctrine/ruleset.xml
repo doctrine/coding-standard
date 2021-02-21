@@ -144,8 +144,6 @@
             <property name="linesCountBetweenUses" value="0"/>
         </properties>
     </rule>
-    <!-- Forbid dead code -->
-    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <!-- Forbid prefix and suffix "Abstract" for abstract classes -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
     <!-- Forbid prefix and suffix "Exception" for exception classes -->
