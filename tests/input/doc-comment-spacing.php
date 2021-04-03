@@ -43,24 +43,20 @@ class Test
      * Description
      * More Description
      * @throws FooException
-     * @param         int[] $foo
+     * @param int[] $foo
      * @uses other
      * @throws BarException
-     * @return         int[]
+     * @return int[]
      * @ORM\Id
      * @internal
      * @link https://example.com
      * @ODM\Id
      * @deprecated
      * @PHPCR\Uuid
-     * @param         int[] $bar
+     * @param int[] $bar
      * @PHPCR\Field
      * @ODM\Column
      * @ORM\Column
-     * @psalm-param   array<string, int> $foo
-     * @phpstan-return array<string, int>
-     * @phpstan-param array<string, int> $foo
-     * @psalm-return   array<string, int>
      * @see  other
      *
      */

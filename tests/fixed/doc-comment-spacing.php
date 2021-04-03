@@ -56,14 +56,10 @@ class Test
      * @PHPCR\Uuid
      * @PHPCR\Field
      *
-     * @param         int[] $foo
-     * @param         int[] $bar
-     * @psalm-param   array<string, int> $foo
-     * @phpstan-param array<string, int> $foo
+     * @param int[] $foo
+     * @param int[] $bar
      *
-     * @return         int[]
-     * @psalm-return   array<string, int>
-     * @phpstan-return array<string, int>
+     * @return int[]
      *
      * @throws FooException
      * @throws BarException
