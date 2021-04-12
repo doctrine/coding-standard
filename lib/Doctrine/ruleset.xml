@@ -230,15 +230,15 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeControlStructure" />
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing.IncorrectLinesCountBeforeFirstControlStructure" />
         <properties>
-            <property name="tokensToCheck" type="array">
-                <element value="T_IF" />
-                <element value="T_DO" />
-                <element value="T_WHILE" />
-                <element value="T_FOR" />
-                <element value="T_FOREACH" />
-                <element value="T_SWITCH" />
-                <element value="T_TRY" />
-                <element value="T_DEFAULT" />
+            <property name="controlStructures" type="array">
+                <element value="if" />
+                <element value="do" />
+                <element value="while" />
+                <element value="for" />
+                <element value="foreach" />
+                <element value="switch" />
+                <element value="try" />
+                <element value="default" />
             </property>
         </properties>
     </rule>
@@ -252,11 +252,11 @@
             <property name="linesCountBeforeWhenFirstInCaseOrDefault" value="0"/>
             <property name="linesCountAfterWhenLastInCaseOrDefault" value="1"/>
             <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
-            <property name="tokensToCheck" type="array">
-                <element value="T_RETURN" />
-                <element value="T_THROW" />
-                <element value="T_YIELD" />
-                <element value="T_YIELD_FROM" />
+            <property name="jumpStatements" type="array">
+                <element value="return" />
+                <element value="throw" />
+                <element value="yield" />
+                <element value="yield_from" />
             </property>
         </properties>
     </rule>
@@ -346,16 +346,20 @@
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
             <property
-                name="newlinesCountBetweenOpenTagAndDeclare"
-                value="2"
+                name="declareOnFirstLine"
+                value="false"
+            />
+            <property
+                name="linesCountBeforeDeclare"
+                value="1"
             />
             <property
                 name="spacesCountAroundEqualsSign"
                 value="0"
             />
             <property
-                name="newlinesCountAfterDeclare"
-                value="2"
+                name="linesCountAfterDeclare"
+                value="1"
             />
         </properties>
     </rule>
