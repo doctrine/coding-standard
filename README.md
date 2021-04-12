@@ -10,5 +10,5 @@ The Doctrine Coding Standard is a set of [PHP_CodeSniffer](https://github.com/sq
 ## More resources:
 
 * [Website](https://www.doctrine-project.org/)
-* [Documentation](https://www.doctrine-project.org/projects/doctrine-coding-standard/en/latest/)
+* [Documentation](https://www.doctrine-project.org/projects/coding-standard.html)
 * [Downloads](https://github.com/doctrine/coding-standard/coding-standard)
