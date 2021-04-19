@@ -11,12 +11,6 @@
             "upcoming": true
         },
         {
-            "name": "8.3",
-            "branchName": "8.3.x",
-            "slug": "8.3",
-            "upcoming": true
-        },
-        {
             "name": "8.2",
             "branchName": "8.2.x",
             "slug": "8.2",
