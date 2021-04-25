@@ -502,7 +502,9 @@
     <!-- Require PHP function calls in lowercase -->
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <!-- Forbid dead code -->
-    <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <rule ref="Squiz.PHP.NonExecutableCode">
+        <type>error</type>
+    </rule>
     <!-- Forbid `$this` inside static function -->
     <rule ref="Squiz.Scope.StaticThisUsage"/>
     <!-- Force whitespace before and after concatenation -->
