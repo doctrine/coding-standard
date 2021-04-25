@@ -17,6 +17,8 @@
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterVariadic"/>
         <!-- checked by SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing -->
         <exclude name="PSR12.Functions.ReturnTypeDeclaration"/>
+        <!-- checked by SlevomatCodingStandard.Classes.ClassConstantVisibility -->
+        <exclude name="PSR12.Properties.ConstantVisibility"/>
         <!-- checked by SlevomatCodingStandard.Classes.TraitUseSpacing -->
         <exclude name="PSR12.Traits.UseDeclaration"/>
         <!-- checked by SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing.WhitespaceAfterNullabilitySymbol -->
