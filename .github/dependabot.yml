@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - doctrine/coding-standard-approvers
+  labels:
+  - Dependencies
+  versioning-strategy: increase-if-necessary
+  ignore:
+  - dependency-name: slevomat/coding-standard
+    versions:
+    - 7.0.0
+    - 7.0.1
+    - 7.0.2
+    - 7.0.4
+    - 7.0.5
