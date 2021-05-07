@@ -13,9 +13,7 @@ class ControlStructures
 {
     private const VERSION = PHP_VERSION;
 
-    /**
-     * @return iterable<int>
-     */
+    /** @return iterable<int> */
     public function varAndIfNoSpaceBetween(): iterable
     {
         $var = 1;
@@ -24,9 +22,7 @@ class ControlStructures
         }
     }
 
-    /**
-     * @return iterable<int>
-     */
+    /** @return iterable<int> */
     public function ifAndYieldSpaceBetween(): iterable
     {
         if (self::VERSION === 0) {
@@ -35,9 +31,7 @@ class ControlStructures
         yield 1;
     }
 
-    /**
-     * @return iterable<int>
-     */
+    /** @return iterable<int> */
     public function ifAndYieldFromSpaceBetween(): iterable
     {
         if (self::VERSION === 0) {

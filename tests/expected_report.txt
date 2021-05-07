@@ -12,10 +12,10 @@ tests/input/concatenation_spacing.php                 49      0
 tests/input/constants-no-lsb.php                      2       0
 tests/input/constants-var.php                         6       0
 tests/input/ControlStructures.php                     28      0
-tests/input/doc-comment-spacing.php                   10      0
+tests/input/doc-comment-spacing.php                   11      0
 tests/input/duplicate-assignment-variable.php         1       0
 tests/input/EarlyReturn.php                           6       0
-tests/input/example-class.php                         36      0
+tests/input/example-class.php                         38      0
 tests/input/forbidden-comments.php                    14      0
 tests/input/forbidden-functions.php                   6       0
 tests/input/inline_type_hint_assertions.php           7       0
@@ -45,9 +45,9 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     20      0
 ----------------------------------------------------------------------
-A TOTAL OF 374 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
+A TOTAL OF 377 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 310 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 313 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

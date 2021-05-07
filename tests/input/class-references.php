@@ -8,9 +8,7 @@ class Foo
 
 class Bar extends Foo
 {
-    /**
-     * @return string[]
-     */
+    /** @return string[] */
     public function names(): iterable
     {
         yield __CLASS__;
