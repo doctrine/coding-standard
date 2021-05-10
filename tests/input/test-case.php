@@ -21,9 +21,7 @@ final class TestCase extends BaseTestCase
     {
     }
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createDependencies()
     {
     }
