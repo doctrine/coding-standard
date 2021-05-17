@@ -8,4 +8,4 @@ update_configs:
       - "doctrine/coding-standard-approvers"
     default_labels:
       - "Dependencies"
-    version_requirement_updates: "increase_versions"
+    version_requirement_updates: "increase_versions_if_necessary"
