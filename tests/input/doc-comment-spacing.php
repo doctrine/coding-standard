@@ -57,10 +57,40 @@ class Test
      * @PHPCR\Field
      * @ODM\Column
      * @ORM\Column
-     * @see  other
+     * @see  Something else and make this see annotation
+     *       multiline
      *
      */
     public function d(iterable $foo, iterable $bar): iterable
+    {
+    }
+
+    /**
+     *
+     * Description
+     * More Description
+     * @phpstan-param string $foo
+     * @psalm-param string $foo
+     * @phpstan-return true
+     * @throws FooException
+     * @param int[] $foo
+     * @uses other
+     * @throws BarException
+     * @return int[]
+     * @ORM\Id
+     * @internal
+     * @link https://example.com
+     * @ODM\Id
+     * @deprecated
+     * @PHPCR\Uuid
+     * @param int[] $bar
+     * @PHPCR\Field
+     * @ODM\Column
+     * @ORM\Column
+     * @see  other
+     *
+     */
+    public function f(iterable $foo, iterable $bar): iterable
     {
     }
 }

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 $array = [
-0,
+0, // this is the first index
  1,
   2,
    3,

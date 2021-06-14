@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Test;
 
+use function array_map;
 use function chop;
 use function compact;
 use function extract;
@@ -28,3 +29,5 @@ $bar = [
 extract($bar);
 
 compact('foo', 'bar');
+
+array_map('is_null', ['1', '2', null]); // forbidden function will not be detected

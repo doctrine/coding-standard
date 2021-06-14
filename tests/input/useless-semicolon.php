@@ -7,9 +7,20 @@ while (! true) {
 };
 
 do {
-    echo 1;
+    ;echo 1;
 } while (! false);
 
 for (;;) {
     echo 'To infity and beyond';
 };
+
+for ($i = 0 ; $i < 10; $i++);
+{
+    echo 'This will not be executed inside the for-loop';
+}
+
+{
+    $var = 'This is useless';
+};
+
+$myvar = 3;;
