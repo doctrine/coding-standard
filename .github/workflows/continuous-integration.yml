@@ -128,6 +128,7 @@ jobs:
         php-version:
           - "7.1"
           - "7.4"
+          - "8.0"
 
     steps:
       - name: "Checkout"
