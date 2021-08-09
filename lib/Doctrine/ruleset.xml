@@ -397,6 +397,9 @@
                 <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
+
+        <!-- Tools like PHPStan or Psalm check this better -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
@@ -407,6 +410,9 @@
                 <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
+
+        <!-- Tools like PHPStan or Psalm check this better -->
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
@@ -418,6 +424,9 @@
                 <element value="Doctrine\Common\Collections\Collection"/>
             </property>
         </properties>
+
+        <!-- Tools like PHPStan or Psalm check this better -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
     <!-- Forbid useless @var for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>

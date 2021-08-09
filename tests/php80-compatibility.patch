@@ -7,7 +7,7 @@ index c644926..d0f0a44 100644
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           6       0
 -tests/input/example-class.php                         38      0
-+tests/input/example-class.php                         42      0
++tests/input/example-class.php                         40      0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
@@ -26,22 +26,20 @@ index c644926..d0f0a44 100644
  tests/input/optimized-functions.php                   1       0
  tests/input/PropertyTypeHintSpacing.php               6       0
  tests/input/return_type_on_closures.php               21      0
-@@ -39,15 +40,15 @@ tests/input/superfluous-naming.php                    11      0
+@@ -39,14 +40,14 @@ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
  tests/input/traits-uses.php                           11      0
--tests/input/type-hints.php                            4       0
-+tests/input/type-hints.php                            5       0
  tests/input/UnusedVariables.php                       1       0
  tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 377 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
-+A TOTAL OF 391 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
+-A TOTAL OF 373 ERRORS AND 0 WARNINGS WERE FOUND IN 40 FILES
++A TOTAL OF 384 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 313 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 327 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 326 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -150,16 +148,3 @@ index 5bbb636..7ce8a3d 100644
  
 -$var = $object === null ? null : $object->property;
 +$var = $object?->property;
-diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
-index 0e952fc..9824fb0 100644
---- a/tests/fixed/type-hints.php
-+++ b/tests/fixed/type-hints.php
-@@ -10,7 +10,7 @@ use Traversable;
- class TraversableTypeHints
- {
-     /** @var Traversable */
--    private $parameter;
-+    private Traversable $parameter;
- 
-     /**
-      * @param Iterator $iterator
