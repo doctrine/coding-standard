@@ -22,7 +22,7 @@ index fd5432c..233e24d 100644
 +tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
  tests/input/optimized-functions.php                   1       0
- tests/input/PropertyTypeHintSpacing.php               6       0
+ tests/input/PropertyDeclaration.php                   6       0
 @@ -39,15 +39,15 @@ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
