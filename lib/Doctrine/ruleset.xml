@@ -419,6 +419,14 @@
             </property>
         </properties>
     </rule>
+    <!-- Define unions style -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+        <properties>
+            <property name="withSpaces" value="no" />
+            <property name="shortNullable" value="no" />
+            <property name="nullPosition" value="last" />
+        </properties>
+    </rule>
     <!-- Forbid useless @var for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
     <!-- Require One Line Doc Comment where there's only 1 annotation present -->

@@ -1,13 +1,15 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index c644926..d0f0a44 100644
+index c644926..d2640a7 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -15,18 +15,19 @@ tests/input/ControlStructures.php                     28      0
+@@ -14,21 +14,22 @@ tests/input/constants-var.php                         6       0
+ tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
- tests/input/EarlyReturn.php                           6       0
+-tests/input/EarlyReturn.php                           6       0
 -tests/input/example-class.php                         38      0
-+tests/input/example-class.php                         42      0
++tests/input/EarlyReturn.php                           7       0
++tests/input/example-class.php                         43      0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
@@ -24,8 +26,11 @@ index c644926..d0f0a44 100644
  tests/input/null_coalesce_operator.php                3       0
 +tests/input/null_safe_operator.php                    1       0
  tests/input/optimized-functions.php                   1       0
- tests/input/PropertyTypeHintSpacing.php               6       0
+-tests/input/PropertyTypeHintSpacing.php               6       0
++tests/input/PropertyTypeHintSpacing.php               7       0
  tests/input/return_type_on_closures.php               21      0
+ tests/input/return_type_on_methods.php                17      0
+ tests/input/semicolon_spacing.php                     3       0
 @@ -39,15 +40,15 @@ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -35,16 +40,30 @@ index c644926..d0f0a44 100644
  tests/input/UnusedVariables.php                       1       0
  tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
- tests/input/UselessConditions.php                     20      0
+-tests/input/UselessConditions.php                     20      0
++tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
 -A TOTAL OF 377 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
-+A TOTAL OF 391 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
++A TOTAL OF 395 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 313 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 327 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 331 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
+diff --git a/tests/fixed/EarlyReturn.php b/tests/fixed/EarlyReturn.php
+index 5a82a93..7d5eb01 100644
+--- a/tests/fixed/EarlyReturn.php
++++ b/tests/fixed/EarlyReturn.php
+@@ -11,7 +11,7 @@ class EarlyReturn
+         return $bar === 'bar';
+     }
+ 
+-    public function foo(): ?string
++    public function foo(): string|null
+     {
+         foreach ($itens as $item) {
+             if (! $item->isItem()) {
 diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 57d9f2b..5493471 100644
 --- a/tests/fixed/NamingCamelCase.php
@@ -67,17 +86,41 @@ index 57d9f2b..5493471 100644
  
      public function fcn(string $A): void
      {
+diff --git a/tests/fixed/PropertyTypeHintSpacing.php b/tests/fixed/PropertyTypeHintSpacing.php
+index 1421913..d52353c 100644
+--- a/tests/fixed/PropertyTypeHintSpacing.php
++++ b/tests/fixed/PropertyTypeHintSpacing.php
+@@ -9,5 +9,5 @@ final class PropertyTypeHintSpacing
+     public bool $boolPropertyWithDefaultValue = false;
+     public string $stringProperty;
+     public int $intProperty;
+-    public ?string $nullableString = null;
++    public string|null $nullableString = null;
+ }
+diff --git a/tests/fixed/UselessConditions.php b/tests/fixed/UselessConditions.php
+index 2151b17..71e0cfb 100644
+--- a/tests/fixed/UselessConditions.php
++++ b/tests/fixed/UselessConditions.php
+@@ -95,7 +95,7 @@ class UselessConditions
+         return false;
+     }
+ 
+-    public function nullShouldNotBeTreatedAsFalse(): ?bool
++    public function nullShouldNotBeTreatedAsFalse(): bool|null
+     {
+         if (! $this->isAdmin) {
+             return null;
 diff --git a/tests/fixed/example-class.php b/tests/fixed/example-class.php
-index 998e51d..b47d358 100644
+index 998e51d..56cd902 100644
 --- a/tests/fixed/example-class.php
 +++ b/tests/fixed/example-class.php
-@@ -25,17 +25,14 @@ class Example implements IteratorAggregate
+@@ -25,19 +25,16 @@ class Example implements IteratorAggregate
  {
      private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
  
 -    /** @var int|null */
 -    private $foo;
-+    private ?int $foo = null;
++    private int|null $foo = null;
  
      /** @var string[] */
 -    private $bar;
@@ -91,8 +134,20 @@ index 998e51d..b47d358 100644
 -    private $baxBax;
 +    private ControlStructureSniff|int|string|null $baxBax = null;
  
-     public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
+-    public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
++    public function __construct(int|null $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
      {
+         $this->foo    = $foo;
+         $this->bar    = $bar;
+@@ -48,7 +45,7 @@ class Example implements IteratorAggregate
+     /**
+      * Description
+      */
+-    public function getFoo(): ?int
++    public function getFoo(): int|null
+     {
+         return $this->foo;
+     }
 diff --git a/tests/fixed/new_with_parentheses.php b/tests/fixed/new_with_parentheses.php
 index 6e81bbe..47a06ec 100644
 --- a/tests/fixed/new_with_parentheses.php
@@ -151,7 +206,7 @@ index 5bbb636..7ce8a3d 100644
 -$var = $object === null ? null : $object->property;
 +$var = $object?->property;
 diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
-index 0e952fc..9824fb0 100644
+index 6033eca..5e26ed8 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
 @@ -10,7 +10,7 @@ use Traversable;
@@ -163,3 +218,11 @@ index 0e952fc..9824fb0 100644
  
      /**
       * @param Iterator $iterator
+@@ -25,6 +25,5 @@ class TraversableTypeHints
+ 
+ class UnionTypeHints
+ {
+-    /** @var int|string|null */
+-    private $x = 1;
++    private int|string|null $x = 1;
+ }
