@@ -22,3 +22,9 @@ class TraversableTypeHints
         return $this->parameter;
     }
 }
+
+class UnionTypeHints
+{
+    /** @var int|string|null */
+    private $x = 1;
+}
