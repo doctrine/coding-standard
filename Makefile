@@ -21,14 +21,14 @@ update-compatibility-patch-74:
 	@git apply tests/php74-compatibility.patch
 	@printf "Please open your editor and apply your changes\n"
 	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
-	@git diff -- tests/expected_report.txt tests/fixed > .tmp-patch && mv .tmp-patch tests/php74-compatibility.patch && git apply -R tests/php74-compatibility.patch
+	@git diff -- tests/expected_report.txt tests/fixed tests/input > .tmp-patch && mv .tmp-patch tests/php74-compatibility.patch && git apply -R tests/php74-compatibility.patch
 	@git commit -m 'Update compatibility patch' tests/php74-compatibility.patch
 
 update-compatibility-patch-80:
 	@git apply tests/php80-compatibility.patch
 	@printf "Please open your editor and apply your changes\n"
 	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
-	@git diff -- tests/expected_report.txt tests/fixed > .tmp-patch-80 && mv .tmp-patch-80 tests/php80-compatibility.patch && git apply -R tests/php80-compatibility.patch
+	@git diff -- tests/expected_report.txt tests/fixed tests/input > .tmp-patch-80 && mv .tmp-patch-80 tests/php80-compatibility.patch && git apply -R tests/php80-compatibility.patch
 	@git commit -m 'Update compatibility patch' tests/php80-compatibility.patch
 
 vendor: composer.json
