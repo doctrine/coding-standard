@@ -448,6 +448,8 @@
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
     <!-- Forbid useless variables -->
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
+    <!-- Require nowdoc syntax instead of heredoc when possible -->
+    <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc" />
     <!-- Forbid spaces around square brackets -->
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
     <!-- Force array declaration structure -->

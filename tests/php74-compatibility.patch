@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index c644926..1854dbb 100644
+index c644926..7d122d2 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -15,7 +15,7 @@ tests/input/ControlStructures.php                     28      0
@@ -23,7 +23,12 @@ index c644926..1854dbb 100644
  tests/input/null_coalesce_operator.php                3       0
  tests/input/optimized-functions.php                   1       0
  tests/input/PropertyTypeHintSpacing.php               6       0
-@@ -39,15 +39,15 @@ tests/input/superfluous-naming.php                    11      0
+@@ -35,19 +35,20 @@ tests/input/semicolon_spacing.php                     3       0
+ tests/input/single-line-array-spacing.php             5       0
+ tests/input/spread-operator.php                       6       0
+ tests/input/static-closures.php                       1       0
++tests/input/strings.php                               1       0
+ tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
  tests/input/traits-uses.php                           11      0
@@ -35,10 +40,10 @@ index c644926..1854dbb 100644
  tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
 -A TOTAL OF 377 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
-+A TOTAL OF 389 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
++A TOTAL OF 390 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 313 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 323 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 324 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
