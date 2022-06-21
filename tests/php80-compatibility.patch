@@ -97,6 +97,19 @@ index 1421913..d52353c 100644
 -    public ?string $nullableString = null;
 +    public string|null $nullableString = null;
  }
+diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingCommaOnFunctions.php
+index ed304c9..001650f 100644
+--- a/tests/fixed/TrailingCommaOnFunctions.php
++++ b/tests/fixed/TrailingCommaOnFunctions.php
+@@ -11,7 +11,7 @@ class TrailingCommaOnFunctions
+     }
+ 
+     public function b(
+-        int $arg
++        int $arg,
+     ): void {
+     }
+ }
 diff --git a/tests/fixed/UselessConditions.php b/tests/fixed/UselessConditions.php
 index 2151b17..71e0cfb 100644
 --- a/tests/fixed/UselessConditions.php
@@ -205,8 +218,105 @@ index 5bbb636..7ce8a3d 100644
  
 -$var = $object === null ? null : $object->property;
 +$var = $object?->property;
+diff --git a/tests/fixed/return_type_on_closures.php b/tests/fixed/return_type_on_closures.php
+index 134bade..80ad413 100644
+--- a/tests/fixed/return_type_on_closures.php
++++ b/tests/fixed/return_type_on_closures.php
+@@ -22,7 +22,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b
++    int $b,
+ ): void {
+ }
+ 
+@@ -31,7 +31,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b
++    int $b,
+ ): void {
+ }
+ 
+@@ -40,7 +40,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b
++    int $b,
+ ): void {
+ }
+ 
+@@ -49,7 +49,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b
++    int $b,
+ ): void {
+ }
+ 
+@@ -58,6 +58,6 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b
++    int $b,
+ ): void {
+ }
+diff --git a/tests/fixed/return_type_on_methods.php b/tests/fixed/return_type_on_methods.php
+index 8e2c6f7..0c897ae 100644
+--- a/tests/fixed/return_type_on_methods.php
++++ b/tests/fixed/return_type_on_methods.php
+@@ -31,7 +31,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b
++        int $b,
+     ): void {
+     }
+ 
+@@ -40,7 +40,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b
++        int $b,
+     ): void {
+     }
+ 
+@@ -49,7 +49,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b
++        int $b,
+     ): void {
+     }
+ 
+@@ -58,7 +58,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b
++        int $b,
+     ): void {
+     }
+ 
+@@ -67,7 +67,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b
++        int $b,
+     ): void {
+     }
+ }
 diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
-index 6033eca..5e26ed8 100644
+index 10e6f34..5e26ed8 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
 @@ -10,7 +10,7 @@ use Traversable;
@@ -226,3 +336,16 @@ index 6033eca..5e26ed8 100644
 -    private $x = 1;
 +    private int|string|null $x = 1;
  }
+diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingCommaOnFunctions.php
+index ed304c9..e383ee2 100644
+--- a/tests/input/TrailingCommaOnFunctions.php
++++ b/tests/input/TrailingCommaOnFunctions.php
+@@ -6,7 +6,7 @@ namespace Doctrine;
+ 
+ class TrailingCommaOnFunctions
+ {
+-    public function a(int $arg): void
++    public function a(int $arg,): void
+     {
+     }
+ 
