@@ -31,6 +31,13 @@ update-compatibility-patch-80:
 	@git diff -- tests/expected_report.txt tests/fixed > .tmp-patch-80 && mv .tmp-patch-80 tests/php80-compatibility.patch && git apply -R tests/php80-compatibility.patch
 	@git commit -m 'Update compatibility patch' tests/php80-compatibility.patch
 
+update-compatibility-patch-81:
+	@git apply tests/php81-compatibility.patch
+	@printf "Please open your editor and apply your changes\n"
+	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
+	@git diff -- tests/expected_report.txt tests/fixed > .tmp-patch-81 && mv .tmp-patch-80 tests/php81-compatibility.patch && git apply -R tests/php81-compatibility.patch
+	@git commit -m 'Update compatibility patch' tests/php81-compatibility.patch
+
 vendor: composer.json
 	composer update
 	touch -c vendor
