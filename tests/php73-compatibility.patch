@@ -1,0 +1,109 @@
+diff --git a/tests/expected_report.txt b/tests/expected_report.txt
+index 1d5a7d3..fae9e70 100644
+--- a/tests/expected_report.txt
++++ b/tests/expected_report.txt
+@@ -39,6 +39,7 @@ tests/input/strings.php                               1       0
+ tests/input/superfluous-naming.php                    11      0
+ tests/input/test-case.php                             8       0
+ tests/input/trailing_comma_on_array.php               1       0
++tests/input/TrailingCommaOnFunctions.php              2       0
+ tests/input/traits-uses.php                           11      0
+ tests/input/type-hints.php                            7       0
+ tests/input/UnusedVariables.php                       1       0
+@@ -46,9 +47,9 @@ tests/input/use-ordering.php                          1       0
+ tests/input/useless-semicolon.php                     2       0
+ tests/input/UselessConditions.php                     20      0
+ ----------------------------------------------------------------------
+-A TOTAL OF 381 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
++A TOTAL OF 383 ERRORS AND 0 WARNINGS WERE FOUND IN 43 FILES
+ ----------------------------------------------------------------------
+-PHPCBF CAN FIX 315 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 317 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+ ----------------------------------------------------------------------
+ 
+ 
+diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingCommaOnFunctions.php
+index f3ffa91..67173b3 100644
+--- a/tests/fixed/TrailingCommaOnFunctions.php
++++ b/tests/fixed/TrailingCommaOnFunctions.php
+@@ -37,8 +37,9 @@ class TrailingCommaOnFunctions
+ 
+ $class = new TrailingCommaOnFunctions();
+ 
++// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
+ $class->a(1);
+ 
+ $class->a(
+-    1
++    1,
+ );
+diff --git a/tests/fixed/arrow-functions-format.php b/tests/fixed/arrow-functions-format.php
+index a45074f..4da39b8 100644
+--- a/tests/fixed/arrow-functions-format.php
++++ b/tests/fixed/arrow-functions-format.php
+@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+ 
+ $multiLineArrowFunctions = Collection::from([1, 2])
+     ->map(
+-        static fn (int $v): int => $v * 2
++        static fn (int $v): int => $v * 2,
+     )
+     ->reduce(
+-        static fn (int $tmp, int $v): int => $tmp + $v
++        static fn (int $tmp, int $v): int => $tmp + $v,
+     );
+ 
+ $thisIsNotAnArrowFunction = [$this->fn => 'value'];
+diff --git a/tests/fixed/namespaces-spacing.php b/tests/fixed/namespaces-spacing.php
+index d42bbfe..36cbae2 100644
+--- a/tests/fixed/namespaces-spacing.php
++++ b/tests/fixed/namespaces-spacing.php
+@@ -16,5 +16,5 @@ use const DATE_RFC3339;
+ strrev(
+     (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
+         ->sub(new DateInterval('P1D'))
+-        ->format(DATE_RFC3339)
++        ->format(DATE_RFC3339),
+ );
+diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingCommaOnFunctions.php
+index f3ffa91..8adcedf 100644
+--- a/tests/input/TrailingCommaOnFunctions.php
++++ b/tests/input/TrailingCommaOnFunctions.php
+@@ -37,7 +37,8 @@ class TrailingCommaOnFunctions
+ 
+ $class = new TrailingCommaOnFunctions();
+ 
+-$class->a(1);
++// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
++$class->a(1,);
+ 
+ $class->a(
+     1
+diff --git a/tests/input/arrow-functions-format.php b/tests/input/arrow-functions-format.php
+index 8a358e8..d3903ff 100644
+--- a/tests/input/arrow-functions-format.php
++++ b/tests/input/arrow-functions-format.php
+@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+ 
+ $multiLineArrowFunctions = Collection::from([1, 2])
+     ->map(
+-        static fn (int $v): int => $v * 2
++        static fn (int $v): int => $v * 2,
+     )
+     ->reduce(
+-        static fn (int $tmp, int $v): int => $tmp + $v
++        static fn (int $tmp, int $v): int => $tmp + $v,
+     );
+ 
+ $thisIsNotAnArrowFunction = [$this->fn => 'value'];
+diff --git a/tests/input/namespaces-spacing.php b/tests/input/namespaces-spacing.php
+index e1ab639..e7be018 100644
+--- a/tests/input/namespaces-spacing.php
++++ b/tests/input/namespaces-spacing.php
+@@ -11,5 +11,5 @@ use const DATE_RFC3339;
+ strrev(
+     (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
+         ->sub(new DateInterval('P1D'))
+-        ->format(DATE_RFC3339)
++        ->format(DATE_RFC3339),
+ );

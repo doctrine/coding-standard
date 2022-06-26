@@ -291,12 +291,28 @@
             <property name="spacesCountAfterArrow" value="1"/>
         </properties>
     </rule>
+    <!-- Disallow trailing commas in single line function calls -->
+    <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInCall">
+        <properties>
+            <property name="onlySingleLine" value="true" />
+        </properties>
+    </rule>
+    <!-- Disallow trailing commas in single line closure use -->
+    <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInClosureUse">
+        <properties>
+            <property name="onlySingleLine" value="true" />
+        </properties>
+    </rule>
     <!-- Disallow trailing commas in single line function declarations -->
     <rule ref="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration">
         <properties>
             <property name="onlySingleLine" value="true" />
         </properties>
     </rule>
+    <!-- Require trailing commas in multiline function calls -->
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
+    <!-- Require trailing commas in multiline closure use -->
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse"/>
     <!-- Require trailing commas in multiline function declarations -->
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
     <!-- Require closures not referencing $this be static -->
