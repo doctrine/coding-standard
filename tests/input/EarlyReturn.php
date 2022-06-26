@@ -17,7 +17,7 @@ class EarlyReturn
 
     public function foo(): ?string
     {
-        foreach ($itens as $item) {
+        foreach ($items as $item) {
             if (! ($item->isItem())) {
                 return 'There is an item that is not an item';
             } else {
