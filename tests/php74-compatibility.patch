@@ -22,7 +22,7 @@ index c644926..7d122d2 100644
 +tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
  tests/input/optimized-functions.php                   1       0
- tests/input/PropertyTypeHintSpacing.php               6       0
+ tests/input/PropertyDeclaration.php                   6       0
 @@ -35,19 +35,20 @@ tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
