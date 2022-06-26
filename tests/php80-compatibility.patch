@@ -69,7 +69,7 @@ index 5a82a93..7d5eb01 100644
 -    public function foo(): ?string
 +    public function foo(): string|null
      {
-         foreach ($itens as $item) {
+         foreach ($items as $item) {
              if (! $item->isItem()) {
 diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 57d9f2b..5493471 100644
