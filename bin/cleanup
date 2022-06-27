@@ -1,0 +1,7 @@
+#!/bin/bash
+
+. bin/patch-file
+
+rm -f phpcs.log
+rm -rf tests/input2/
+if [ -f "$PATCH_FILE" ]; then git apply -R "$PATCH_FILE" ; fi

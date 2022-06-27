@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. bin/patch-file
+
+if [ -f "$PATCH_FILE" ]; then git apply "$PATCH_FILE" ; fi
