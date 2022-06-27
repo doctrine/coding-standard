@@ -112,6 +112,8 @@
     </rule>
     <!-- Require that single line arrays have the correct spacing: no space around brackets and one space after comma -->
     <rule ref="SlevomatCodingStandard.Arrays.SingleLineArrayWhitespace"/>
+    <!-- Enforce reasonable end bracket placement for multi-line arrays. -->
+    <rule ref="SlevomatCodingStandard.Arrays.MultiLineArrayEndBracketPlacement"/>
     <!-- Require comma after last element in multi-line array -->
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
     <!-- Require presence of constant visibility -->
