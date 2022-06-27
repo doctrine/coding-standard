@@ -1,8 +1,8 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 476a58b..54630dd 100644
+index 1d5a7d3..bfdc3f5 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -14,41 +14,43 @@ tests/input/constants-var.php                         6       0
+@@ -14,23 +14,24 @@ tests/input/constants-var.php                         6       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -29,14 +29,13 @@ index 476a58b..54630dd 100644
 -tests/input/PropertyDeclaration.php                   6       0
 -tests/input/return_type_on_closures.php               21      0
 -tests/input/return_type_on_methods.php                17      0
-+tests/input/PropertyDeclaration.php                   7       0
++tests/input/PropertyDeclaration.php                   11      0
 +tests/input/return_type_on_closures.php               26      0
 +tests/input/return_type_on_methods.php                22      0
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
- tests/input/static-closures.php                       1       0
- tests/input/strings.php                               1       0
+@@ -39,16 +40,17 @@ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -51,15 +50,15 @@ index 476a58b..54630dd 100644
 +tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
 -A TOTAL OF 381 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
-+A TOTAL OF 412 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
++A TOTAL OF 416 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 315 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 346 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 350 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
 diff --git a/tests/fixed/EarlyReturn.php b/tests/fixed/EarlyReturn.php
-index 5a82a93..7d5eb01 100644
+index caf1dbb..fc734db 100644
 --- a/tests/fixed/EarlyReturn.php
 +++ b/tests/fixed/EarlyReturn.php
 @@ -11,7 +11,7 @@ class EarlyReturn
@@ -94,15 +93,20 @@ index 57d9f2b..5493471 100644
      public function fcn(string $A): void
      {
 diff --git a/tests/fixed/PropertyDeclaration.php b/tests/fixed/PropertyDeclaration.php
-index 5c3f27b..7f286ad 100644
+index 5c3f27b..7821d5c 100644
 --- a/tests/fixed/PropertyDeclaration.php
 +++ b/tests/fixed/PropertyDeclaration.php
-@@ -9,5 +9,5 @@ final class PropertyDeclaration
+@@ -9,5 +9,10 @@ final class PropertyDeclaration
      public bool $boolPropertyWithDefaultValue = false;
      public string $stringProperty;
      public int $intProperty;
 -    public ?string $nullableString = null;
 +    public string|null $nullableString = null;
++
++    public function __construct(
++        public Foo $foo,
++    ) {
++    }
  }
 diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingCommaOnFunctions.php
 index 6e5cca4..c5fdccb 100644
@@ -342,6 +346,20 @@ index 10e6f34..5e26ed8 100644
 -    /** @var int|string|null */
 -    private $x = 1;
 +    private int|string|null $x = 1;
+ }
+diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
+index 0891e12..4eb8164 100644
+--- a/tests/input/PropertyDeclaration.php
++++ b/tests/input/PropertyDeclaration.php
+@@ -10,4 +10,9 @@ final class PropertyDeclaration
+     public string  $stringProperty;
+     public  int $intProperty;
+     public ? string $nullableString = null;
++
++    public function __construct(
++        public Foo  $foo
++    ) {
++    }
  }
 diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingCommaOnFunctions.php
 index 6e5cca4..1d24bb6 100644
