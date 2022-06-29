@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+bin/init
+trap 'bin/cleanup' EXIT
+
+set +e
+
+cp -R tests/input/ tests/input2/
+vendor/bin/phpcbf tests/input2
+diff -u tests/input2 tests/fixed

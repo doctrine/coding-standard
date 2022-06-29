@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+bin/init
+trap 'bin/cleanup' EXIT
+
+set +e
+
+# shellcheck disable=SC2046
+vendor/bin/phpcs $(find tests/input/* | sort) --report=summary --report-file=phpcs.log
+diff -u tests/expected_report.txt phpcs.log

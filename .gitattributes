@@ -3,6 +3,7 @@
 /.gitattributes export-ignore
 /.github export-ignore
 /.gitignore export-ignore
+/bin/ export-ignore
 /docs/ export-ignore
 /phpcs.xml.dist export-ignore
 /tests/ export-ignore

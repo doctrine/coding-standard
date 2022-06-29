@@ -2,7 +2,7 @@ diff --git a/tests/expected_report.txt b/tests/expected_report.txt
 index 476a58b..54630dd 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -14,40 +14,43 @@ tests/input/constants-var.php                         6       0
+@@ -14,41 +14,43 @@ tests/input/constants-var.php                         6       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -36,13 +36,13 @@ index 476a58b..54630dd 100644
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
  tests/input/static-closures.php                       1       0
-+tests/input/strings.php                               1       0
+ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
 +tests/input/TrailingCommaOnFunctions.php              2       0
  tests/input/traits-uses.php                           11      0
--tests/input/type-hints.php                            4       0
+-tests/input/type-hints.php                            7       0
 +tests/input/type-hints.php                            9       0
  tests/input/UnusedVariables.php                       1       0
  tests/input/use-ordering.php                          1       0
@@ -50,10 +50,10 @@ index 476a58b..54630dd 100644
 -tests/input/UselessConditions.php                     20      0
 +tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 377 ERRORS AND 0 WARNINGS WERE FOUND IN 41 FILES
+-A TOTAL OF 381 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
 +A TOTAL OF 412 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 313 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 315 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 346 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
