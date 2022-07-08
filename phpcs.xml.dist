@@ -13,6 +13,9 @@
     <!-- Show progress of the run -->
     <arg value="p"/>
 
+    <!--Show sniff codes in all reports -->
+    <arg value="s"/>
+
     <rule ref="Doctrine"/>
 
     <file>lib</file>
