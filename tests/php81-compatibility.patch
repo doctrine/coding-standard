@@ -1,8 +1,8 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 1d5a7d3..a10bb10 100644
+index 1d5a7d3..e9394b1 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -14,23 +14,24 @@ tests/input/constants-var.php                         6       0
+@@ -14,23 +14,25 @@ tests/input/constants-var.php                         6       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -10,6 +10,7 @@ index 1d5a7d3..a10bb10 100644
 -tests/input/example-class.php                         38      0
 +tests/input/EarlyReturn.php                           7       0
 +tests/input/example-class.php                         43      0
++tests/input/ExampleBackedEnum.php                     3       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
@@ -35,7 +36,7 @@ index 1d5a7d3..a10bb10 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -39,16 +40,17 @@ tests/input/strings.php                               1       0
+@@ -39,16 +41,17 @@ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -50,10 +51,10 @@ index 1d5a7d3..a10bb10 100644
 +tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
 -A TOTAL OF 381 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
-+A TOTAL OF 423 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
++A TOTAL OF 426 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 315 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 357 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 360 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -70,6 +71,18 @@ index caf1dbb..fc734db 100644
      {
          foreach ($items as $item) {
              if (! $item->isItem()) {
+diff --git a/tests/fixed/ExampleBackedEnum.php b/tests/fixed/ExampleBackedEnum.php
+index fe54eb9..cc38c54 100644
+--- a/tests/fixed/ExampleBackedEnum.php
++++ b/tests/fixed/ExampleBackedEnum.php
+@@ -3,3 +3,7 @@
+ declare(strict_types=1);
+ 
+ namespace ExampleBackedEnum;
++
++enum ExampleBackedEnum: int
++{
++}
 diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 57d9f2b..5493471 100644
 --- a/tests/fixed/NamingCamelCase.php
@@ -395,6 +408,18 @@ index 10e6f34..5e26ed8 100644
 -    private $x = 1;
 +    private int|string|null $x = 1;
  }
+diff --git a/tests/input/ExampleBackedEnum.php b/tests/input/ExampleBackedEnum.php
+index fe54eb9..0c47286 100644
+--- a/tests/input/ExampleBackedEnum.php
++++ b/tests/input/ExampleBackedEnum.php
+@@ -3,3 +3,7 @@
+ declare(strict_types=1);
+ 
+ namespace ExampleBackedEnum;
++
++enum ExampleBackedEnum :   int
++{
++}
 diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
 index 0891e12..acdc445 100644
 --- a/tests/input/PropertyDeclaration.php
