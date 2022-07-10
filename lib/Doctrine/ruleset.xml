@@ -122,6 +122,8 @@
             <property name="fixable" value="true"/>
         </properties>
     </rule>
+    <!-- Enforce consistent constant spacing -->
+    <rule ref="SlevomatCodingStandard.Classes.ConstantSpacing"/>
     <!-- Forbid LSB for constants (static::FOO) -->
     <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
     <!-- Forbid more than one constant declared per statement -->
