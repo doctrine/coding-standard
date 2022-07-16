@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 1d5a7d3..e9394b1 100644
+index ad4de5c..baa1244 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -14,23 +14,25 @@ tests/input/constants-var.php                         7       0
@@ -7,9 +7,9 @@ index 1d5a7d3..e9394b1 100644
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
 -tests/input/EarlyReturn.php                           6       0
--tests/input/example-class.php                         38      0
+-tests/input/example-class.php                         39      0
 +tests/input/EarlyReturn.php                           7       0
-+tests/input/example-class.php                         43      0
++tests/input/example-class.php                         44      0
 +tests/input/ExampleBackedEnum.php                     3       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
@@ -50,11 +50,11 @@ index 1d5a7d3..e9394b1 100644
 -tests/input/UselessConditions.php                     20      0
 +tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 382 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
-+A TOTAL OF 427 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
+-A TOTAL OF 383 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
++A TOTAL OF 428 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 317 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 362 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 318 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 363 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -106,26 +106,25 @@ index 57d9f2b..5493471 100644
      public function fcn(string $A): void
      {
 diff --git a/tests/fixed/PropertyDeclaration.php b/tests/fixed/PropertyDeclaration.php
-index 5c3f27b..9703897 100644
+index 5c3f27b..679a86e 100644
 --- a/tests/fixed/PropertyDeclaration.php
 +++ b/tests/fixed/PropertyDeclaration.php
-@@ -9,5 +9,10 @@ final class PropertyDeclaration
+@@ -9,5 +9,9 @@ final class PropertyDeclaration
      public bool $boolPropertyWithDefaultValue = false;
      public string $stringProperty;
      public int $intProperty;
 -    public ?string $nullableString = null;
 +    public string|null $nullableString = null;
 +
-+    public function __construct(
-+        public readonly Foo $foo,
-+    ) {
++    public function __construct(public readonly Foo $foo)
++    {
 +    }
  }
 diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingCommaOnFunctions.php
-index f3ffa91..4248238 100644
+index 5813816..92571b1 100644
 --- a/tests/fixed/TrailingCommaOnFunctions.php
 +++ b/tests/fixed/TrailingCommaOnFunctions.php
-@@ -15,7 +15,7 @@ class TrailingCommaOnFunctions
+@@ -16,7 +16,7 @@ class TrailingCommaOnFunctions
      }
  
      public function b(
@@ -134,7 +133,7 @@ index f3ffa91..4248238 100644
      ): void {
      }
  
-@@ -28,7 +28,7 @@ class TrailingCommaOnFunctions
+@@ -29,7 +29,7 @@ class TrailingCommaOnFunctions
          };
  
          $multiLine = static function (int $arg) use (
@@ -143,7 +142,7 @@ index f3ffa91..4248238 100644
          ): void {
              var_dump($var);
          };
-@@ -37,8 +37,9 @@ class TrailingCommaOnFunctions
+@@ -38,8 +38,9 @@ class TrailingCommaOnFunctions
  
  $class = new TrailingCommaOnFunctions();
  
@@ -185,7 +184,7 @@ index a45074f..4da39b8 100644
  
  $thisIsNotAnArrowFunction = [$this->fn => 'value'];
 diff --git a/tests/fixed/example-class.php b/tests/fixed/example-class.php
-index 998e51d..56cd902 100644
+index 45cc5a9..875c1a4 100644
 --- a/tests/fixed/example-class.php
 +++ b/tests/fixed/example-class.php
 @@ -25,19 +25,16 @@ class Example implements IteratorAggregate
@@ -339,10 +338,10 @@ index 134bade..80ad413 100644
  ): void {
  }
 diff --git a/tests/fixed/return_type_on_methods.php b/tests/fixed/return_type_on_methods.php
-index 8e2c6f7..0c897ae 100644
+index 66618c5..913394d 100644
 --- a/tests/fixed/return_type_on_methods.php
 +++ b/tests/fixed/return_type_on_methods.php
-@@ -31,7 +31,7 @@ class Test
+@@ -33,7 +33,7 @@ class Test
          int $c,
          int $d,
          int $e,
@@ -351,7 +350,7 @@ index 8e2c6f7..0c897ae 100644
      ): void {
      }
  
-@@ -40,7 +40,7 @@ class Test
+@@ -42,7 +42,7 @@ class Test
          int $c,
          int $d,
          int $e,
@@ -360,7 +359,7 @@ index 8e2c6f7..0c897ae 100644
      ): void {
      }
  
-@@ -49,7 +49,7 @@ class Test
+@@ -51,7 +51,7 @@ class Test
          int $c,
          int $d,
          int $e,
@@ -369,7 +368,7 @@ index 8e2c6f7..0c897ae 100644
      ): void {
      }
  
-@@ -58,7 +58,7 @@ class Test
+@@ -60,7 +60,7 @@ class Test
          int $c,
          int $d,
          int $e,
@@ -378,7 +377,7 @@ index 8e2c6f7..0c897ae 100644
      ): void {
      }
  
-@@ -67,7 +67,7 @@ class Test
+@@ -69,7 +69,7 @@ class Test
          int $c,
          int $d,
          int $e,
@@ -421,24 +420,23 @@ index fe54eb9..0c47286 100644
 +{
 +}
 diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
-index 0891e12..acdc445 100644
+index 0891e12..942f8d6 100644
 --- a/tests/input/PropertyDeclaration.php
 +++ b/tests/input/PropertyDeclaration.php
-@@ -10,4 +10,9 @@ final class PropertyDeclaration
+@@ -10,4 +10,8 @@ final class PropertyDeclaration
      public string  $stringProperty;
      public  int $intProperty;
      public ? string $nullableString = null;
 +
-+    public function __construct(
-+        public  readonly  Foo  $foo,
-+    ) {
++    public function __construct(public  readonly  Foo  $foo)
++    {
 +    }
  }
 diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingCommaOnFunctions.php
-index f3ffa91..fc5480e 100644
+index 5813816..fc90130 100644
 --- a/tests/input/TrailingCommaOnFunctions.php
 +++ b/tests/input/TrailingCommaOnFunctions.php
-@@ -10,7 +10,7 @@ use function var_dump;
+@@ -11,7 +11,7 @@ use function var_dump;
  
  class TrailingCommaOnFunctions
  {
@@ -447,7 +445,7 @@ index f3ffa91..fc5480e 100644
      {
      }
  
-@@ -23,7 +23,7 @@ class TrailingCommaOnFunctions
+@@ -24,7 +24,7 @@ class TrailingCommaOnFunctions
      {
          $var = null;
  
@@ -456,7 +454,7 @@ index f3ffa91..fc5480e 100644
              var_dump($var);
          };
  
-@@ -37,7 +37,8 @@ class TrailingCommaOnFunctions
+@@ -38,7 +38,8 @@ class TrailingCommaOnFunctions
  
  $class = new TrailingCommaOnFunctions();
  
@@ -483,6 +481,19 @@ index 8a358e8..d3903ff 100644
      );
  
  $thisIsNotAnArrowFunction = [$this->fn => 'value'];
+diff --git a/tests/input/example-class.php b/tests/input/example-class.php
+index 4beb5e4..89e505b 100644
+--- a/tests/input/example-class.php
++++ b/tests/input/example-class.php
+@@ -95,7 +95,7 @@ class Example implements \IteratorAggregate
+ 
+     public function shortMethod(
+         int $thatCanBe,
+-        int $singleLined
++        int $singleLined,
+     ): void {
+     }
+ 
 diff --git a/tests/input/namespaces-spacing.php b/tests/input/namespaces-spacing.php
 index e1ab639..e7be018 100644
 --- a/tests/input/namespaces-spacing.php

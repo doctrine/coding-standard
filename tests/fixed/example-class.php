@@ -87,4 +87,8 @@ class Example implements IteratorAggregate
     {
         return new TestCase();
     }
+
+    public function shortMethod(int $thatCanBe, int $singleLined): void
+    {
+    }
 }

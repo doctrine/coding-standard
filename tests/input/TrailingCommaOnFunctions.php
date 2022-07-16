@@ -7,6 +7,7 @@ namespace Doctrine;
 use function var_dump;
 
 // phpcs:disable PSR1.Files.SideEffects
+// phpcs:disable SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature.RequiredSingleLineSignature
 
 class TrailingCommaOnFunctions
 {

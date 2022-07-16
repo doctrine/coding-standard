@@ -144,6 +144,8 @@
             <property name="enableMultipleSpacesBetweenModifiersCheck" value="true"/>
         </properties>
     </rule>
+    <!--Enforce method signature to be on a single line.-->
+    <rule ref="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>
     <!-- Forbid uses of multiple traits separated by comma -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
     <!-- Require no spaces before trait use, between trait uses and one space after trait uses -->

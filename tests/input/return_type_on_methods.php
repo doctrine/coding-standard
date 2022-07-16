@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Blah;
 
+// phpcs:disable SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature.RequiredSingleLineSignature
+
 class Test
 {
     public function a() :void
