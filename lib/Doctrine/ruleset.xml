@@ -287,6 +287,8 @@
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!-- Require using Throwable instead of Exception -->
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+    <!-- Require non-capturing catch when the variable with exception is not used. -->
+    <rule ref="SlevomatCodingStandard.Exceptions.RequireNonCapturingCatch" />
     <!-- Ensure Arrow Functions declaration format -->
     <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration">
         <properties>
