@@ -10,4 +10,9 @@ final class PropertyDeclaration
     public string  $stringProperty;
     public  int $intProperty;
     public ? string $nullableString = null;
+
+    public function __construct(
+        public  readonly  Foo  $foo,
+    ) {
+    }
 }

@@ -22,7 +22,7 @@ static function (
     int $c,
     int $d,
     int $e,
-    int $b
+    int $b,
 ): void {
 }
 
@@ -31,7 +31,7 @@ static function (
     int $c,
     int $d,
     int $e,
-    int $b
+    int $b,
 ): void {
 }
 
@@ -40,7 +40,7 @@ static function (
     int $c,
     int $d,
     int $e,
-    int $b
+    int $b,
 ): void {
 }
 
@@ -49,7 +49,7 @@ static function (
     int $c,
     int $d,
     int $e,
-    int $b
+    int $b,
 ): void {
 }
 
@@ -58,6 +58,6 @@ static function (
     int $c,
     int $d,
     int $e,
-    int $b
+    int $b,
 ): void {
 }

@@ -31,7 +31,7 @@ class Test
         int $c,
         int $d,
         int $e,
-        int $b
+        int $b,
     ): void {
     }
 
@@ -40,7 +40,7 @@ class Test
         int $c,
         int $d,
         int $e,
-        int $b
+        int $b,
     ): void {
     }
 
@@ -49,7 +49,7 @@ class Test
         int $c,
         int $d,
         int $e,
-        int $b
+        int $b,
     ): void {
     }
 
@@ -58,7 +58,7 @@ class Test
         int $c,
         int $d,
         int $e,
-        int $b
+        int $b,
     ): void {
     }
 
@@ -67,7 +67,7 @@ class Test
         int $c,
         int $d,
         int $e,
-        int $b
+        int $b,
     ): void {
     }
 }

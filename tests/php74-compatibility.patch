@@ -1,213 +1,417 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 1d5a7d3..91e97e7 100644
+index d53fd48..dc2cf18 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -15,7 +15,7 @@ tests/input/ControlStructures.php                     28      0
+@@ -14,26 +14,23 @@ tests/input/constants-var.php                         7       0
+ tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
- tests/input/EarlyReturn.php                           6       0
--tests/input/example-class.php                         38      0
+-tests/input/EarlyReturn.php                           7       0
+-tests/input/example-class.php                         43      0
+-tests/input/ExampleBackedEnum.php                     3       0
+-tests/input/Exceptions.php                            1       0
++tests/input/EarlyReturn.php                           6       0
 +tests/input/example-class.php                         41      0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
-@@ -23,9 +23,9 @@ tests/input/LowCaseTypes.php                          2       0
+ tests/input/LowCaseTypes.php                          2       0
  tests/input/namespaces-spacing.php                    7       0
- tests/input/NamingCamelCase.php                       6       0
+-tests/input/NamingCamelCase.php                       9       0
++tests/input/NamingCamelCase.php                       6       0
  tests/input/negation-operator.php                     2       0
--tests/input/new_with_parentheses.php                  18      0
-+tests/input/new_with_parentheses.php                  19      0
+ tests/input/new_with_parentheses.php                  19      0
  tests/input/not_spacing.php                           8       0
--tests/input/null_coalesce_equal_operator.php          1       0
-+tests/input/null_coalesce_equal_operator.php          5       0
+ tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
+-tests/input/null_safe_operator.php                    1       0
  tests/input/optimized-functions.php                   1       0
- tests/input/PropertyDeclaration.php                   6       0
-@@ -39,16 +39,17 @@ tests/input/strings.php                               1       0
+-tests/input/PropertyDeclaration.php                   14      0
+-tests/input/return_type_on_closures.php               26      0
+-tests/input/return_type_on_methods.php                22      0
++tests/input/PropertyDeclaration.php                   6       0
++tests/input/return_type_on_closures.php               21      0
++tests/input/return_type_on_methods.php                17      0
+ tests/input/semicolon_spacing.php                     3       0
+ tests/input/single-line-array-spacing.php             5       0
+ tests/input/spread-operator.php                       6       0
+@@ -42,17 +39,17 @@ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
+-tests/input/TrailingCommaOnFunctions.php              6       0
 +tests/input/TrailingCommaOnFunctions.php              2       0
  tests/input/traits-uses.php                           11      0
--tests/input/type-hints.php                            7       0
+-tests/input/type-hints.php                            9       0
 +tests/input/type-hints.php                            8       0
  tests/input/UnusedVariables.php                       1       0
  tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
- tests/input/UselessConditions.php                     20      0
+-tests/input/UselessConditions.php                     21      0
++tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 382 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
+-A TOTAL OF 428 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
 +A TOTAL OF 393 ERRORS AND 0 WARNINGS WERE FOUND IN 43 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 317 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 363 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 328 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
+diff --git a/tests/fixed/ControlStructures.php b/tests/fixed/ControlStructures.php
+index f8f7f65..a653086 100644
+--- a/tests/fixed/ControlStructures.php
++++ b/tests/fixed/ControlStructures.php
+@@ -104,7 +104,7 @@ class ControlStructures
+ 
+         try {
+             echo 4;
+-        } catch (Throwable) {
++        } catch (Throwable $throwable) {
+         }
+ 
+         echo 5;
+diff --git a/tests/fixed/EarlyReturn.php b/tests/fixed/EarlyReturn.php
+index fc734db..caf1dbb 100644
+--- a/tests/fixed/EarlyReturn.php
++++ b/tests/fixed/EarlyReturn.php
+@@ -11,7 +11,7 @@ class EarlyReturn
+         return $bar === 'bar';
+     }
+ 
+-    public function foo(): string|null
++    public function foo(): ?string
+     {
+         foreach ($items as $item) {
+             if (! $item->isItem()) {
+diff --git a/tests/fixed/ExampleBackedEnum.php b/tests/fixed/ExampleBackedEnum.php
+index cc38c54..fe54eb9 100644
+--- a/tests/fixed/ExampleBackedEnum.php
++++ b/tests/fixed/ExampleBackedEnum.php
+@@ -3,7 +3,3 @@
+ declare(strict_types=1);
+ 
+ namespace ExampleBackedEnum;
+-
+-enum ExampleBackedEnum: int
+-{
+-}
+diff --git a/tests/fixed/Exceptions.php b/tests/fixed/Exceptions.php
+index db7408b..9b146c6 100644
+--- a/tests/fixed/Exceptions.php
++++ b/tests/fixed/Exceptions.php
+@@ -3,11 +3,3 @@
+ declare(strict_types=1);
+ 
+ namespace Exceptions;
+-
+-use Exception;
+-use Throwable;
+-
+-try {
+-    throw new Exception();
+-} catch (Throwable) {
+-}
+diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
+index 5493471..57d9f2b 100644
+--- a/tests/fixed/NamingCamelCase.php
++++ b/tests/fixed/NamingCamelCase.php
+@@ -6,11 +6,14 @@ namespace Example;
+ 
+ class NamingCamelCase
+ {
+-    public mixed $A;
++    /** @var mixed */
++    public $A;
+ 
+-    protected mixed $B;
++    /** @var mixed */
++    protected $B;
+ 
+-    private mixed $C;
++    /** @var mixed */
++    private $C;
+ 
+     public function fcn(string $A): void
+     {
+diff --git a/tests/fixed/PropertyDeclaration.php b/tests/fixed/PropertyDeclaration.php
+index 9703897..5c3f27b 100644
+--- a/tests/fixed/PropertyDeclaration.php
++++ b/tests/fixed/PropertyDeclaration.php
+@@ -9,10 +9,5 @@ final class PropertyDeclaration
+     public bool $boolPropertyWithDefaultValue = false;
+     public string $stringProperty;
+     public int $intProperty;
+-    public string|null $nullableString = null;
+-
+-    public function __construct(
+-        public readonly Foo $foo,
+-    ) {
+-    }
++    public ?string $nullableString = null;
+ }
 diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingCommaOnFunctions.php
-index f3ffa91..67173b3 100644
+index 4248238..67173b3 100644
 --- a/tests/fixed/TrailingCommaOnFunctions.php
 +++ b/tests/fixed/TrailingCommaOnFunctions.php
-@@ -37,8 +37,9 @@ class TrailingCommaOnFunctions
+@@ -15,7 +15,7 @@ class TrailingCommaOnFunctions
+     }
  
- $class = new TrailingCommaOnFunctions();
+     public function b(
+-        int $arg,
++        int $arg
+     ): void {
+     }
  
-+// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
- $class->a(1);
+@@ -28,7 +28,7 @@ class TrailingCommaOnFunctions
+         };
  
- $class->a(
--    1
-+    1,
- );
-diff --git a/tests/fixed/arrow-functions-format.php b/tests/fixed/arrow-functions-format.php
-index a45074f..4da39b8 100644
---- a/tests/fixed/arrow-functions-format.php
-+++ b/tests/fixed/arrow-functions-format.php
-@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+         $multiLine = static function (int $arg) use (
+-            $var,
++            $var
+         ): void {
+             var_dump($var);
+         };
+diff --git a/tests/fixed/UselessConditions.php b/tests/fixed/UselessConditions.php
+index 71e0cfb..2151b17 100644
+--- a/tests/fixed/UselessConditions.php
++++ b/tests/fixed/UselessConditions.php
+@@ -95,7 +95,7 @@ class UselessConditions
+         return false;
+     }
  
- $multiLineArrowFunctions = Collection::from([1, 2])
-     ->map(
--        static fn (int $v): int => $v * 2
-+        static fn (int $v): int => $v * 2,
-     )
-     ->reduce(
--        static fn (int $tmp, int $v): int => $tmp + $v
-+        static fn (int $tmp, int $v): int => $tmp + $v,
-     );
- 
- $thisIsNotAnArrowFunction = [$this->fn => 'value'];
+-    public function nullShouldNotBeTreatedAsFalse(): bool|null
++    public function nullShouldNotBeTreatedAsFalse(): ?bool
+     {
+         if (! $this->isAdmin) {
+             return null;
 diff --git a/tests/fixed/example-class.php b/tests/fixed/example-class.php
-index 998e51d..7866379 100644
+index 56cd902..7866379 100644
 --- a/tests/fixed/example-class.php
 +++ b/tests/fixed/example-class.php
-@@ -25,14 +25,12 @@ class Example implements IteratorAggregate
+@@ -25,16 +25,17 @@ class Example implements IteratorAggregate
  {
      private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
  
--    /** @var int|null */
--    private $foo;
+-    private int|null $foo = null;
 +    private ?int $foo = null;
  
      /** @var string[] */
--    private $bar;
-+    private array $bar;
+     private array $bar;
  
--    /** @var bool */
--    private $baz;
-+    private bool $baz;
+     private bool $baz;
  
-     /** @var ControlStructureSniff|int|string|null */
-     private $baxBax;
-diff --git a/tests/fixed/namespaces-spacing.php b/tests/fixed/namespaces-spacing.php
-index d42bbfe..36cbae2 100644
---- a/tests/fixed/namespaces-spacing.php
-+++ b/tests/fixed/namespaces-spacing.php
-@@ -16,5 +16,5 @@ use const DATE_RFC3339;
- strrev(
-     (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
-         ->sub(new DateInterval('P1D'))
--        ->format(DATE_RFC3339)
-+        ->format(DATE_RFC3339),
- );
-diff --git a/tests/fixed/new_with_parentheses.php b/tests/fixed/new_with_parentheses.php
-index 6e81bbe..47a06ec 100644
---- a/tests/fixed/new_with_parentheses.php
-+++ b/tests/fixed/new_with_parentheses.php
-@@ -24,5 +24,5 @@ $y = [new stdClass()];
+-    private ControlStructureSniff|int|string|null $baxBax = null;
++    /** @var ControlStructureSniff|int|string|null */
++    private $baxBax;
  
- $z = new stdClass() ? new stdClass() : new stdClass();
- 
--$q = $q ?: new stdClass();
--$e = $e ?? new stdClass();
-+$q   = $q ?: new stdClass();
-+$e ??= new stdClass();
-diff --git a/tests/fixed/null_coalesce_equal_operator.php b/tests/fixed/null_coalesce_equal_operator.php
-index b997469..6703d30 100644
---- a/tests/fixed/null_coalesce_equal_operator.php
-+++ b/tests/fixed/null_coalesce_equal_operator.php
-@@ -2,12 +2,12 @@
+-    public function __construct(int|null $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
++    public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
+     {
+         $this->foo    = $foo;
+         $this->bar    = $bar;
+@@ -45,7 +46,7 @@ class Example implements IteratorAggregate
+     /**
+      * Description
+      */
+-    public function getFoo(): int|null
++    public function getFoo(): ?int
+     {
+         return $this->foo;
+     }
+diff --git a/tests/fixed/null_safe_operator.php b/tests/fixed/null_safe_operator.php
+index 7ce8a3d..5bbb636 100644
+--- a/tests/fixed/null_safe_operator.php
++++ b/tests/fixed/null_safe_operator.php
+@@ -2,4 +2,4 @@
  
  declare(strict_types=1);
  
--$bar = $bar ?? 'bar';
-+$bar ??= 'bar';
+-$var = $object?->property;
++$var = $object === null ? null : $object->property;
+diff --git a/tests/fixed/return_type_on_closures.php b/tests/fixed/return_type_on_closures.php
+index 80ad413..134bade 100644
+--- a/tests/fixed/return_type_on_closures.php
++++ b/tests/fixed/return_type_on_closures.php
+@@ -22,7 +22,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b,
++    int $b
+ ): void {
+ }
  
--$bar['baz'] = $bar['baz'] ?? 'baz';
-+$bar['baz'] ??= 'baz';
+@@ -31,7 +31,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b,
++    int $b
+ ): void {
+ }
  
--$bar = $bar ?? 'bar';
-+$bar ??= 'bar';
+@@ -40,7 +40,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b,
++    int $b
+ ): void {
+ }
  
--$object->property = $object->property ?? 'Default Value';
-+$object->property ??= 'Default Value';
+@@ -49,7 +49,7 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b,
++    int $b
+ ): void {
+ }
  
--Test::$foo = Test::$foo ?? 123;
-+Test::$foo ??= 123;
-diff --git a/tests/fixed/null_coalesce_operator.php b/tests/fixed/null_coalesce_operator.php
-index 8846dd1..51c361c 100644
---- a/tests/fixed/null_coalesce_operator.php
-+++ b/tests/fixed/null_coalesce_operator.php
-@@ -4,7 +4,7 @@ declare(strict_types=1);
+@@ -58,6 +58,6 @@ static function (
+     int $c,
+     int $d,
+     int $e,
+-    int $b,
++    int $b
+ ): void {
+ }
+diff --git a/tests/fixed/return_type_on_methods.php b/tests/fixed/return_type_on_methods.php
+index 0c897ae..8e2c6f7 100644
+--- a/tests/fixed/return_type_on_methods.php
++++ b/tests/fixed/return_type_on_methods.php
+@@ -31,7 +31,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b,
++        int $b
+     ): void {
+     }
  
- $foo = $_GET['foo'] ?? 'foo';
+@@ -40,7 +40,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b,
++        int $b
+     ): void {
+     }
  
--$bar = $bar ?? 'bar';
-+$bar ??= 'bar';
+@@ -49,7 +49,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b,
++        int $b
+     ): void {
+     }
  
- $bar = $bar['baz'] ?? 'baz';
+@@ -58,7 +58,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b,
++        int $b
+     ): void {
+     }
  
+@@ -67,7 +67,7 @@ class Test
+         int $c,
+         int $d,
+         int $e,
+-        int $b,
++        int $b
+     ): void {
+     }
+ }
 diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
-index 10e6f34..bfa6d4f 100644
+index 5e26ed8..bfa6d4f 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
-@@ -10,7 +10,7 @@ use Traversable;
- class TraversableTypeHints
- {
-     /** @var Traversable */
--    private $parameter;
-+    private Traversable $parameter;
+@@ -25,5 +25,6 @@ class TraversableTypeHints
  
-     /**
-      * @param Iterator $iterator
+ class UnionTypeHints
+ {
+-    private int|string|null $x = 1;
++    /** @var int|string|null */
++    private $x = 1;
+ }
+diff --git a/tests/input/ControlStructures.php b/tests/input/ControlStructures.php
+index 73944e3..a0e0b2e 100644
+--- a/tests/input/ControlStructures.php
++++ b/tests/input/ControlStructures.php
+@@ -93,7 +93,7 @@ class ControlStructures
+         }
+         try {
+             echo 4;
+-        } catch (Throwable) {
++        } catch (Throwable $throwable) {
+         }
+         echo 5;
+     }
+diff --git a/tests/input/ExampleBackedEnum.php b/tests/input/ExampleBackedEnum.php
+index 0c47286..fe54eb9 100644
+--- a/tests/input/ExampleBackedEnum.php
++++ b/tests/input/ExampleBackedEnum.php
+@@ -3,7 +3,3 @@
+ declare(strict_types=1);
+ 
+ namespace ExampleBackedEnum;
+-
+-enum ExampleBackedEnum :   int
+-{
+-}
+diff --git a/tests/input/Exceptions.php b/tests/input/Exceptions.php
+index 3aaa30f..9b146c6 100644
+--- a/tests/input/Exceptions.php
++++ b/tests/input/Exceptions.php
+@@ -3,11 +3,3 @@
+ declare(strict_types=1);
+ 
+ namespace Exceptions;
+-
+-use Exception;
+-use Throwable;
+-
+-try {
+-    throw new Exception();
+-} catch (Throwable $throwable) {
+-}
+diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
+index acdc445..0891e12 100644
+--- a/tests/input/PropertyDeclaration.php
++++ b/tests/input/PropertyDeclaration.php
+@@ -10,9 +10,4 @@ final class PropertyDeclaration
+     public string  $stringProperty;
+     public  int $intProperty;
+     public ? string $nullableString = null;
+-
+-    public function __construct(
+-        public  readonly  Foo  $foo,
+-    ) {
+-    }
+ }
 diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingCommaOnFunctions.php
-index f3ffa91..8adcedf 100644
+index fc5480e..8adcedf 100644
 --- a/tests/input/TrailingCommaOnFunctions.php
 +++ b/tests/input/TrailingCommaOnFunctions.php
-@@ -37,7 +37,8 @@ class TrailingCommaOnFunctions
+@@ -10,7 +10,7 @@ use function var_dump;
  
- $class = new TrailingCommaOnFunctions();
+ class TrailingCommaOnFunctions
+ {
+-    public function a(int $arg,): void
++    public function a(int $arg): void
+     {
+     }
  
--$class->a(1);
-+// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
-+$class->a(1,);
+@@ -23,7 +23,7 @@ class TrailingCommaOnFunctions
+     {
+         $var = null;
  
- $class->a(
-     1
-diff --git a/tests/input/arrow-functions-format.php b/tests/input/arrow-functions-format.php
-index 8a358e8..d3903ff 100644
---- a/tests/input/arrow-functions-format.php
-+++ b/tests/input/arrow-functions-format.php
-@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+-        $singleLine = static function (int $arg) use ($var,): void {
++        $singleLine = static function (int $arg) use ($var): void {
+             var_dump($var);
+         };
  
- $multiLineArrowFunctions = Collection::from([1, 2])
-     ->map(
--        static fn (int $v): int => $v * 2
-+        static fn (int $v): int => $v * 2,
-     )
-     ->reduce(
--        static fn (int $tmp, int $v): int => $tmp + $v
-+        static fn (int $tmp, int $v): int => $tmp + $v,
-     );
- 
- $thisIsNotAnArrowFunction = [$this->fn => 'value'];
-diff --git a/tests/input/namespaces-spacing.php b/tests/input/namespaces-spacing.php
-index e1ab639..e7be018 100644
---- a/tests/input/namespaces-spacing.php
-+++ b/tests/input/namespaces-spacing.php
-@@ -11,5 +11,5 @@ use const DATE_RFC3339;
- strrev(
-     (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
-         ->sub(new DateInterval('P1D'))
--        ->format(DATE_RFC3339)
-+        ->format(DATE_RFC3339),
- );

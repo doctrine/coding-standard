@@ -11,7 +11,7 @@ class EarlyReturn
         return $bar === 'bar';
     }
 
-    public function foo(): ?string
+    public function foo(): string|null
     {
         foreach ($items as $item) {
             if (! $item->isItem()) {

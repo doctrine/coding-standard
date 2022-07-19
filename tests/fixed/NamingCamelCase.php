@@ -6,14 +6,11 @@ namespace Example;
 
 class NamingCamelCase
 {
-    /** @var mixed */
-    public $A;
+    public mixed $A;
 
-    /** @var mixed */
-    protected $B;
+    protected mixed $B;
 
-    /** @var mixed */
-    private $C;
+    private mixed $C;
 
     public function fcn(string $A): void
     {

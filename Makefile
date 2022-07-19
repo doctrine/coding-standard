@@ -8,6 +8,13 @@ test-report: vendor
 test-fix: vendor
 	./bin/test-fix
 
+update-compatibility-patch-72:
+	@git apply tests/php72-compatibility.patch
+	@printf "Please open your editor and apply your changes\n"
+	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
+	@git diff -- tests/expected_report.txt tests/fixed tests/input > .tmp-patch && mv .tmp-patch tests/php72-compatibility.patch && git apply -R tests/php72-compatibility.patch
+	@git commit -m 'Update compatibility patch' tests/php72-compatibility.patch
+
 update-compatibility-patch-73:
 	@git apply tests/php73-compatibility.patch
 	@printf "Please open your editor and apply your changes\n"
@@ -28,13 +35,6 @@ update-compatibility-patch-80:
 	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
 	@git diff -- tests/expected_report.txt tests/fixed tests/input > .tmp-patch && mv .tmp-patch tests/php80-compatibility.patch && git apply -R tests/php80-compatibility.patch
 	@git commit -m 'Update compatibility patch' tests/php80-compatibility.patch
-
-update-compatibility-patch-81:
-	@git apply tests/php81-compatibility.patch
-	@printf "Please open your editor and apply your changes\n"
-	@until [ "$${compatibility_resolved}" == "y" ]; do read -p "Have finished your changes (y|n)? " compatibility_resolved; done && compatibility_resolved=
-	@git diff -- tests/expected_report.txt tests/fixed tests/input > .tmp-patch && mv .tmp-patch tests/php81-compatibility.patch && git apply -R tests/php81-compatibility.patch
-	@git commit -m 'Update compatibility patch' tests/php81-compatibility.patch
 
 vendor: composer.json
 	composer update
