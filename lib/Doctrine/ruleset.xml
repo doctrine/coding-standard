@@ -144,6 +144,8 @@
             <property name="enableMultipleSpacesBetweenModifiersCheck" value="true"/>
         </properties>
     </rule>
+    <!-- Require usage of constructor property promotion -->
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
     <!-- Forbid uses of multiple traits separated by comma -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
     <!-- Require no spaces before trait use, between trait uses and one space after trait uses -->
