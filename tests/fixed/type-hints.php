@@ -10,7 +10,7 @@ use Traversable;
 class TraversableTypeHints
 {
     /** @var Traversable */
-    private $parameter;
+    private Traversable $parameter;
 
     /**
      * @param Iterator $iterator
@@ -25,6 +25,5 @@ class TraversableTypeHints
 
 class UnionTypeHints
 {
-    /** @var int|string|null */
-    private $x = 1;
+    private int|string|null $x = 1;
 }

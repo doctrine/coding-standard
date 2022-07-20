@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
 
 $multiLineArrowFunctions = Collection::from([1, 2])
     ->map(
-        static fn (int $v): int => $v * 2
+        static fn (int $v): int => $v * 2,
     )
     ->reduce(
-        static fn (int $tmp, int $v): int => $tmp + $v
+        static fn (int $tmp, int $v): int => $tmp + $v,
     );
 
 $thisIsNotAnArrowFunction = [$this->fn => 'value'];

@@ -15,7 +15,7 @@ class TrailingCommaOnFunctions
     }
 
     public function b(
-        int $arg
+        int $arg,
     ): void {
     }
 
@@ -28,7 +28,7 @@ class TrailingCommaOnFunctions
         };
 
         $multiLine = static function (int $arg) use (
-            $var
+            $var,
         ): void {
             var_dump($var);
         };
@@ -37,8 +37,9 @@ class TrailingCommaOnFunctions
 
 $class = new TrailingCommaOnFunctions();
 
+// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
 $class->a(1);
 
 $class->a(
-    1
+    1,
 );

@@ -104,7 +104,7 @@ class ControlStructures
 
         try {
             echo 4;
-        } catch (Throwable $throwable) {
+        } catch (Throwable) {
         }
 
         echo 5;

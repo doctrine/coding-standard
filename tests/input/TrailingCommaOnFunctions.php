@@ -10,7 +10,7 @@ use function var_dump;
 
 class TrailingCommaOnFunctions
 {
-    public function a(int $arg): void
+    public function a(int $arg,): void
     {
     }
 
@@ -23,7 +23,7 @@ class TrailingCommaOnFunctions
     {
         $var = null;
 
-        $singleLine = static function (int $arg) use ($var): void {
+        $singleLine = static function (int $arg) use ($var,): void {
             var_dump($var);
         };
 
@@ -37,7 +37,8 @@ class TrailingCommaOnFunctions
 
 $class = new TrailingCommaOnFunctions();
 
-$class->a(1);
+// phpcs:ignore Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma
+$class->a(1,);
 
 $class->a(
     1

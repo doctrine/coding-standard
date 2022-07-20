@@ -14,23 +14,26 @@ tests/input/constants-var.php                         7       0
 tests/input/ControlStructures.php                     28      0
 tests/input/doc-comment-spacing.php                   11      0
 tests/input/duplicate-assignment-variable.php         1       0
-tests/input/EarlyReturn.php                           6       0
-tests/input/example-class.php                         38      0
+tests/input/EarlyReturn.php                           7       0
+tests/input/example-class.php                         43      0
+tests/input/ExampleBackedEnum.php                     3       0
+tests/input/Exceptions.php                            1       0
 tests/input/forbidden-comments.php                    14      0
 tests/input/forbidden-functions.php                   6       0
 tests/input/inline_type_hint_assertions.php           7       0
 tests/input/LowCaseTypes.php                          2       0
 tests/input/namespaces-spacing.php                    7       0
-tests/input/NamingCamelCase.php                       6       0
+tests/input/NamingCamelCase.php                       9       0
 tests/input/negation-operator.php                     2       0
-tests/input/new_with_parentheses.php                  18      0
+tests/input/new_with_parentheses.php                  19      0
 tests/input/not_spacing.php                           8       0
-tests/input/null_coalesce_equal_operator.php          1       0
+tests/input/null_coalesce_equal_operator.php          5       0
 tests/input/null_coalesce_operator.php                3       0
+tests/input/null_safe_operator.php                    1       0
 tests/input/optimized-functions.php                   1       0
-tests/input/PropertyDeclaration.php                   6       0
-tests/input/return_type_on_closures.php               21      0
-tests/input/return_type_on_methods.php                17      0
+tests/input/PropertyDeclaration.php                   14      0
+tests/input/return_type_on_closures.php               26      0
+tests/input/return_type_on_methods.php                22      0
 tests/input/semicolon_spacing.php                     3       0
 tests/input/single-line-array-spacing.php             5       0
 tests/input/spread-operator.php                       6       0
@@ -39,16 +42,17 @@ tests/input/strings.php                               1       0
 tests/input/superfluous-naming.php                    11      0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
+tests/input/TrailingCommaOnFunctions.php              6       0
 tests/input/traits-uses.php                           11      0
-tests/input/type-hints.php                            7       0
+tests/input/type-hints.php                            9       0
 tests/input/UnusedVariables.php                       1       0
 tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
-tests/input/UselessConditions.php                     20      0
+tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 382 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
+A TOTAL OF 428 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 317 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 363 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
