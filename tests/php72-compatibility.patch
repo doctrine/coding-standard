@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d53fd48..53dada5 100644
+index 5110131..53dada5 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -14,26 +14,23 @@ tests/input/constants-var.php                         7       0
@@ -7,7 +7,7 @@ index d53fd48..53dada5 100644
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
 -tests/input/EarlyReturn.php                           7       0
--tests/input/example-class.php                         43      0
+-tests/input/example-class.php                         44      0
 -tests/input/ExampleBackedEnum.php                     3       0
 -tests/input/Exceptions.php                            1       0
 +tests/input/EarlyReturn.php                           6       0
@@ -51,10 +51,10 @@ index d53fd48..53dada5 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 428 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
+-A TOTAL OF 429 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
 +A TOTAL OF 382 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 363 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 364 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 317 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
@@ -63,7 +63,7 @@ diff --git a/tests/fixed/ControlStructures.php b/tests/fixed/ControlStructures.p
 index f8f7f65..a653086 100644
 --- a/tests/fixed/ControlStructures.php
 +++ b/tests/fixed/ControlStructures.php
-@@ -104,7 +104,7 @@ class ControlStructures
+@@ -104,7 +104,7 @@ public function spaceBelowBlocks(): void
  
          try {
              echo 4;
@@ -76,7 +76,7 @@ diff --git a/tests/fixed/EarlyReturn.php b/tests/fixed/EarlyReturn.php
 index fc734db..caf1dbb 100644
 --- a/tests/fixed/EarlyReturn.php
 +++ b/tests/fixed/EarlyReturn.php
-@@ -11,7 +11,7 @@ class EarlyReturn
+@@ -11,7 +11,7 @@ public function bar(): bool
          return $bar === 'bar';
      }
  
@@ -117,7 +117,7 @@ diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 5493471..57d9f2b 100644
 --- a/tests/fixed/NamingCamelCase.php
 +++ b/tests/fixed/NamingCamelCase.php
-@@ -6,11 +6,14 @@ namespace Example;
+@@ -6,11 +6,14 @@
  
  class NamingCamelCase
  {
@@ -155,7 +155,7 @@ diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingComm
 index 4248238..f3ffa91 100644
 --- a/tests/fixed/TrailingCommaOnFunctions.php
 +++ b/tests/fixed/TrailingCommaOnFunctions.php
-@@ -15,7 +15,7 @@ class TrailingCommaOnFunctions
+@@ -15,7 +15,7 @@ public function a(int $arg): void
      }
  
      public function b(
@@ -164,7 +164,7 @@ index 4248238..f3ffa91 100644
      ): void {
      }
  
-@@ -28,7 +28,7 @@ class TrailingCommaOnFunctions
+@@ -28,7 +28,7 @@ public function uses(): void
          };
  
          $multiLine = static function (int $arg) use (
@@ -173,7 +173,7 @@ index 4248238..f3ffa91 100644
          ): void {
              var_dump($var);
          };
-@@ -37,9 +37,8 @@ class TrailingCommaOnFunctions
+@@ -37,9 +37,8 @@ public function uses(): void
  
  $class = new TrailingCommaOnFunctions();
  
@@ -188,7 +188,7 @@ diff --git a/tests/fixed/UselessConditions.php b/tests/fixed/UselessConditions.p
 index 71e0cfb..2151b17 100644
 --- a/tests/fixed/UselessConditions.php
 +++ b/tests/fixed/UselessConditions.php
-@@ -95,7 +95,7 @@ class UselessConditions
+@@ -95,7 +95,7 @@ public function necessaryIfConditionWithMethodCall(): bool
          return false;
      }
  
@@ -201,7 +201,7 @@ diff --git a/tests/fixed/arrow-functions-format.php b/tests/fixed/arrow-function
 index 4da39b8..a45074f 100644
 --- a/tests/fixed/arrow-functions-format.php
 +++ b/tests/fixed/arrow-functions-format.php
-@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+@@ -18,10 +18,10 @@
  
  $multiLineArrowFunctions = Collection::from([1, 2])
      ->map(
@@ -215,35 +215,35 @@ index 4da39b8..a45074f 100644
  
  $thisIsNotAnArrowFunction = [$this->fn => 'value'];
 diff --git a/tests/fixed/example-class.php b/tests/fixed/example-class.php
-index 56cd902..998e51d 100644
+index 7d27825..998e51d 100644
 --- a/tests/fixed/example-class.php
 +++ b/tests/fixed/example-class.php
-@@ -25,16 +25,19 @@ class Example implements IteratorAggregate
+@@ -25,17 +25,30 @@ class Example implements IteratorAggregate
  {
      private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
  
--    private int|null $foo = null;
+-    private ControlStructureSniff|int|string|null $baxBax = null;
 +    /** @var int|null */
 +    private $foo;
  
-     /** @var string[] */
--    private array $bar;
+-    public function __construct(private int|null $foo = null, private array $bar = [], private bool $baz = false, $baxBax = 'unused')
++    /** @var string[] */
 +    private $bar;
- 
--    private bool $baz;
++
 +    /** @var bool */
 +    private $baz;
- 
--    private ControlStructureSniff|int|string|null $baxBax = null;
++
 +    /** @var ControlStructureSniff|int|string|null */
 +    private $baxBax;
- 
--    public function __construct(int|null $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
++
 +    public function __construct(?int $foo = null, array $bar = [], bool $baz = false, $baxBax = 'unused')
      {
-         $this->foo    = $foo;
-         $this->bar    = $bar;
-@@ -45,7 +48,7 @@ class Example implements IteratorAggregate
++        $this->foo    = $foo;
++        $this->bar    = $bar;
++        $this->baz    = $baz;
+         $this->baxBax = $baxBax;
+     }
+ 
      /**
       * Description
       */
@@ -256,7 +256,7 @@ diff --git a/tests/fixed/namespaces-spacing.php b/tests/fixed/namespaces-spacing
 index 36cbae2..d42bbfe 100644
 --- a/tests/fixed/namespaces-spacing.php
 +++ b/tests/fixed/namespaces-spacing.php
-@@ -16,5 +16,5 @@ use const DATE_RFC3339;
+@@ -16,5 +16,5 @@
  strrev(
      (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
          ->sub(new DateInterval('P1D'))
@@ -267,7 +267,7 @@ diff --git a/tests/fixed/new_with_parentheses.php b/tests/fixed/new_with_parenth
 index 47a06ec..6e81bbe 100644
 --- a/tests/fixed/new_with_parentheses.php
 +++ b/tests/fixed/new_with_parentheses.php
-@@ -24,5 +24,5 @@ $y = [new stdClass()];
+@@ -24,5 +24,5 @@
  
  $z = new stdClass() ? new stdClass() : new stdClass();
  
@@ -301,7 +301,7 @@ diff --git a/tests/fixed/null_coalesce_operator.php b/tests/fixed/null_coalesce_
 index 51c361c..8846dd1 100644
 --- a/tests/fixed/null_coalesce_operator.php
 +++ b/tests/fixed/null_coalesce_operator.php
-@@ -4,7 +4,7 @@ declare(strict_types=1);
+@@ -4,7 +4,7 @@
  
  $foo = $_GET['foo'] ?? 'foo';
  
@@ -372,7 +372,7 @@ diff --git a/tests/fixed/return_type_on_methods.php b/tests/fixed/return_type_on
 index 0c897ae..8e2c6f7 100644
 --- a/tests/fixed/return_type_on_methods.php
 +++ b/tests/fixed/return_type_on_methods.php
-@@ -31,7 +31,7 @@ class Test
+@@ -31,7 +31,7 @@ public function f(
          int $c,
          int $d,
          int $e,
@@ -381,7 +381,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -40,7 +40,7 @@ class Test
+@@ -40,7 +40,7 @@ public function g(
          int $c,
          int $d,
          int $e,
@@ -390,7 +390,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -49,7 +49,7 @@ class Test
+@@ -49,7 +49,7 @@ public function h(
          int $c,
          int $d,
          int $e,
@@ -399,7 +399,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -58,7 +58,7 @@ class Test
+@@ -58,7 +58,7 @@ public function i(
          int $c,
          int $d,
          int $e,
@@ -408,7 +408,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -67,7 +67,7 @@ class Test
+@@ -67,7 +67,7 @@ public function j(
          int $c,
          int $d,
          int $e,
@@ -421,7 +421,7 @@ diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
 index 5e26ed8..10e6f34 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
-@@ -10,7 +10,7 @@ use Traversable;
+@@ -10,7 +10,7 @@
  class TraversableTypeHints
  {
      /** @var Traversable */
@@ -430,7 +430,7 @@ index 5e26ed8..10e6f34 100644
  
      /**
       * @param Iterator $iterator
-@@ -25,5 +25,6 @@ class TraversableTypeHints
+@@ -25,5 +25,6 @@ public function get(Iterator $iterator): Traversable
  
  class UnionTypeHints
  {
@@ -442,7 +442,7 @@ diff --git a/tests/input/ControlStructures.php b/tests/input/ControlStructures.p
 index 73944e3..a0e0b2e 100644
 --- a/tests/input/ControlStructures.php
 +++ b/tests/input/ControlStructures.php
-@@ -93,7 +93,7 @@ class ControlStructures
+@@ -93,7 +93,7 @@ public function spaceBelowBlocks(): void
          }
          try {
              echo 4;
@@ -497,7 +497,7 @@ diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingComm
 index fc5480e..f3ffa91 100644
 --- a/tests/input/TrailingCommaOnFunctions.php
 +++ b/tests/input/TrailingCommaOnFunctions.php
-@@ -10,7 +10,7 @@ use function var_dump;
+@@ -10,7 +10,7 @@
  
  class TrailingCommaOnFunctions
  {
@@ -506,7 +506,7 @@ index fc5480e..f3ffa91 100644
      {
      }
  
-@@ -23,7 +23,7 @@ class TrailingCommaOnFunctions
+@@ -23,7 +23,7 @@ public function uses(): void
      {
          $var = null;
  
@@ -515,7 +515,7 @@ index fc5480e..f3ffa91 100644
              var_dump($var);
          };
  
-@@ -37,8 +37,7 @@ class TrailingCommaOnFunctions
+@@ -37,8 +37,7 @@ public function uses(): void
  
  $class = new TrailingCommaOnFunctions();
  
@@ -529,7 +529,7 @@ diff --git a/tests/input/arrow-functions-format.php b/tests/input/arrow-function
 index d3903ff..8a358e8 100644
 --- a/tests/input/arrow-functions-format.php
 +++ b/tests/input/arrow-functions-format.php
-@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
+@@ -18,10 +18,10 @@
  
  $multiLineArrowFunctions = Collection::from([1, 2])
      ->map(
@@ -546,7 +546,7 @@ diff --git a/tests/input/namespaces-spacing.php b/tests/input/namespaces-spacing
 index e7be018..e1ab639 100644
 --- a/tests/input/namespaces-spacing.php
 +++ b/tests/input/namespaces-spacing.php
-@@ -11,5 +11,5 @@ use const DATE_RFC3339;
+@@ -11,5 +11,5 @@
  strrev(
      (new DateTimeImmutable('@' . time(), new DateTimeZone('UTC')))
          ->sub(new DateInterval('P1D'))

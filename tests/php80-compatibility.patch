@@ -1,11 +1,11 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d53fd48..741d972 100644
+index 5110131..f0a3fc9 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -16,7 +16,6 @@ tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           7       0
- tests/input/example-class.php                         43      0
+ tests/input/example-class.php                         44      0
 -tests/input/ExampleBackedEnum.php                     3       0
  tests/input/Exceptions.php                            1       0
  tests/input/forbidden-comments.php                    14      0
@@ -23,11 +23,11 @@ index d53fd48..741d972 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 428 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
-+A TOTAL OF 422 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
+-A TOTAL OF 429 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
++A TOTAL OF 423 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 363 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 357 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 364 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 358 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
