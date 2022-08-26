@@ -71,9 +71,4 @@ class Test
     public function d(iterable $foo, iterable $bar): iterable
     {
     }
-
-    /** @param iterable<mixed> $singleAnnotation */
-    public function e(iterable $singleAnnotation): void
-    {
-    }
 }

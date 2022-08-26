@@ -53,7 +53,9 @@ class Example implements IteratorAggregate
         return $this->foo;
     }
 
-    /** @return iterable */
+    /**
+     * @return iterable
+     */
     public function getIterator(): array
     {
         assert($this->bar !== null);
@@ -68,7 +70,9 @@ class Example implements IteratorAggregate
         return $this->baz;
     }
 
-    /** @throws InvalidArgumentException if this example cannot baz. */
+    /**
+     * @throws InvalidArgumentException if this example cannot baz.
+     */
     public function mangleBar(int $length): void
     {
         if (! $this->baz) {

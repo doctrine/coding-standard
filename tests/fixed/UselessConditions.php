@@ -119,7 +119,9 @@ class UselessConditions
         return $this->isFalse() ? true : false;
     }
 
-    /** @param string[] $words */
+    /**
+     * @param string[] $words
+     */
     public function uselessTernaryCheck(array $words): bool
     {
         return count($words) < 1;

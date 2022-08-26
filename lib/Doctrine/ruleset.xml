@@ -421,8 +421,6 @@
     </rule>
     <!-- Forbid useless @var for constants -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
-    <!-- Require One Line Doc Comment where there's only 1 annotation present -->
-    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLineDocComment"/>
     <!-- Forbid useless phpDocs for functions -->
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment">
         <properties>
