@@ -133,8 +133,6 @@
     </rule>
     <!-- Require usage of ::class instead of __CLASS__, get_class(), get_class($this), get_called_class() and get_parent_class() -->
     <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
-    <!-- https://github.com/slevomat/coding-standard#slevomatcodingstandardclassespropertydeclaration- -->
-    <rule ref="SlevomatCodingStandard.Classes.PropertyDeclaration"/>
     <!-- Forbid uses of multiple traits separated by comma -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
     <!-- Require no spaces before trait use, between trait uses and one space after trait uses -->
@@ -410,6 +408,7 @@
             </property>
         </properties>
     </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <properties>
             <property name="traversableTypeHints" type="array">
