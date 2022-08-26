@@ -117,8 +117,11 @@ and `the list of configuration options <https://github.com/squizlabs/PHP_CodeSni
 
 To learn about customizing the rules, please refer to the :ref:`customizing` chapter.
 
+Contributing
+============
+
 Versioning
-==========
+----------
 
 This library follows semantic versioning, and additions to the code ruleset
 are only performed in major releases.
@@ -131,7 +134,7 @@ The minor branch can receive refactorings, and dependency updates that
 do not affect the code ruleset.
 
 Testing
-=======
+-------
 
 If you are contributing to the Doctrine Coding Standard and want to test your contribution, you just
 need to execute the ``test`` GNU make target:
