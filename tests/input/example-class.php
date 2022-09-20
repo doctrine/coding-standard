@@ -14,12 +14,16 @@ use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 
 use Doctrine\Sniffs\Spacing\ControlStructureSniff;
 
+class ParentClass
+{
+}
+
 /**
  * Description
  * @author Invalid
  * @since 0.1
  */
-class Example implements \IteratorAggregate
+class Example extends ParentClass implements \IteratorAggregate
 {
     private const VERSION = \PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
@@ -41,6 +45,7 @@ class Example implements \IteratorAggregate
         $this->bar    = $bar;
         $this->baz    = $baz;
         $this->baxBax = $baxBax;
+        parent::__construct();
     }
 
     /**

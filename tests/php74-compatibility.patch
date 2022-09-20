@@ -7,11 +7,11 @@ index 5110131..dc2cf18 100644
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
 -tests/input/EarlyReturn.php                           7       0
--tests/input/example-class.php                         44      0
+-tests/input/example-class.php                         47      0
 -tests/input/ExampleBackedEnum.php                     3       0
 -tests/input/Exceptions.php                            1       0
 +tests/input/EarlyReturn.php                           6       0
-+tests/input/example-class.php                         41      0
++tests/input/example-class.php                         44      0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
  tests/input/inline_type_hint_assertions.php           7       0
@@ -50,11 +50,11 @@ index 5110131..dc2cf18 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 429 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
-+A TOTAL OF 393 ERRORS AND 0 WARNINGS WERE FOUND IN 43 FILES
+-A TOTAL OF 432 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
++A TOTAL OF 396 ERRORS AND 0 WARNINGS WERE FOUND IN 43 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 364 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 328 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 365 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 329 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -189,7 +189,7 @@ diff --git a/tests/fixed/example-class.php b/tests/fixed/example-class.php
 index 7d27825..7866379 100644
 --- a/tests/fixed/example-class.php
 +++ b/tests/fixed/example-class.php
-@@ -25,17 +25,28 @@ class Example implements IteratorAggregate
+@@ -29,19 +29,30 @@ class Example extends ParentClass implements IteratorAggregate
  {
      private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
  
@@ -211,6 +211,8 @@ index 7d27825..7866379 100644
 +        $this->bar    = $bar;
 +        $this->baz    = $baz;
          $this->baxBax = $baxBax;
+
+         parent::__construct();
      }
  
      /**
