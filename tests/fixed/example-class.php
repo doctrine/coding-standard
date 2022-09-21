@@ -18,10 +18,14 @@ use const PHP_MINOR_VERSION;
 use const PHP_RELEASE_VERSION as PHP_PATCH_VERSION;
 use const PHP_VERSION;
 
+class ParentClass
+{
+}
+
 /**
  * Description
  */
-class Example implements IteratorAggregate
+class Example extends ParentClass implements IteratorAggregate
 {
     private const VERSION = PHP_VERSION - (PHP_MINOR_VERSION * 100) - PHP_PATCH_VERSION;
 
@@ -30,6 +34,8 @@ class Example implements IteratorAggregate
     public function __construct(private int|null $foo = null, private array $bar = [], private bool $baz = false, $baxBax = 'unused')
     {
         $this->baxBax = $baxBax;
+
+        parent::__construct();
     }
 
     /**
