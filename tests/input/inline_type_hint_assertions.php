@@ -24,3 +24,12 @@ $nullableType = expression();
 $multipleScalarTypes = expression();
 
 /** @var Potato $variableThatIsNowhereToBeFound */
+
+/** @var positive-int $a */
+$a = 1;
+
+/** @var positive-int|null $aa */
+$aa = null;
+
+/** @var non-empty-string $aaa */
+$aaa = 'string';

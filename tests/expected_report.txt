@@ -20,7 +20,7 @@ tests/input/ExampleBackedEnum.php                     3       0
 tests/input/Exceptions.php                            1       0
 tests/input/forbidden-comments.php                    14      0
 tests/input/forbidden-functions.php                   6       0
-tests/input/inline_type_hint_assertions.php           7       0
+tests/input/inline_type_hint_assertions.php           10      0
 tests/input/LowCaseTypes.php                          2       0
 tests/input/namespaces-spacing.php                    7       0
 tests/input/NamingCamelCase.php                       9       0
@@ -50,9 +50,9 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 432 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
+A TOTAL OF 435 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 365 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 368 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
