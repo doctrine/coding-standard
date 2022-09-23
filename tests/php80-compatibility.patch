@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 5110131..f0a3fc9 100644
+index 151bce4..873691d 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -16,7 +16,6 @@ tests/input/doc-comment-spacing.php                   11      0
