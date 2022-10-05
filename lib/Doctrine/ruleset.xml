@@ -237,7 +237,7 @@
     <!-- Report invalid format of inline phpDocs with @var -->
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
     <!-- Require comments with single line written as one-liners -->
-    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLineDocComment"/>
     <!-- Forbid assignments in conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <!-- Require consistent spacing for block structures -->
