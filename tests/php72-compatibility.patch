@@ -51,11 +51,11 @@ index 151bce4..0afca8c 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 435 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
-+A TOTAL OF 388 ERRORS AND 0 WARNINGS WERE FOUND IN 42 FILES
+-A TOTAL OF 437 ERRORS AND 0 WARNINGS WERE FOUND IN 47 FILES
++A TOTAL OF 390 ERRORS AND 0 WARNINGS WERE FOUND IN 43 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 368 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 321 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 370 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 323 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  

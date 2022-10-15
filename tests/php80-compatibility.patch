@@ -23,11 +23,11 @@ index 151bce4..873691d 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 435 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
-+A TOTAL OF 429 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
+-A TOTAL OF 437 ERRORS AND 0 WARNINGS WERE FOUND IN 47 FILES
++A TOTAL OF 431 ERRORS AND 0 WARNINGS WERE FOUND IN 46 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 368 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 362 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 370 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 364 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
