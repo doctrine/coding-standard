@@ -1,8 +1,8 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 151bce4..08a098f 100644
+index 9e34caa..ed67841 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -14,26 +14,23 @@ tests/input/constants-var.php                         7       0
+@@ -16,26 +16,23 @@ tests/input/constants-var.php                         7       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -35,7 +35,7 @@ index 151bce4..08a098f 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -42,17 +39,17 @@ tests/input/strings.php                               1       0
+@@ -44,17 +41,17 @@ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -50,11 +50,11 @@ index 151bce4..08a098f 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 437 ERRORS AND 0 WARNINGS WERE FOUND IN 47 FILES
-+A TOTAL OF 401 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
+-A TOTAL OF 452 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
++A TOTAL OF 416 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 370 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 334 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 374 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 338 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
@@ -62,7 +62,7 @@ diff --git a/tests/fixed/ControlStructures.php b/tests/fixed/ControlStructures.p
 index f8f7f65..a653086 100644
 --- a/tests/fixed/ControlStructures.php
 +++ b/tests/fixed/ControlStructures.php
-@@ -104,7 +104,7 @@ class ControlStructures
+@@ -104,7 +104,7 @@ public function spaceBelowBlocks(): void
  
          try {
              echo 4;
@@ -75,7 +75,7 @@ diff --git a/tests/fixed/EarlyReturn.php b/tests/fixed/EarlyReturn.php
 index fc734db..caf1dbb 100644
 --- a/tests/fixed/EarlyReturn.php
 +++ b/tests/fixed/EarlyReturn.php
-@@ -11,7 +11,7 @@ class EarlyReturn
+@@ -11,7 +11,7 @@ public function bar(): bool
          return $bar === 'bar';
      }
  
@@ -116,7 +116,7 @@ diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 5493471..57d9f2b 100644
 --- a/tests/fixed/NamingCamelCase.php
 +++ b/tests/fixed/NamingCamelCase.php
-@@ -6,11 +6,14 @@ namespace Example;
+@@ -6,11 +6,14 @@
  
  class NamingCamelCase
  {
@@ -154,7 +154,7 @@ diff --git a/tests/fixed/TrailingCommaOnFunctions.php b/tests/fixed/TrailingComm
 index 4248238..67173b3 100644
 --- a/tests/fixed/TrailingCommaOnFunctions.php
 +++ b/tests/fixed/TrailingCommaOnFunctions.php
-@@ -15,7 +15,7 @@ class TrailingCommaOnFunctions
+@@ -15,7 +15,7 @@ public function a(int $arg): void
      }
  
      public function b(
@@ -163,7 +163,7 @@ index 4248238..67173b3 100644
      ): void {
      }
  
-@@ -28,7 +28,7 @@ class TrailingCommaOnFunctions
+@@ -28,7 +28,7 @@ public function uses(): void
          };
  
          $multiLine = static function (int $arg) use (
@@ -176,7 +176,7 @@ diff --git a/tests/fixed/UselessConditions.php b/tests/fixed/UselessConditions.p
 index 71e0cfb..2151b17 100644
 --- a/tests/fixed/UselessConditions.php
 +++ b/tests/fixed/UselessConditions.php
-@@ -95,7 +95,7 @@ class UselessConditions
+@@ -95,7 +95,7 @@ public function necessaryIfConditionWithMethodCall(): bool
          return false;
      }
  
@@ -213,7 +213,7 @@ index 4988dab..c31e53f 100644
          $this->baxBax = $baxBax;
  
          parent::__construct();
-@@ -41,7 +52,7 @@ class Example extends ParentClass implements IteratorAggregate
+@@ -41,7 +52,7 @@ public function __construct(private int|null $foo = null, private array $bar = [
      /**
       * Description
       */
@@ -284,7 +284,7 @@ diff --git a/tests/fixed/return_type_on_methods.php b/tests/fixed/return_type_on
 index 0c897ae..8e2c6f7 100644
 --- a/tests/fixed/return_type_on_methods.php
 +++ b/tests/fixed/return_type_on_methods.php
-@@ -31,7 +31,7 @@ class Test
+@@ -31,7 +31,7 @@ public function f(
          int $c,
          int $d,
          int $e,
@@ -293,7 +293,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -40,7 +40,7 @@ class Test
+@@ -40,7 +40,7 @@ public function g(
          int $c,
          int $d,
          int $e,
@@ -302,7 +302,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -49,7 +49,7 @@ class Test
+@@ -49,7 +49,7 @@ public function h(
          int $c,
          int $d,
          int $e,
@@ -311,7 +311,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -58,7 +58,7 @@ class Test
+@@ -58,7 +58,7 @@ public function i(
          int $c,
          int $d,
          int $e,
@@ -320,7 +320,7 @@ index 0c897ae..8e2c6f7 100644
      ): void {
      }
  
-@@ -67,7 +67,7 @@ class Test
+@@ -67,7 +67,7 @@ public function j(
          int $c,
          int $d,
          int $e,
@@ -333,7 +333,7 @@ diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
 index 5e26ed8..bfa6d4f 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
-@@ -25,5 +25,6 @@ class TraversableTypeHints
+@@ -25,5 +25,6 @@ public function get(Iterator $iterator): Traversable
  
  class UnionTypeHints
  {
@@ -345,7 +345,7 @@ diff --git a/tests/input/ControlStructures.php b/tests/input/ControlStructures.p
 index 73944e3..a0e0b2e 100644
 --- a/tests/input/ControlStructures.php
 +++ b/tests/input/ControlStructures.php
-@@ -93,7 +93,7 @@ class ControlStructures
+@@ -93,7 +93,7 @@ public function spaceBelowBlocks(): void
          }
          try {
              echo 4;
@@ -400,7 +400,7 @@ diff --git a/tests/input/TrailingCommaOnFunctions.php b/tests/input/TrailingComm
 index fc5480e..8adcedf 100644
 --- a/tests/input/TrailingCommaOnFunctions.php
 +++ b/tests/input/TrailingCommaOnFunctions.php
-@@ -10,7 +10,7 @@ use function var_dump;
+@@ -10,7 +10,7 @@
  
  class TrailingCommaOnFunctions
  {
@@ -409,7 +409,7 @@ index fc5480e..8adcedf 100644
      {
      }
  
-@@ -23,7 +23,7 @@ class TrailingCommaOnFunctions
+@@ -23,7 +23,7 @@ public function uses(): void
      {
          $var = null;
  
