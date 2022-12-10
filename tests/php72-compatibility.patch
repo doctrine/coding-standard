@@ -1,8 +1,12 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 9e34caa..ea3b611 100644
+index d1e1fad..ea3b611 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -16,26 +16,23 @@ tests/input/constants-var.php                         7       0
+@@ -12,30 +12,27 @@ tests/input/class-references.php                      10      0
+ tests/input/ClassPropertySpacing.php                  2       0
+ tests/input/concatenation_spacing.php                 49      0
+ tests/input/constants-no-lsb.php                      2       0
+ tests/input/constants-var.php                         6       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -51,8 +55,8 @@ index 9e34caa..ea3b611 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 452 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
-+A TOTAL OF 405 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
+-A TOTAL OF 451 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
++A TOTAL OF 404 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 374 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 327 OF THESE SNIFF VIOLATIONS AUTOMATICALLY

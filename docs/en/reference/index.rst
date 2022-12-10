@@ -117,14 +117,24 @@ and `the list of configuration options <https://github.com/squizlabs/PHP_CodeSni
 
 To learn about customizing the rules, please refer to the :ref:`customizing` chapter.
 
+Contributing
+============
+
 Versioning
-==========
+----------
 
 This library follows semantic versioning, and additions to the code ruleset
 are only performed in major releases.
 
+The patch branch can receive internal changes, such as CI pipeline
+improvements, test workflow improvements, and can receive bugfixes. For
+instance, such as removing rules that were not meant to be added.
+
+The minor branch can receive refactorings, and dependency updates that
+do not affect the code ruleset.
+
 Testing
-=======
+-------
 
 If you are contributing to the Doctrine Coding Standard and want to test your contribution, you just
 need to execute the ``test`` GNU make target:
@@ -136,13 +146,21 @@ need to execute the ``test`` GNU make target:
 Sometimes you are enabling a sniff that enforces some features for a specific PHP version, that will
 probably cause our build pipeline to fail when running on such versions.
 
-We have created the ``update-compatibility-patch`` GNU make target to help you with that:
+We have created the ``update-compatibility-patch-*`` GNU make targets to
+help you with that. For instance, for PHP 6.0, you would run
 
 .. code-block:: bash
 
-    $ make update-compatibility-patch
+    $ make update-compatibility-patch-60
 
-That target will apply the latest version of our compatibility patch and ask you to adjust the code in ``tests/fixed`` and
-``tests/expected_report.txt`` using the editor of your preference.
-Once you are done, please type "y" to resume the command, which will update the compatibility patch and create a commit
-with your changes for you to push to your remote branch.
+That target will attempt to apply the latest version of our
+compatibility patch for that version of PHP and ask you to adjust the
+code in ``tests/fixed`` and ``tests/expected_report.txt`` using the
+editor of your preference.
+
+If the patch does not apply cleanly, you can edit it to edit or remove
+hunks that relate to files you changed in your PR.
+
+Once you are done, please type "y" to resume the command, which will
+update the compatibility patch and create a commit with your changes for
+you to push to your remote branch.
