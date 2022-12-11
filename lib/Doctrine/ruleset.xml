@@ -599,9 +599,6 @@
     </rule>
     <!-- Forbid strings in `"` unless necessary -->
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
-    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
-        <message>Variable "%s" not allowed in double quoted string; use sprintf() or concatenation instead</message>
-    </rule>
     <!-- Forbid braces around string in `echo` -->
     <rule ref="Squiz.Strings.EchoedStrings"/>
     <!-- Forbid spaces in type casts -->

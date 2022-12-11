@@ -40,7 +40,7 @@ tests/input/semicolon_spacing.php                     3       0
 tests/input/single-line-array-spacing.php             5       0
 tests/input/spread-operator.php                       6       0
 tests/input/static-closures.php                       1       0
-tests/input/strings.php                               1       0
+tests/input/strings.php                               3       0
 tests/input/superfluous-naming.php                    11      0
 tests/input/test-case.php                             8       0
 tests/input/trailing_comma_on_array.php               1       0
@@ -52,9 +52,9 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 451 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
+A TOTAL OF 453 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 374 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 375 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
