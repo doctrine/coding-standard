@@ -41,7 +41,7 @@ index d1e1fad..ea3b611 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -44,17 +41,16 @@ tests/input/strings.php                               1       0
+@@ -43,17 +42,16 @@ tests/input/strings.php                               1       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -55,11 +55,11 @@ index d1e1fad..ea3b611 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 453 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
-+A TOTAL OF 406 ERRORS AND 0 WARNINGS WERE FOUND IN 44 FILES
+-A TOTAL OF 454 ERRORS AND 0 WARNINGS WERE FOUND IN 49 FILES
++A TOTAL OF 407 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 375 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 328 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 376 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 329 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  

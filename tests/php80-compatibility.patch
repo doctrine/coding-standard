@@ -25,15 +25,15 @@ index d1e1fad..71022c4 100644
  tests/input/return_type_on_closures.php               26      0
  tests/input/return_type_on_methods.php                22      0
  tests/input/semicolon_spacing.php                     3       0
-@@ -52,9 +51,9 @@ tests/input/use-ordering.php                          1       0
+@@ -51,9 +52,9 @@ tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 453 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
-+A TOTAL OF 447 ERRORS AND 0 WARNINGS WERE FOUND IN 47 FILES
+-A TOTAL OF 454 ERRORS AND 0 WARNINGS WERE FOUND IN 49 FILES
++A TOTAL OF 448 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 375 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 369 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 376 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 370 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
