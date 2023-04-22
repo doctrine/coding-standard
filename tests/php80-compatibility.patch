@@ -1,14 +1,8 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d1e1fad..71022c4 100644
+index 1773423..449da88 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -12,13 +12,12 @@ tests/input/class-references.php                      10      0
- tests/input/ClassPropertySpacing.php                  2       0
- tests/input/concatenation_spacing.php                 49      0
- tests/input/constants-no-lsb.php                      2       0
- tests/input/constants-var.php                         6       0
- tests/input/ControlStructures.php                     28      0
- tests/input/doc-comment-spacing.php                   11      0
+@@ -18,7 +18,6 @@ tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           7       0
  tests/input/example-class.php                         47      0
