@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 .PHONY: test test-report test-fix update-compatibility-patch
 
 test: test-report test-fix
