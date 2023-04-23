@@ -2,7 +2,7 @@ diff --git a/tests/expected_report.txt b/tests/expected_report.txt
 index 1773423..9422a54 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -16,26 +16,23 @@ tests/input/constants-var.php                         6       0
+@@ -17,26 +17,23 @@
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
@@ -35,7 +35,7 @@ index 1773423..9422a54 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -44,17 +41,17 @@ tests/input/strings.php                               3       0
+@@ -45,17 +42,17 @@
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -50,11 +50,11 @@ index 1773423..9422a54 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 453 ERRORS AND 0 WARNINGS WERE FOUND IN 48 FILES
-+A TOTAL OF 417 ERRORS AND 0 WARNINGS WERE FOUND IN 45 FILES
+-A TOTAL OF 461 ERRORS AND 2 WARNINGS WERE FOUND IN 49 FILES
++A TOTAL OF 425 ERRORS AND 2 WARNINGS WERE FOUND IN 46 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 375 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 339 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 377 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 341 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
