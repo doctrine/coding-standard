@@ -3,12 +3,13 @@ PHP CODE SNIFFER REPORT SUMMARY
 ----------------------------------------------------------------------
 FILE                                                  ERRORS  WARNINGS
 ----------------------------------------------------------------------
+tests/input/annotation-name.php                       8       0
 tests/input/array_indentation.php                     10      0
 tests/input/arrow-functions-format.php                10      0
 tests/input/assignment-operators.php                  4       0
 tests/input/attributes.php                            15      0
 tests/input/binary_operators.php                      9       0
-tests/input/class-references.php                      10      0
+tests/input/class-references.php                      10      2
 tests/input/ClassPropertySpacing.php                  2       0
 tests/input/concatenation_spacing.php                 49      0
 tests/input/constants-no-lsb.php                      2       0
@@ -53,9 +54,9 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 454 ERRORS AND 0 WARNINGS WERE FOUND IN 49 FILES
+A TOTAL OF 462 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 376 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 378 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
