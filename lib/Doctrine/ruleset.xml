@@ -183,6 +183,8 @@
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
     <!-- Forbid suffix "Trait" for traits -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
+    <!-- Forbid invalid annotation names in standard PHPDoc tags -->
+    <rule ref="SlevomatCodingStandard.Commenting.AnnotationName"/>
     <!-- Require specific order of phpDoc annotations with empty newline between specific groups -->
     <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
         <properties>
