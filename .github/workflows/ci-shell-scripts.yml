@@ -1,0 +1,33 @@
+# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+
+name: "Continuous Integration for shell scripts"
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/ci-shell-scripts.yml"
+      - "bin/**"
+  push:
+    branches:
+      - "*.*.x"
+    paths:
+      - ".github/workflows/ci-shell-scripts.yml"
+      - "bin/**"
+  schedule:
+    - cron: "0 17 * * *"
+
+jobs:
+  lint-shell-scripts:
+    name: "Lint shell scripts"
+
+    runs-on: "ubuntu-22.04"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3"
+
+      - name: "Lint shell scripts with ShellCheck"
+        uses: "ludeeus/action-shellcheck@2.0.0"
+        with:
+          scandir: "./bin"
+          check_together: "yes"
