@@ -513,8 +513,8 @@
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
     <!-- Require nowdoc syntax instead of heredoc when possible -->
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc" />
-    <!-- Forbid spaces around square brackets -->
-    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+    <!-- Disallow whitespace between array access operator and the variable, or between array access operators -->
+    <rule ref="SlevomatCodingStandard.Arrays.ArrayAccess" />
     <!-- Force array declaration structure -->
     <rule ref="Squiz.Arrays.ArrayDeclaration">
         <!-- Disable arrow alignment -->
