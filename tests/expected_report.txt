@@ -19,7 +19,7 @@ tests/input/doc-comment-spacing.php                   11      0
 tests/input/duplicate-assignment-variable.php         1       0
 tests/input/EarlyReturn.php                           7       0
 tests/input/example-class.php                         47      0
-tests/input/ExampleBackedEnum.php                     3       0
+tests/input/ExampleBackedEnum.php                     5       0
 tests/input/Exceptions.php                            1       0
 tests/input/forbidden-comments.php                    14      0
 tests/input/forbidden-functions.php                   6       0
@@ -54,9 +54,9 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 462 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+A TOTAL OF 464 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 378 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 380 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 

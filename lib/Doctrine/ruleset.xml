@@ -145,6 +145,8 @@
             <property name="linesCountBeforeClosingBrace" value="0"/>
         </properties>
     </rule>
+    <!-- Enforce consistent enum case spacing -->
+    <rule ref="SlevomatCodingStandard.Classes.EnumCaseSpacing" />
     <!-- Add one line around parent call in order to improve readability -->
     <rule ref="SlevomatCodingStandard.Classes.ParentCallSpacing"/>
     <!-- Ensure that there are consistent blank lines between properties. -->
