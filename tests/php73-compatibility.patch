@@ -1,14 +1,14 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d1e1fad..9a78bc1 100644
+index 087995d..cd61b3f 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -17,26 +17,23 @@
+@@ -17,26 +17,23 @@ tests/input/constants-var.php                         6       0
  tests/input/ControlStructures.php                     28      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
 -tests/input/EarlyReturn.php                           7       0
 -tests/input/example-class.php                         47      0
--tests/input/ExampleBackedEnum.php                     3       0
+-tests/input/ExampleBackedEnum.php                     5       0
 -tests/input/Exceptions.php                            1       0
 +tests/input/EarlyReturn.php                           6       0
 +tests/input/example-class.php                         41      0
@@ -37,7 +37,7 @@ index d1e1fad..9a78bc1 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -46,17 +43,17 @@
+@@ -46,17 +43,17 @@ tests/input/strings.php                               3       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -52,10 +52,10 @@ index d1e1fad..9a78bc1 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 462 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+-A TOTAL OF 464 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
 +A TOTAL OF 417 ERRORS AND 2 WARNINGS WERE FOUND IN 47 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 378 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 380 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 333 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
@@ -87,16 +87,23 @@ index fc734db..caf1dbb 100644
          foreach ($items as $item) {
              if (! $item->isItem()) {
 diff --git a/tests/fixed/ExampleBackedEnum.php b/tests/fixed/ExampleBackedEnum.php
-index cc38c54..fe54eb9 100644
+index fd701eb..fe54eb9 100644
 --- a/tests/fixed/ExampleBackedEnum.php
 +++ b/tests/fixed/ExampleBackedEnum.php
-@@ -3,7 +3,3 @@
+@@ -3,14 +3,3 @@
  declare(strict_types=1);
  
  namespace ExampleBackedEnum;
 -
 -enum ExampleBackedEnum: int
 -{
+-    case FOO = 0;
+-    case BAR = 1;
+-
+-    case BAZ = 2;
+-
+-    /** Brevis, primus coordinataes foris promissio de varius, barbatus heuretes. */
+-    case BAM = 1234;
 -}
 diff --git a/tests/fixed/Exceptions.php b/tests/fixed/Exceptions.php
 index db7408b..9b146c6 100644
@@ -415,16 +422,25 @@ index 73944e3..a0e0b2e 100644
          echo 5;
      }
 diff --git a/tests/input/ExampleBackedEnum.php b/tests/input/ExampleBackedEnum.php
-index 0c47286..fe54eb9 100644
+index 3b09f47..fe54eb9 100644
 --- a/tests/input/ExampleBackedEnum.php
 +++ b/tests/input/ExampleBackedEnum.php
-@@ -3,7 +3,3 @@
+@@ -3,16 +3,3 @@
  declare(strict_types=1);
  
  namespace ExampleBackedEnum;
 -
 -enum ExampleBackedEnum :   int
 -{
+-    case FOO = 0;
+-    case BAR = 1;
+-
+-
+-    case BAZ = 2;
+-
+-
+-    /** Brevis, primus coordinataes foris promissio de varius, barbatus heuretes. */
+-    case BAM = 1234;
 -}
 diff --git a/tests/input/Exceptions.php b/tests/input/Exceptions.php
 index 3aaa30f..9b146c6 100644

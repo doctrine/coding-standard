@@ -1,16 +1,16 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index d1e1fad..71022c4 100644
+index 087995d..f99aa86 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -19,7 +19,6 @@
+@@ -19,7 +19,6 @@ tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
  tests/input/EarlyReturn.php                           7       0
  tests/input/example-class.php                         47      0
--tests/input/ExampleBackedEnum.php                     3       0
+-tests/input/ExampleBackedEnum.php                     5       0
  tests/input/Exceptions.php                            1       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
-@@ -34,7 +33,7 @@
+@@ -34,7 +33,7 @@ tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
  tests/input/null_safe_operator.php                    1       0
  tests/input/optimized-functions.php                   1       0
@@ -19,29 +19,36 @@ index d1e1fad..71022c4 100644
  tests/input/return_type_on_closures.php               26      0
  tests/input/return_type_on_methods.php                22      0
  tests/input/semicolon_spacing.php                     3       0
-@@ -54,9 +53,9 @@
+@@ -54,9 +53,9 @@ tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 462 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+-A TOTAL OF 464 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
 +A TOTAL OF 456 ERRORS AND 2 WARNINGS WERE FOUND IN 49 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 378 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 380 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 372 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
  
  
 diff --git a/tests/fixed/ExampleBackedEnum.php b/tests/fixed/ExampleBackedEnum.php
-index cc38c54..fe54eb9 100644
+index fd701eb..fe54eb9 100644
 --- a/tests/fixed/ExampleBackedEnum.php
 +++ b/tests/fixed/ExampleBackedEnum.php
-@@ -3,7 +3,3 @@
+@@ -3,14 +3,3 @@
  declare(strict_types=1);
  
  namespace ExampleBackedEnum;
 -
 -enum ExampleBackedEnum: int
 -{
+-    case FOO = 0;
+-    case BAR = 1;
+-
+-    case BAZ = 2;
+-
+-    /** Brevis, primus coordinataes foris promissio de varius, barbatus heuretes. */
+-    case BAM = 1234;
 -}
 diff --git a/tests/fixed/PropertyDeclaration.php b/tests/fixed/PropertyDeclaration.php
 index 9703897..7821d5c 100644
@@ -57,16 +64,25 @@ index 9703897..7821d5c 100644
      }
  }
 diff --git a/tests/input/ExampleBackedEnum.php b/tests/input/ExampleBackedEnum.php
-index 0c47286..fe54eb9 100644
+index 3b09f47..fe54eb9 100644
 --- a/tests/input/ExampleBackedEnum.php
 +++ b/tests/input/ExampleBackedEnum.php
-@@ -3,7 +3,3 @@
+@@ -3,16 +3,3 @@
  declare(strict_types=1);
  
  namespace ExampleBackedEnum;
 -
 -enum ExampleBackedEnum :   int
 -{
+-    case FOO = 0;
+-    case BAR = 1;
+-
+-
+-    case BAZ = 2;
+-
+-
+-    /** Brevis, primus coordinataes foris promissio de varius, barbatus heuretes. */
+-    case BAM = 1234;
 -}
 diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
 index acdc445..4eb8164 100644
