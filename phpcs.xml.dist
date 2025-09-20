@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
 >
-    <description>Check the code of the sniffs in doctrine/coding-standards.</description>
+    <description>Used by the binaries inside bin/</description>
 
     <arg name="basepath" value="." />
     <arg name="extensions" value="php" />
@@ -17,6 +17,4 @@
     <arg value="s" />
 
     <rule ref="Doctrine" />
-
-    <file>lib</file>
 </ruleset>
