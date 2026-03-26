@@ -25,3 +25,7 @@ updates:
       interval: "weekly"
     labels:
       - "CI"
+    groups:
+      doctrine:
+        patterns:
+          - "doctrine/*"
