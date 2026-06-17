@@ -18,27 +18,26 @@ index 9b19b9e..760ee4a 100644
  tests/input/Exceptions.php                            1       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
-@@ -34,7 +33,7 @@ tests/input/null_coalesce_equal_operator.php          5       0
+@@ -34,8 +33,8 @@ tests/input/null_coalesce_equal_operator.php          5       0
  tests/input/null_coalesce_operator.php                3       0
  tests/input/null_safe_operator.php                    1       0
  tests/input/optimized-functions.php                   1       0
 -tests/input/PropertyDeclaration.php                   16      0
 +tests/input/PropertyDeclaration.php                   11      0
+ tests/input/RequireOneDocComment.php                  1       0
  tests/input/return_type_on_closures.php               26      0
  tests/input/return_type_on_methods.php                22      0
  tests/input/semicolon_spacing.php                     3       0
-@@ -54,9 +53,9 @@ tests/input/use-ordering.php                          1       0
+@@ -55,7 +54,7 @@ tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 476 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
-+A TOTAL OF 459 ERRORS AND 2 WARNINGS WERE FOUND IN 49 FILES
+-A TOTAL OF 477 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
++A TOTAL OF 460 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 391 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 375 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
- 
- 
 diff --git a/tests/fixed/ExampleBackedEnum.php b/tests/fixed/ExampleBackedEnum.php
 index fd701eb..fe54eb9 100644
 --- a/tests/fixed/ExampleBackedEnum.php

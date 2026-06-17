@@ -2,7 +2,7 @@ diff --git a/tests/expected_report.txt b/tests/expected_report.txt
 index 8547171..f01ece0 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -13,30 +13,27 @@ tests/input/class-references.php                      10      2
+@@ -13,31 +13,28 @@ tests/input/class-references.php                      10      2
  tests/input/ClassPropertySpacing.php                  2       0
  tests/input/concatenation_spacing.php                 49      0
  tests/input/constants-no-lsb.php                      2       0
@@ -32,15 +32,16 @@ index 8547171..f01ece0 100644
 -tests/input/null_safe_operator.php                    1       0
  tests/input/optimized-functions.php                   1       0
 -tests/input/PropertyDeclaration.php                   16      0
++tests/input/PropertyDeclaration.php                   6       0
+ tests/input/RequireOneDocComment.php                  1       0
 -tests/input/return_type_on_closures.php               26      0
 -tests/input/return_type_on_methods.php                22      0
-+tests/input/PropertyDeclaration.php                   6       0
 +tests/input/return_type_on_closures.php               21      0
 +tests/input/return_type_on_methods.php                17      0
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -46,17 +43,17 @@ tests/input/strings.php                               3       0
+@@ -47,15 +44,15 @@ tests/input/strings.php                               3       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -55,14 +56,12 @@ index 8547171..f01ece0 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 476 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
-+A TOTAL OF 429 ERRORS AND 2 WARNINGS WERE FOUND IN 47 FILES
+-A TOTAL OF 477 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
++A TOTAL OF 430 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 391 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 345 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
- 
- 
 diff --git a/tests/fixed/ControlStructures.php b/tests/fixed/ControlStructures.php
 index 480e419..a653086 100644
 --- a/tests/fixed/ControlStructures.php

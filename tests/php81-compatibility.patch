@@ -17,18 +17,16 @@ index 8547171..a7a42fa 100644
  tests/input/ExampleBackedEnum.php                     5       0
  tests/input/Exceptions.php                            1       0
  tests/input/forbidden-comments.php                    14      0
-@@ -54,9 +54,9 @@ tests/input/use-ordering.php                          1       0
+@@ -55,7 +55,7 @@ tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 476 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
-+A TOTAL OF 469 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+-A TOTAL OF 477 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
++A TOTAL OF 470 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
  ----------------------------------------------------------------------
 -PHPCBF CAN FIX 391 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 385 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
- 
- 
 diff --git a/tests/fixed/constants-var.php b/tests/fixed/constants-var.php
 index f10c235..d4268cb 100644
 --- a/tests/fixed/constants-var.php
