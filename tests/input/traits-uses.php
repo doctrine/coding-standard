@@ -14,11 +14,11 @@ class Bar
 {
     use T2, T3;
 
+    use T5;
+
     use T4 {
         x as public;
     }
-
-    use T5;
     public function __construct()
     {
     }

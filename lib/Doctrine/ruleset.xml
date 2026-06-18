@@ -168,6 +168,8 @@
     <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
     <!-- Forbid uses of multiple traits separated by comma -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
+    <!-- Require trait uses to be sorted alphabetically -->
+    <rule ref="SlevomatCodingStandard.Classes.TraitUseOrder"/>
     <!-- Require no spaces before trait use, between trait uses and one space after trait uses -->
     <rule ref="SlevomatCodingStandard.Classes.TraitUseSpacing">
         <properties>

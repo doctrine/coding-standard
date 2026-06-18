@@ -48,7 +48,7 @@ index 8547171..f01ece0 100644
  tests/input/trailing_comma_on_array.php               1       0
 -tests/input/TrailingCommaOnFunctions.php              6       0
 +tests/input/TrailingCommaOnFunctions.php              2       0
- tests/input/traits-uses.php                           11      0
+ tests/input/traits-uses.php                           12      0
 -tests/input/type-hints.php                            9       0
 +tests/input/type-hints.php                            8       0
  tests/input/UnusedVariables.php                       1       0
@@ -57,11 +57,11 @@ index 8547171..f01ece0 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 481 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 433 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
+-A TOTAL OF 482 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 434 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 395 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 348 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 396 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 349 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644
