@@ -254,6 +254,8 @@
     </rule>
     <!-- Report invalid format of inline phpDocs with @var -->
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
+    <!-- Require only one doc comment per symbol -->
+    <rule ref="SlevomatCodingStandard.Commenting.RequireOneDocComment"/>
     <!-- Forbid assignments in conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <!-- Require consistent spacing for block structures -->

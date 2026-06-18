@@ -35,6 +35,7 @@ tests/input/null_coalesce_operator.php                3       0
 tests/input/null_safe_operator.php                    1       0
 tests/input/optimized-functions.php                   1       0
 tests/input/PropertyDeclaration.php                   16      0
+tests/input/RequireOneDocComment.php                  1       0
 tests/input/return_type_on_closures.php               26      0
 tests/input/return_type_on_methods.php                22      0
 tests/input/semicolon_spacing.php                     3       0
@@ -54,7 +55,7 @@ tests/input/use-ordering.php                          1       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 476 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+A TOTAL OF 477 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
 ----------------------------------------------------------------------
 PHPCBF CAN FIX 391 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
