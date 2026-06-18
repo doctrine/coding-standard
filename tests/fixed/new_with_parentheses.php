@@ -26,3 +26,5 @@ $z = new stdClass() ? new stdClass() : new stdClass();
 
 $q   = $q ?: new stdClass();
 $e ??= new stdClass();
+
+$dateTime = new DateTimeImmutable()->format('c');

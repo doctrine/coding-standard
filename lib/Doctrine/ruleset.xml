@@ -427,7 +427,11 @@
         </properties>
     </rule>
     <!-- Forbid useless parentheses -->
-    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
+    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses">
+        <properties>
+            <property name="enableCheckAroundNew" value="true"/>
+        </properties>
+    </rule>
     <!-- Forbid useless semicolon `;` -->
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
     <!-- Require /* @var type $foo */ and similar simple inline annotations to be replaced by assert() -->
