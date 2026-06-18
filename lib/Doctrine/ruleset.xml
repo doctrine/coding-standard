@@ -128,6 +128,8 @@
             <property name="fixable" value="true"/>
         </properties>
     </rule>
+    <!-- Enforce consistent class keyword order -->
+    <rule ref="SlevomatCodingStandard.Classes.ClassKeywordOrder"/>
     <!-- Enforce consistent constant spacing -->
     <rule ref="SlevomatCodingStandard.Classes.ConstantSpacing"/>
     <!-- Forbid LSB for constants (static::FOO) -->
