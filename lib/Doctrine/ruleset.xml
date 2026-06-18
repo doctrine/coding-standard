@@ -258,6 +258,8 @@
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
     <!-- Require only one doc comment per symbol -->
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneDocComment"/>
+    <!-- Require @throws annotations to be sorted alphabetically -->
+    <rule ref="SlevomatCodingStandard.Commenting.ThrowsAnnotationsOrder"/>
     <!-- Forbid assignments in conditions -->
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <!-- Require consistent spacing for block structures -->
