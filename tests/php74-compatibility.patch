@@ -2,7 +2,8 @@ diff --git a/tests/expected_report.txt b/tests/expected_report.txt
 index 8547171..f01ece0 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
-@@ -13,31 +13,28 @@ tests/input/class-references.php                      10      2
+@@ -13,32 +13,28 @@ tests/input/class-references.php                      10      2
+-tests/input/ClassKeywordOrder.php                     1       0
  tests/input/ClassPropertySpacing.php                  2       0
  tests/input/concatenation_spacing.php                 49      0
  tests/input/constants-no-lsb.php                      2       0
@@ -41,7 +42,7 @@ index 8547171..f01ece0 100644
  tests/input/semicolon_spacing.php                     3       0
  tests/input/single-line-array-spacing.php             5       0
  tests/input/spread-operator.php                       6       0
-@@ -47,15 +44,15 @@ tests/input/strings.php                               3       0
+@@ -47,15 +43,15 @@ tests/input/strings.php                               3       0
  tests/input/superfluous-naming.php                    11      0
  tests/input/test-case.php                             8       0
  tests/input/trailing_comma_on_array.php               1       0
@@ -56,12 +57,36 @@ index 8547171..f01ece0 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 480 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
+-A TOTAL OF 481 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
 +A TOTAL OF 433 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 394 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 395 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 348 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
+diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
+index 29f6164..4b28352 100644
+--- a/tests/fixed/ClassKeywordOrder.php
++++ b/tests/fixed/ClassKeywordOrder.php
+@@ -3,7 +3,3 @@
+ declare(strict_types=1);
+
+ namespace ClassKeywordOrder;
+-
+-final readonly class ClassKeywordOrder
+-{
+-}
+diff --git a/tests/input/ClassKeywordOrder.php b/tests/input/ClassKeywordOrder.php
+index dcad6ca..4b28352 100644
+--- a/tests/input/ClassKeywordOrder.php
++++ b/tests/input/ClassKeywordOrder.php
+@@ -3,7 +3,3 @@
+ declare(strict_types=1);
+
+ namespace ClassKeywordOrder;
+-
+-readonly final class ClassKeywordOrder
+-{
+-}
 diff --git a/tests/fixed/ControlStructures.php b/tests/fixed/ControlStructures.php
 index 480e419..a653086 100644
 --- a/tests/fixed/ControlStructures.php
