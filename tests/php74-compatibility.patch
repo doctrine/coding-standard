@@ -8,14 +8,14 @@ index 8547171..f01ece0 100644
  tests/input/constants-no-lsb.php                      2       0
 -tests/input/constants-var.php                         13      0
 +tests/input/constants-var.php                         7       0
- tests/input/ControlStructures.php                     28      0
+ tests/input/ControlStructures.php                     27      0
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
--tests/input/EarlyReturn.php                           7       0
+-tests/input/EarlyReturn.php                           8       0
 -tests/input/example-class.php                         48      0
 -tests/input/ExampleBackedEnum.php                     5       0
 -tests/input/Exceptions.php                            1       0
-+tests/input/EarlyReturn.php                           6       0
++tests/input/EarlyReturn.php                           7       0
 +tests/input/example-class.php                         44      0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0

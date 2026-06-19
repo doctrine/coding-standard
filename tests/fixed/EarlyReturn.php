@@ -41,4 +41,21 @@ class EarlyReturn
 
         return false === false;
     }
+
+    public function trailingIfWithOneInstruction(): void
+    {
+        if ($condition) {
+            echo 'one instruction is left alone';
+        }
+    }
+
+    public function trailingIfWithMultipleInstructions(): void
+    {
+        if (! $condition) {
+            return;
+        }
+
+        echo 'more than one instruction';
+        echo 'still requires an early exit';
+    }
 }

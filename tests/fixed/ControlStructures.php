@@ -17,11 +17,9 @@ class ControlStructures
     public function varAndIfNoSpaceBetween(): iterable
     {
         $var = 1;
-        if (self::VERSION !== 0) {
-            return;
+        if (self::VERSION === 0) {
+            yield 0;
         }
-
-        yield 0;
     }
 
     /** @return iterable<int> */
