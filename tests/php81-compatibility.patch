@@ -22,11 +22,11 @@ index 8547171..a7a42fa 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 481 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 473 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
+-A TOTAL OF 482 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 474 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 395 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 388 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 396 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 389 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644

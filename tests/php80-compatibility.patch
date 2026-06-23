@@ -33,11 +33,11 @@ index 9b19b9e..760ee4a 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 481 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 463 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+-A TOTAL OF 482 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 464 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 395 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 378 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 396 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 379 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644
