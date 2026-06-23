@@ -22,7 +22,7 @@ jobs:
     runs-on: "ubuntu-22.04"
 
     steps:
-      - uses: "actions/checkout@v6"
+      - uses: "actions/checkout@v7"
 
       - name: "Lint Dockerfile"
         uses: "hadolint/hadolint-action@v3.3.0"
