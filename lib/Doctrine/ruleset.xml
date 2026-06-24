@@ -503,6 +503,7 @@
             <property name="withSpacesInsideParentheses" value="no" />
             <property name="shortNullable" value="no" />
             <property name="nullPosition" value="last" />
+            <property name="enableForDocComments" value="true" />
         </properties>
     </rule>
     <!-- Forbid useless @var for constants -->
