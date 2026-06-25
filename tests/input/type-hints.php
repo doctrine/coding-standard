@@ -27,4 +27,9 @@ class UnionTypeHints
 {
     /** @var null|int|string */
     private $x = 1;
+
+    /** @param array<null|int|string> $value */
+    public function set(array $value): void
+    {
+    }
 }

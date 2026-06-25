@@ -26,4 +26,9 @@ class TraversableTypeHints
 class UnionTypeHints
 {
     private int|string|null $x = 1;
+
+    /** @param array<int|string|null> $value */
+    public function set(array $value): void
+    {
+    }
 }

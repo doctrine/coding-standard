@@ -13,7 +13,7 @@ index 8547171..f01ece0 100644
  tests/input/doc-comment-spacing.php                   11      0
  tests/input/duplicate-assignment-variable.php         1       0
 -tests/input/EarlyReturn.php                           8       0
--tests/input/example-class.php                         48      0
+-tests/input/example-class.php                         49      0
 -tests/input/ExampleBackedEnum.php                     5       0
 -tests/input/Exceptions.php                            1       0
 +tests/input/EarlyReturn.php                           7       0
@@ -49,19 +49,19 @@ index 8547171..f01ece0 100644
 -tests/input/TrailingCommaOnFunctions.php              6       0
 +tests/input/TrailingCommaOnFunctions.php              2       0
  tests/input/traits-uses.php                           12      0
--tests/input/type-hints.php                            9       0
-+tests/input/type-hints.php                            8       0
+-tests/input/type-hints.php                            12      0
++tests/input/type-hints.php                            9       0
  tests/input/UnusedVariables.php                       1       0
  tests/input/use-ordering.php                          2       0
  tests/input/useless-semicolon.php                     2       0
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 482 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 434 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
+-A TOTAL OF 486 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 435 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 396 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 349 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 400 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 350 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644
@@ -409,14 +409,19 @@ diff --git a/tests/fixed/type-hints.php b/tests/fixed/type-hints.php
 index 5e26ed8..bfa6d4f 100644
 --- a/tests/fixed/type-hints.php
 +++ b/tests/fixed/type-hints.php
-@@ -25,5 +25,6 @@ class TraversableTypeHints
- 
+@@ -26,7 +26,8 @@
  class UnionTypeHints
  {
 -    private int|string|null $x = 1;
+-
+-    /** @param array<int|string|null> $value */
+-    public function set(array $value): void
 +    /** @var int|string|null */
 +    private $x = 1;
- }
++
++    /** @param array<int|string|null> $value */
++    public function set(array $value): void
+     {
 diff --git a/tests/input/ControlStructures.php b/tests/input/ControlStructures.php
 index 7c20d0e..a0e0b2e 100644
 --- a/tests/input/ControlStructures.php
