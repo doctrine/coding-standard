@@ -16,7 +16,7 @@ index 9b19b9e..760ee4a 100644
 -tests/input/example-class.php                         49      0
 -tests/input/ExampleBackedEnum.php                     5       0
 +tests/input/example-class.php                         48      0
- tests/input/Exceptions.php                            1       0
+ tests/input/Exceptions.php                            2       0
  tests/input/forbidden-comments.php                    14      0
  tests/input/forbidden-functions.php                   6       0
 @@ -34,8 +33,8 @@ tests/input/null_coalesce_equal_operator.php          5       0
@@ -33,11 +33,11 @@ index 9b19b9e..760ee4a 100644
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 486 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 468 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
+-A TOTAL OF 487 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 469 ERRORS AND 2 WARNINGS WERE FOUND IN 50 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 400 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 383 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 401 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 384 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644

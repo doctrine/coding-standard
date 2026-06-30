@@ -15,7 +15,7 @@ index 8547171..f01ece0 100644
 -tests/input/EarlyReturn.php                           8       0
 -tests/input/example-class.php                         49      0
 -tests/input/ExampleBackedEnum.php                     5       0
--tests/input/Exceptions.php                            1       0
+-tests/input/Exceptions.php                            2       0
 +tests/input/EarlyReturn.php                           7       0
 +tests/input/example-class.php                         44      0
  tests/input/forbidden-comments.php                    14      0
@@ -57,10 +57,10 @@ index 8547171..f01ece0 100644
 -tests/input/UselessConditions.php                     21      0
 +tests/input/UselessConditions.php                     20      0
  ----------------------------------------------------------------------
--A TOTAL OF 486 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
+-A TOTAL OF 487 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
 +A TOTAL OF 435 ERRORS AND 2 WARNINGS WERE FOUND IN 48 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 400 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 401 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 +PHPCBF CAN FIX 350 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
@@ -142,20 +142,27 @@ index fd701eb..fe54eb9 100644
 -    case BAM = 1234;
 -}
 diff --git a/tests/fixed/Exceptions.php b/tests/fixed/Exceptions.php
-index db7408b..9b146c6 100644
+index eba1df2..9b146c6 100644
 --- a/tests/fixed/Exceptions.php
 +++ b/tests/fixed/Exceptions.php
-@@ -3,11 +3,3 @@
+@@ -3,18 +3,3 @@
  declare(strict_types=1);
  
  namespace Exceptions;
 -
 -use Exception;
+-use LogicException;
+-use RuntimeException;
 -use Throwable;
 -
 -try {
 -    throw new Exception();
 -} catch (Throwable) {
+-}
+-
+-try {
+-    throw new LogicException();
+-} catch (LogicException | RuntimeException) {
 -}
 diff --git a/tests/fixed/NamingCamelCase.php b/tests/fixed/NamingCamelCase.php
 index 5493471..57d9f2b 100644
@@ -466,20 +473,27 @@ index 3b09f47..fe54eb9 100644
 -    case BAM = 1234;
 -}
 diff --git a/tests/input/Exceptions.php b/tests/input/Exceptions.php
-index 3aaa30f..9b146c6 100644
+index 048b7fb..9b146c6 100644
 --- a/tests/input/Exceptions.php
 +++ b/tests/input/Exceptions.php
-@@ -3,11 +3,3 @@
+@@ -3,18 +3,3 @@
  declare(strict_types=1);
  
  namespace Exceptions;
 -
 -use Exception;
+-use LogicException;
+-use RuntimeException;
 -use Throwable;
 -
 -try {
 -    throw new Exception();
 -} catch (Throwable $throwable) {
+-}
+-
+-try {
+-    throw new LogicException();
+-} catch (RuntimeException | LogicException) {
 -}
 diff --git a/tests/input/PropertyDeclaration.php b/tests/input/PropertyDeclaration.php
 index acdc445..0891e12 100644
