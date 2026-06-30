@@ -16,17 +16,17 @@ index 8547171..a7a42fa 100644
 -tests/input/example-class.php                         49      0
 +tests/input/example-class.php                         48      0
  tests/input/ExampleBackedEnum.php                     5       0
- tests/input/Exceptions.php                            1       0
+ tests/input/Exceptions.php                            2       0
  tests/input/forbidden-comments.php                    14      0
 @@ -55,7 +54,7 @@ tests/input/use-ordering.php                          1       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 486 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 478 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
+-A TOTAL OF 487 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
++A TOTAL OF 479 ERRORS AND 2 WARNINGS WERE FOUND IN 51 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 400 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 393 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 401 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 394 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/ClassKeywordOrder.php b/tests/fixed/ClassKeywordOrder.php
 index 29f6164..4b28352 100644
