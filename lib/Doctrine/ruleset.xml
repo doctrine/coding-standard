@@ -327,6 +327,7 @@
             <property name="spacesCountAfterKeyword" value="1"/>
             <property name="spacesCountBeforeArrow" value="1"/>
             <property name="spacesCountAfterArrow" value="1"/>
+            <property name="disallowReturnTypeHint" value="true"/>
         </properties>
     </rule>
     <!-- Disallow trailing commas in single line function calls -->

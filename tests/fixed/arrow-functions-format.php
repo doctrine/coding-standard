@@ -6,9 +6,9 @@ $missingStatic = static fn ($a, $b) => $a + $b;
 
 $uselessParentheses = static fn ($x) => $x + $y;
 
-$withReturnType = static fn (): int => 1 + 2;
+$withReturnType = static fn () => 1 + 2;
 
-$withTypesInArguments = static fn (int $a, int $b): int => $a + $b;
+$withTypesInArguments = static fn (int $a, int $b) => $a + $b;
 
 $spacing = static fn (int $x) => $x * 2;
 
@@ -18,10 +18,10 @@ $returningObject = static fn () => new stdClass();
 
 $multiLineArrowFunctions = Collection::from([1, 2])
     ->map(
-        static fn (int $v): int => $v * 2,
+        static fn (int $v) => $v * 2,
     )
     ->reduce(
-        static fn (int $tmp, int $v): int => $tmp + $v,
+        static fn (int $tmp, int $v) => $tmp + $v,
     );
 
 $thisIsNotAnArrowFunction = [$this->fn => 'value'];

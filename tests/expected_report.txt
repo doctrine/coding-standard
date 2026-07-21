@@ -5,7 +5,7 @@ FILE                                                  ERRORS  WARNINGS
 ----------------------------------------------------------------------
 tests/input/annotation-name.php                       8       0
 tests/input/array_indentation.php                     10      0
-tests/input/arrow-functions-format.php                12      0
+tests/input/arrow-functions-format.php                16      0
 tests/input/assignment-operators.php                  4       0
 tests/input/attributes.php                            15      0
 tests/input/binary_operators.php                      9       0
@@ -56,9 +56,9 @@ tests/input/use-ordering.php                          2       0
 tests/input/useless-semicolon.php                     2       0
 tests/input/UselessConditions.php                     21      0
 ----------------------------------------------------------------------
-A TOTAL OF 487 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
+A TOTAL OF 491 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
 ----------------------------------------------------------------------
-PHPCBF CAN FIX 401 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+PHPCBF CAN FIX 405 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
 
