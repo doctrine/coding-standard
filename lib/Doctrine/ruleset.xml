@@ -168,6 +168,8 @@
             <property name="enableMultipleSpacesBetweenModifiersCheck" value="true"/>
         </properties>
     </rule>
+    <!-- Require eligible classes to be readonly and remove redundant readonly property modifiers -->
+    <rule ref="SlevomatCodingStandard.Classes.ReadonlyClass"/>
     <!-- Require usage of constructor property promotion -->
     <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
     <!-- Forbid uses of multiple traits separated by comma -->

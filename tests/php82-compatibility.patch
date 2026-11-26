@@ -1,5 +1,5 @@
 diff --git a/tests/expected_report.txt b/tests/expected_report.txt
-index 8547171..a7a42fa 100644
+index bf0e044..ae1a23c 100644
 --- a/tests/expected_report.txt
 +++ b/tests/expected_report.txt
 @@ -13,13 +13,13 @@ tests/input/class-references.php                      10      2
@@ -18,15 +18,15 @@ index 8547171..a7a42fa 100644
  tests/input/ExampleBackedEnum.php                     5       0
  tests/input/Exceptions.php                            2       0
  tests/input/forbidden-comments.php                    14      0
-@@ -55,7 +55,7 @@ tests/input/use-ordering.php                          2       0
+@@ -56,7 +56,7 @@ tests/input/use-ordering.php                          2       0
  tests/input/useless-semicolon.php                     2       0
  tests/input/UselessConditions.php                     21      0
  ----------------------------------------------------------------------
--A TOTAL OF 487 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
-+A TOTAL OF 480 ERRORS AND 2 WARNINGS WERE FOUND IN 52 FILES
+-A TOTAL OF 488 ERRORS AND 2 WARNINGS WERE FOUND IN 53 FILES
++A TOTAL OF 481 ERRORS AND 2 WARNINGS WERE FOUND IN 53 FILES
  ----------------------------------------------------------------------
--PHPCBF CAN FIX 401 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
-+PHPCBF CAN FIX 395 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+-PHPCBF CAN FIX 402 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
++PHPCBF CAN FIX 396 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
  ----------------------------------------------------------------------
 diff --git a/tests/fixed/constants-var.php b/tests/fixed/constants-var.php
 index f10c235..d4268cb 100644
