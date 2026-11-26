@@ -1,10 +1,7 @@
-/.docker export-ignore
-/.doctrine-project.json export-ignore
-/.gitattributes export-ignore
-/.github export-ignore
-/.gitignore export-ignore
-/bin/ export-ignore
-/docs/ export-ignore
-/phpcs.xml.dist export-ignore
-/tests/ export-ignore
-/bin/ export-ignore
+/* export-ignore
+/lib -export-ignore
+/lib/** -export-ignore
+/*.md -export-ignore
+/LICENSE -export-ignore
+/Makefile -export-ignore
+/composer.json -export-ignore
