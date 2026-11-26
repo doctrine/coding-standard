@@ -21,6 +21,16 @@ class TraversableTypeHints
     {
         return $this->parameter;
     }
+
+    /**
+     * @return array{
+     *     name: string
+     * }
+     */
+    public function getArrayShape(): array
+    {
+        return ['name' => 'Doctrine'];
+    }
 }
 
 class UnionTypeHints

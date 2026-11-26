@@ -463,6 +463,8 @@
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <!-- Require one space between typehint and variable, require no space between nullability sign and typehint -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
+    <!-- Require trailing commas in non-empty multi-line PHPDoc array shapes -->
+    <rule ref="SlevomatCodingStandard.TypeHints.RequireTrailingCommaInArrayShape"/>
     <!-- Require space around colon in return types -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
     <!-- Require types to be written as natively if possible;
